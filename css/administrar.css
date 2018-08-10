@@ -1,0 +1,23 @@
+.bg-darkpr{
+    background-color: #1d809f!important;
+}
+
+.colorsec{
+     background-color: #005874!important;
+   
+}
+
+.colorf{
+    background-color: #f6f6f6!important;
+    }
+
+.colorsecb{
+    background-color: #005874!important;  
+    border-color: #005874!important; 
+}
+
+.colorsecb:hover{
+    background-color: #1d809f!important;  
+    border-color: #005874!important; 
+    opacity: 0.4;
+}
