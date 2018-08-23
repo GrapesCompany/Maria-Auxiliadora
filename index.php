@@ -16,7 +16,7 @@ session_start();
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap/css/pro.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/estilos.css" rel="stylesheet">
 
 
     <!-- Custom styles -->
@@ -48,13 +48,12 @@ document.nform.submit();}
             <form name="nform" action="login.php" method="post">
                 <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-                <input type="button" class="fadeIn fourth" value="Entrar" onClick="enviar('/administracion.php')">
+                <input type="button" class="fadeIn fourth" value="Entrar" onClick="enviar('http://localhost/Maria-Auxiliadora/index2.php')">
             </form>
              
             <div id="formFooter">
                 <a class="underlineHover" href="./error.php">¿Olvidaste la contraseña?</a>
-                          <br>    
-                Eres Nuevo! <a class="underlineHover" href="./registro.php">Regístrate</a> 
+                        
             </div>
 
         </div>
