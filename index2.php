@@ -42,13 +42,13 @@ document.nform.submit();}
 
             <form name="nform" action="login.php" method="post">
                 <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
-                <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-                <div>
-                <label class="checkbox-inline fadeIn third"><input type="checkbox" value="">Médico</label>  
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <label class="checkbox-inline fadeIn third"><input type="checkbox" value="">Auxiliar</label>
-                 
-            </div>
+                <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">  
+
+                <div class="radio">
+                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio" checked>Médico</label> 
+                &nbsp;&nbsp;&nbsp;           
+                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio">Auxiliar</label>
+                </div>
                 <input type="button" class="fadeIn fourth colorbutton" value="Entrar" onClick="enviar('/administracion.php')">
             </form>
            
