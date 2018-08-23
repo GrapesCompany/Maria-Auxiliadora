@@ -52,7 +52,9 @@ document.nform.submit();}
             </form>
              
             <div id="formFooter">
-                <a class="underlineHover" href="./error.php">¿Olvidaste la contraseña?</a>
+                <a class="underlineHover" href="./error.php">¿Olvidaste la contraseña?</a><br>
+                <a class="underlineHover letrape" href="./index2.php">Ingresar al Sistema Administrativo</a>
+                
                         
             </div>
 
