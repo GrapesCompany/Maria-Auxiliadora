@@ -34,7 +34,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">Maria Auxiliadora - Médico</a>
+      <a class="navbar-brand mr-1" href="index.php">Maria Auxiliadora - Médico</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-arrows-alt-h fa-lg"></i>
@@ -45,7 +45,7 @@
         <div class="input-group">
           <input type="text" class="form-control" size="40" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
           <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" title="Buscar Paciente" type="button">
+            <button class="btn btn-primary colorsecb" onclick="showCita(this.value)" title="Buscar Paciente" type="button">
               <i class="fas fa-user-md"></i>
             </button>            
           </div>
@@ -86,14 +86,16 @@
             <span>Citas médicas</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">            
-            <a class="dropdown-item" onclick="showCita(this.value)" href="#">Reservar cita</a>            
+            <a class="dropdown-item" onclick="reservarCita(this.value)" href="#">Reservar cita</a>            
             <a class="dropdown-item" onclick="buscarCita(this.value)" href="#">Buscar cita</a>   
-            <a class="dropdown-item"  href="#">Listar cita pendiente</a>                      
+            <a class="dropdown-item" onclick="listarCitaPendiente(this.value)" href="#">Listar cita pendiente</a>                      
           </div>
+
+         <!--  onclick="showCita(this.value)" -->
         </li>
 
          <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" onclick="reporteCita(this.value)" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Reporte</span></a>
         </li> 
@@ -106,7 +108,7 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="index.html">Panel de Navegación</a>
+              <a href="index.php">Panel de Navegación</a>
             </li>
             <li class="breadcrumb-item active">Inicio</li>
           </ol>
@@ -114,12 +116,20 @@
 
           <!-- Pagina Principal -->        
 
+        <!--Reservar Cita Medica--> 
+        <div id="div_reservarcita" class="container"></div>
+
         <!--Nueva Cita Medica--> 
         <div id="div_nuevacita" class="container"></div>
 
         <!--Buscar Cita Medica--> 
         <div id="div_buscarcita" class="container"></div>
 
+         <!--Listar Cita Pendiente--> 
+         <div id="div_listarcitapendiente" class="container"></div>
+
+         <!--Reporte Cita Médicas--> 
+         <div id="div_reportecita" class="container"></div>
         
 
         </div>

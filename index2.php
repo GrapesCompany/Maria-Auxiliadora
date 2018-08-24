@@ -42,8 +42,8 @@ document.nform.submit();
             </div>  
 
             <form name="nform" action="./login/verificar.php/?tipoP=administrador" method="post">
-                <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
-                <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">  
+                <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario" require>
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña" require>  
 
                 <div class="radio">
                 <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio" checked><a href="http://localhost/Maria-Auxiliadora/admin.php"> Administrador</label></a> 
@@ -57,7 +57,13 @@ document.nform.submit();
            
              
             <div id="formFooter">
-                <a class="underlineHover" href="./error.php">¿Olvidaste la contraseña?</a>
+            <?php
+                if (isset($_GET['error'])) { ?>
+                <div class="alert alert-danger" role="alert">
+                     Datos no válidos
+                </div>
+                 <?php } ?>
+                <a class="underlineHover" href="./index.php">Regresar</a>
                 <a  href="./index.php">Entrar como usuario</a>
                           
             </div>
