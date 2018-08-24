@@ -32,8 +32,8 @@
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="date" id="fec_nac" class="form-control" placeholder="Fecha de Nacimiento" required="required">
-         <label for="fec_nac">Fecha de Nacimiento</label>
+         <input type="date" id="fech_nac" name="fech_nac"  class="form-control" placeholder="Fecha de Nacimiento" required="required">
+         <label for="fech_nac">Fecha de Nacimiento</label>
        </div>
      </div>
    </div>         
@@ -43,14 +43,14 @@
  <div class="form-row">
    <div class="col-md-6">
      <div class="form-label-group">
-       <input type="text" id="direccion" class="form-control" placeholder="Dirección" required="required" autofocus="autofocus">
+       <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Dirección" required="required" autofocus="autofocus">
        <label for="direccion">Dirección</label>
      </div>
    </div>
    <div class="col-md-6">
      <div class="form-label-group">
-       <input type="email" id="celectronico" class="form-control" placeholder="Correo electrónico" required="required">
-       <label for="celectronico">Correo electrónico</label>
+       <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico" required="required">
+       <label for="correo">Correo electrónico</label>
      </div>
    </div>
  </div>         

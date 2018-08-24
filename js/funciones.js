@@ -57,16 +57,18 @@ function guardarDoctor() {
         '&nombre=' + document.getElementById('nombre').value +
         '&apellido=' + document.getElementById('apellido').value +
         '&telefono=' + document.getElementById('telefono').value +
-        '&especialidad=' + document.getElementById('especialidad').value +
-        '&inputPassword=' + document.getElementById('inputPassword').value;
-
+        '&especialidad=' + document.getElementById('especialidad').value+
+        '&inputPassword=' + document.getElementById('inputPassword').value+
+        '&fech_nac='+document.getElementById('fech_nac').value+
+        '&direccion='+document.getElementById('direccion').value+
+        '&correo='+document.getElementById('correo').value;
 
     $.ajax({
         type: "POST",
         url: "php/ingresarMedico.php",
         data: dataString,
         success: function () {
-            showMedico("gh");
+            showAuxiliar("gh");
             alert("Ha sido ejecutada la acción.");
             //recuperando las variables
 
@@ -81,17 +83,18 @@ function guardarDoctor() {
 function guardarAux() {
 
 
-    var dataString = 'cedula=' + document.getElementById('cedula').value +
-        '&nombre=' + document.getElementById('nombre').value +
-        '&apellido=' + document.getElementById('apellido').value +
-        '&telefono=' + document.getElementById('telefono').value +
-        '&especialidad=' + document.getElementById('especialidad').value +
-        '&inputPassword=' + document.getElementById('inputPassword').value;
-
+    var dataString = 'cedulaAux=' + document.getElementById('cedula').value +
+        '&nombreAux=' + document.getElementById('nombre').value +
+        '&apellidoAux=' + document.getElementById('apellido').value +
+        '&telefonoAux=' + document.getElementById('telefono').value +
+        '&inputPasswordAux=' + document.getElementById('inputPassword').value+
+        '&fech_nacAux='+document.getElementById('fech_nac').value+
+        '&direccionAux='+document.getElementById('direccion').value+
+        '&correoAux='+document.getElementById('correo').value;
 
     $.ajax({
         type: "POST",
-        url: "php/ingresarMedico.php",
+        url: "php/ingresarAuxiliar.php",
         data: dataString,
         success: function () {
             showMedico("gh");
