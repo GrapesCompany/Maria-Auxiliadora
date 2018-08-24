@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MA Auxiliar</title>
+    <title>MA Médico</title>
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
@@ -34,7 +34,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">Maria Auxiliadora - Auxiliar</a>
+      <a class="navbar-brand mr-1" href="index.html">Maria Auxiliadora - Médico</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-arrows-alt-h fa-lg"></i>
@@ -44,20 +44,11 @@
       <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
           <input type="text" class="form-control" size="40" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
-         
           <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" title="Historias Clínicas" type="button">
+            <button class="btn btn-primary colorsecb" title="Buscar Paciente" type="button">
               <i class="fas fa-user-md"></i>
             </button>            
           </div>
-         
-
-            <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" onclick="showCitaMedica(this.value)" title="Citas Médicas Pendientes" type="button">
-              <i class="fas fa-book-open"></i>
-            </button>            
-          </div>
-
         </div>
       </form>
       <div class="input-group-append">
@@ -91,15 +82,21 @@
         <li class="nav-item">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Nuevo</span>
+            <i class="fas fa-fw fa-calendar-alt"></i>
+            <span>Citas médicas</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">            
-            <a class="dropdown-item" onclick="showPaciente(this.value)" href="#">Paciente</a>            
-                            
+            <a class="dropdown-item" onclick="showCita(this.value)" href="#">Reservar cita</a>            
+            <a class="dropdown-item" onclick="buscarCita(this.value)" href="#">Buscar cita</a>   
+            <a class="dropdown-item"  href="#">Listar cita pendiente</a>                      
           </div>
         </li>
- 
+
+         <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Reporte</span></a>
+        </li> 
       </ul>
 
       <div id="content-wrapper">
@@ -117,14 +114,13 @@
 
           <!-- Pagina Principal -->        
 
-        <!--Nuevo Auxiliar--> 
-        <div id="div_nuevopaciente" class="container"></div>
+        <!--Nueva Cita Medica--> 
+        <div id="div_nuevacita" class="container"></div>
 
-        <!--Modificar Auxiliar--> 
-        <div id="div_modificaraux" class="container"></div>
+        <!--Buscar Cita Medica--> 
+        <div id="div_buscarcita" class="container"></div>
+
         
-        <!--Modificar Cita Medica--> 
-        <div id="div_modificarcita" class="container"></div>
 
         </div>
         

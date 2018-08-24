@@ -32,30 +32,57 @@
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="telefono" class="form-control" placeholder="Teléfono" required="required">
-         <label for="telefono">Teléfono</label>
+         <input type="date" id="fec_nac" class="form-control" placeholder="Fecha de Nacimiento" required="required">
+         <label for="fec_nac">Fecha de Nacimiento</label>
        </div>
      </div>
    </div>         
  </div>
+
+ <div class="form-group">
+ <div class="form-row">
+   <div class="col-md-6">
+     <div class="form-label-group">
+       <input type="text" id="direccion" class="form-control" placeholder="Dirección" required="required" autofocus="autofocus">
+       <label for="direccion">Dirección</label>
+     </div>
+   </div>
+   <div class="col-md-6">
+     <div class="form-label-group">
+       <input type="email" id="celectronico" class="form-control" placeholder="Correo electrónico" required="required">
+       <label for="celectronico">Correo electrónico</label>
+     </div>
+   </div>
+ </div>         
+</div>
+
  <div class="form-group">
    <div class="form-row">
+   <div class="col-md-6">
+       <div class="form-label-group">
+         <input type="text" id="telefono" class="form-control" placeholder="Teléfono" required="required">
+         <label for="telefono">Teléfono</label>
+       </div>
+   </div>   
      <div class="col-md-6">
        <div class="form-label-group">
          <input type="text" id="especialidad" class="form-control" placeholder="Especialidad" required="required" autofocus="autofocus">
          <label for="especialidad">Especialidad</label>
        </div>
+     </div>           
+ </div> 
+ </div>
+
+ <div class="form-group">
+ <div class="form-row">
+ <div class="col-md-12">
+     <div class="form-label-group">
+       <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
+       <label for="inputPassword">Contraseña</label>
      </div>
-     <div class="col-md-6">
-       <div class="form-label-group">
-         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
-         <label for="inputPassword">Contraseña</label>
-       </div>
-   </div>         
- </div>
- 
- 
- </div>
+ </div>               
+</div> 
+</div>
   
  <button class="btn btn-block col-md-2 btn-ttc" href="login.html">Registrar</button>
  

@@ -32,11 +32,6 @@
  }
 
 
- 
- 
-
-
-
  function showReporte(str) {
 
     document.getElementById("div_nuevomedico").innerHTML = "";
@@ -56,7 +51,8 @@
 
 function showPaciente(str) {
 
-    document.getElementById("div_modificaraux").innerHTML = "";   
+    document.getElementById("div_modificaraux").innerHTML = ""; 
+    document.getElementById("div_modificarcita").innerHTML = "";  
 
    var xmlhttp = new XMLHttpRequest();
    xmlhttp.onreadystatechange = function () {
@@ -66,13 +62,14 @@ function showPaciente(str) {
        }
    }
 
-   xmlhttp.open("GET", "nuevopaciente.php?q=" + str, true);
+   xmlhttp.open("GET", "nuevo_paciente.php?q=" + str, true);
    xmlhttp.send();
 }
 
 function showModificarAuxiliar(str) {
 
-    document.getElementById("div_nuevopaciente").innerHTML = "";    
+    document.getElementById("div_nuevopaciente").innerHTML = "";  
+    document.getElementById("div_modificarcita").innerHTML = "";  
 
    var xmlhttp = new XMLHttpRequest();
    xmlhttp.onreadystatechange = function () {
@@ -84,6 +81,25 @@ function showModificarAuxiliar(str) {
    xmlhttp.open("GET", "modificar_auxiliar.php?q=" + str, true);
    xmlhttp.send();
 }
+
+function showCitaMedica(str) {
+
+    document.getElementById("div_nuevopaciente").innerHTML = ""; 
+    document.getElementById("div_modificaraux").innerHTML = ""; 
+     
+
+   var xmlhttp = new XMLHttpRequest();
+   xmlhttp.onreadystatechange = function () {
+       if (this.readyState == 4 && this.status == 200) {
+           document.getElementById("div_modificarcita").innerHTML = this.responseText;
+       }
+   }
+
+   xmlhttp.open("GET", "modificar_citamedica.php?q=" + str, true);
+   xmlhttp.send();
+}
+
+
 
 function habilitarcampos()
 {
@@ -97,3 +113,36 @@ function habilitarcampos()
     document.getElementById("contrasena").removeAttribute("disabled");
     
 }
+
+
+function showCita(str) {
+
+    document.getElementById("div_buscarcita").innerHTML = "";
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_nuevacita").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "nueva_cita.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+function buscarCita(str) {
+
+    document.getElementById("div_nuevacita").innerHTML = "";
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_buscarcita").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "buscar_cita.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+
