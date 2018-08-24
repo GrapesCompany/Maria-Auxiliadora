@@ -32,7 +32,7 @@
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="fec_nac" class="form-control" placeholder="Fecha de Nacimiento" required="required">
+         <input type="date" id="fec_nac" class="form-control" placeholder="Fecha de Nacimiento" required="required">
          <label for="fec_nac">Fecha de Nacimiento</label>
        </div>
      </div>
@@ -41,7 +41,7 @@
  
    <div class="form-group">
    <div class="form-label-group">
-     <input type="email" id="direccion" class="form-control" placeholder="Dirección" required="required">
+     <input type="text" id="direccion" class="form-control" placeholder="Dirección" required="required">
      <label for="direccion">Dirección</label>
    </div>
  </div> 

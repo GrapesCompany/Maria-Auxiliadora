@@ -102,9 +102,9 @@
         </li> -->
 
          <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" onclick="showReporte(this.value)" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Reportes</span></a>
+            <span>Reporte</span></a>
         </li> 
 
        <!-- <li class="nav-item">
@@ -134,6 +134,9 @@
 
            <!--Nuevo Auxiliar--> 
            <div id="div_nuevoauxiliar" class="container"></div>
+
+           <!--Reporte--> 
+           <div id="div_reporte" class="container"></div>
 
         </div>
         
