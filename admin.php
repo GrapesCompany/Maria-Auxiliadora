@@ -24,6 +24,7 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/administrar.css" rel="stylesheet">
+    <link href="css/estilosadministrar.css" rel="stylesheet">
 
   </head>
 
@@ -50,40 +51,16 @@
       </form>
 
       <!-- Navbar -->
-      <ul class="navbar-nav ml-auto ml-md-0">
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-bell fa-fw"></i>
-            <span class="badge badge-danger">9+</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-envelope fa-fw"></i>
-            <span class="badge badge-danger">117</span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
+      <ul class="navbar-nav ml-auto ml-md-0">      
+        
         <li class="nav-item dropdown no-arrow">
           <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user-circle fa-fw"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">Settings</a>
-            <a class="dropdown-item" href="#">Activity Log</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            <a class="dropdown-item" href="#">Cambiar contraseña</a>
+             <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Salir</a>
           </div>
         </li>
       </ul>
@@ -100,14 +77,13 @@
             <i class="fas fa-fw fa-users"></i>
             <span>Nuevo</span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            
-            <a class="dropdown-item" href="#">Médico</a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">            
+            <a class="dropdown-item" onclick="showMedico(this.value)" href="#">Médico</a>            
             <a class="dropdown-item" href="#">Auxiliar</a>             
           </div>
         </li>
 
-        <li class="nav-item dropdown">
+<!--         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
             <span>Páginas</span>
@@ -123,17 +99,19 @@
             <a class="dropdown-item" href="#">404 Page</a>
             <a class="dropdown-item active" href="#">Blank Page</a>
           </div>
-        </li>
-        <li class="nav-item">
+        </li> -->
+
+         <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Gráficos</span></a>
-        </li>
-        <li class="nav-item">
+            <span>Reportes</span></a>
+        </li> 
+
+       <!-- <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="fas fa-fw fa-table"></i>
             <span>Tablas</span></a>
-        </li>
+        </li>-->
       </ul>
 
       <div id="content-wrapper">
@@ -147,14 +125,16 @@
             </li>
             <li class="breadcrumb-item active">Inicio</li>
           </ol>
-
-          <!-- Page Content -->
-          <h1></h1>
           <hr>
-          <p></p>
+
+          <!-- Pagina Principal -->        
+                
+          <!--Nuevo Medico-->              
+            <div id="div_nuevomedico" class="container"></div>
+
 
         </div>
-        <!-- /.container-fluid -->
+        
 
         <!-- Sticky Footer -->
         <footer class="sticky-footer colorf">
@@ -204,6 +184,9 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
+
+    <!-- Javascript Paginas-->
+    <script src="js/funciones.js"></script>
 
   </body>
 
