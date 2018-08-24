@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MA Administración</title>
+    <title>MA Auxiliar</title>
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
@@ -34,7 +34,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">Maria Auxiliadora</a>
+      <a class="navbar-brand mr-1" href="index.html">Maria Auxiliadora - Auxiliar</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -43,14 +43,26 @@
       <!-- Navbar Search -->
       <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon2">
+          <input type="text" class="form-control" size="40" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
+         
           <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" type="button">
-              <i class="fas fa-search"></i>
-            </button>
+            <button class="btn btn-primary colorsecb" title="Cita Médica" type="button">
+              <i class="fas fa-user-md"></i>
+            </button>            
           </div>
+         
+
+            <div class="input-group-append">
+            <button class="btn btn-primary colorsecb" title="Historia Clínica" type="button">
+              <i class="fas fa-book-open"></i>
+            </button>            
+          </div>
+
         </div>
       </form>
+      <div class="input-group-append">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+      </div>
 
       <!-- Navbar -->
       <ul class="navbar-nav ml-auto ml-md-0">      
@@ -60,7 +72,10 @@
             <i class="fas fa-user-circle fa-fw fa-lg"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ccontrasena">Cambiar contraseña</a>
+          <div class="dropdown-divider"></div>
+            <a class="dropdown-item" onclick="showModificarAuxiliar(this.value)" href="#">Mi cuenta</a>
+             
+             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ccontrasena">Cambiar contraseña</a>
              <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Salir</a>
           </div>
@@ -80,8 +95,8 @@
             <span>Nuevo</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">            
-            <a class="dropdown-item" onclick="showMedico(this.value)" href="#">Médico</a>            
-            <a class="dropdown-item" onclick="showAuxiliar(this.value)" href="#">Auxiliar</a>                         
+            <a class="dropdown-item" onclick="showPaciente(this.value)" href="#">Paciente</a>            
+                            
           </div>
         </li>
 
@@ -103,11 +118,11 @@
           </div>
         </li> -->
 
-         <li class="nav-item">
+         <!-- <li class="nav-item">
           <a class="nav-link" onclick="showReporte(this.value)" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Reporte</span></a>
-        </li> 
+        </li>  -->
 
        <!-- <li class="nav-item">
           <a class="nav-link" href="#">
@@ -130,15 +145,12 @@
           <hr>
 
           <!-- Pagina Principal -->        
-                
-          <!--Nuevo Medico-->              
-            <div id="div_nuevomedico" class="container"></div>
 
-           <!--Nuevo Auxiliar--> 
-           <div id="div_nuevoauxiliar" class="container"></div>
+        <!--Nuevo Auxiliar--> 
+        <div id="div_nuevopaciente" class="container"></div>
 
-           <!--Reporte--> 
-           <div id="div_reporte" class="container"></div>
+           <!--Modificar Auxiliar--> 
+           <div id="div_modificaraux" class="container"></div>       
 
         </div>
         
@@ -247,8 +259,7 @@
 
     <!-- Javascript Paginas-->
     <script src="js/funciones.js"></script>
-    <script src="js/chart-area-demo.js"></script>
-
+ 
   </body>
 
 </html>
