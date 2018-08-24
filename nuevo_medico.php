@@ -6,17 +6,17 @@
               <i class="fas fa-address-book"></i>
               Registro de un Nuevo Médico</div><br>
             <div class="container">
-            <form> <div class="form-group">
+            <form  action="php/ingresarMedico.php" method="POST"> <div class="form-group">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="cedula" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
+         <input type="text"  name="cedula" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
          <label for="cedula">Cédula</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="nombre" class="form-control" placeholder="Nombre" required="required">
+         <input type="text" name="nombre" class="form-control" placeholder="Nombre" required="required">
          <label for="nombre">Nombre</label>
        </div>
      </div>
