@@ -7,7 +7,7 @@ $nombre=$_POST['nombre'];
 $apellido=$_POST['apellido'];
 $telefono=$_POST['telefono'];
 $especialidad=$_POST['especialidad'];
-$inputPassword=$_POST['inputPassword']
+$inputPassword=$_POST['inputPassword'];
     echo "hola tefo", $cedula;
         $conexion=conectar();
          
