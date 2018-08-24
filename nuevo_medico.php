@@ -48,28 +48,13 @@
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="estado" class="form-control" placeholder="Estado" required="required">
-         <label for="estado">Estado</label>
-       </div>
-     </div>
-   </div>         
- </div>
-<!--  <div class="form-group">
-   <div class="form-label-group">
-     <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-     <label for="inputEmail">Email address</label>
-   </div>
- </div> -->
- <div class="form-group">
-   <div class="form-row">
-     <div class="col-md-6">
-       <div class="form-label-group">
          <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
          <label for="inputPassword">Contraseña</label>
        </div>
-     </div>
-   
-   </div>
+   </div>         
+ </div>
+ 
+ 
  </div>
   
  <button class="btn btn-block col-md-2 btn-ttc" href="login.html">Registrar</button>
