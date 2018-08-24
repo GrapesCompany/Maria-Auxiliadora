@@ -4,3 +4,13 @@
   text-shadow: 0 -1px 0 #005874;
   background-color: #1d809f;
 }
+
+.btn-ttc:hover{ 
+  color: white !important;
+  text-shadow: 0 -1px 0 #005874 !important;
+  background-color: #005874 !important;
+}
+
+ 
+
+ 

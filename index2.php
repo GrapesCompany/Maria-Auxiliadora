@@ -40,16 +40,16 @@ document.nform.submit();}
                 <img src="https://s15.postimg.cc/3n4ejdm0r/portada.gif" id="icon" alt="Maria Auxiliadora" />
             </div>  
 
-            <form name="nform" action="login.php" method="post">
+            <form name="nform" action="./login/verificar.php/?tipoP=administrador" method="post">
                 <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">  
 
                 <div class="radio">
-                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio" checked>Médico</label> 
+                <label class="checkbox-inline fadeIn third"><input type="radio" name="cargo" value="medico" checked>Médico</label> 
                 &nbsp;&nbsp;&nbsp;           
-                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio">Auxiliar</label>
+                <label class="checkbox-inline fadeIn third"><input type="radio" name="cargo" value="auxiliar">Auxiliar</label>
                 </div>
-                <input type="button" class="fadeIn fourth colorbutton" value="Entrar" onClick="enviar('/administracion.php')">
+                <input type="submit" class="fadeIn fourth colorbutton" value="Entrar">
             </form>
            
              

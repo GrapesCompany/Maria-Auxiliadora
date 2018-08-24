@@ -45,17 +45,16 @@ document.nform.submit();}
                 <img src="https://s15.postimg.cc/3n4ejdm0r/portada.gif" id="icon" alt="User Icon" />
             </div>  
 
-            <form name="nform" action="login.php" method="post">
+            <form name="nform" action="./login/verificar.php/?tipoP=paciente" method="post">
                 <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-                <input type="button" class="fadeIn fourth" value="Entrar" onClick="enviar('http://localhost/Maria-Auxiliadora/admin.php')">
+                <input type="submit" class="fadeIn fourth" value="Entrar">
             </form>
+
              
             <div id="formFooter">
-                <a class="underlineHover" href="./error.php">¿Olvidaste la contraseña?</a><br>
-                <a class="underlineHover letrape" href="./index2.php">Ingresar al Sistema Administrativo</a>
-                
-                        
+                <!-- <a class="underlineHover" href="./error.php">¿Olvidaste la contraseña?</a><br> -->
+                <a class="underlineHover letrape" href="./index2.php">Ingresar al Sistema Administrativo</a>         
             </div>
 
         </div>
