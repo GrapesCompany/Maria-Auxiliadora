@@ -26,13 +26,13 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="apellido" class="form-control" placeholder="Apellido" required="required" autofocus="autofocus">
+         <input type="text" name="apellido" class="form-control" placeholder="Apellido" required="required" autofocus="autofocus">
          <label for="apellido">Apellido</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="telefono" class="form-control" placeholder="Teléfono" required="required">
+         <input type="text" name="telefono" class="form-control" placeholder="Teléfono" required="required">
          <label for="telefono">Teléfono</label>
        </div>
      </div>
@@ -42,13 +42,13 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="especialidad" class="form-control" placeholder="Especialidad" required="required" autofocus="autofocus">
+         <input type="text" name="especialidad" class="form-control" placeholder="Especialidad" required="required" autofocus="autofocus">
          <label for="especialidad">Especialidad</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
+         <input type="password" name="inputPassword" class="form-control" placeholder="Contraseña" required="required">
          <label for="inputPassword">Contraseña</label>
        </div>
    </div>         
