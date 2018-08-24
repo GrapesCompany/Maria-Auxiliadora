@@ -60,7 +60,7 @@
             <i class="fas fa-user-circle fa-fw"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">Cambiar contraseña</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ccontrasena">Cambiar contraseña</a>
              <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Salir</a>
           </div>
@@ -163,24 +163,76 @@
       <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
+    <!-- Seccion Salir-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">¿Desea cerrar su sesión?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+         
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary btn-ttc " href="./index.php">Aceptar</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Seccion Cambiar Contraseña-->
+    <div class="modal fade" id="ccontrasena" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cambiar contraseña</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+         
+           
+           <div class="container">
+           <form> <br>
+
+            <div class="form-group">
+   <div class="form-label-group">
+     <input type="text" id="ccactual" class="form-control" placeholder="Contraseña actual" required="required">
+     <label for="ccactual">Contraseña actual</label>
+   </div>
+ </div> 
+ <hr>
+
+ <div class="form-group">
+   <div class="form-label-group">
+     <input type="text" id="ccnueva" class="form-control" placeholder="Contraseña nueva" required="required">
+     <label for="ccnueva">Contraseña nueva</label>
+   </div>
+ </div> 
+
+ <div class="form-group">
+   <div class="form-label-group">
+     <input type="text" id="ccverinueva" class="form-control" placeholder="Verificar la nueva contraseña" required="required">
+     <label for="ccverinueva">Verificar la nueva contraseña</label>
+   </div>
+ </div> 
+ 
+ 
+
+</form>
+</div>
+          <div class="modal-footer">
+          <a class="btn btn-primary btn-ttc " href="./admin.php">Aplicar</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
