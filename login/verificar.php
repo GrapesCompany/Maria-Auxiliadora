@@ -1,20 +1,14 @@
 <?php
-
-echo "tefin";
+session_start();
 include '../conexion.php';
-echo "hola1";
 
 $conexion = conectar();
-echo "hola2";
 $username = $_POST['username'];
 $password = $_POST['password'];
 $tipoP = $_GET['tipoP'];
 $cargo = $_POST['cargo'];
 
-echo $username;
-echo $password;
-
-if ($tipoP == 'paciente') {
+if ($tipoP == 'paciente' && $username != "" && $username != null && $password != "" && $password != null) {
     $existenciausuario = mysqli_query($conexion, "SELECT * FROM paciente WHERE paciente.`CEDULA_PAC`='$username' AND  paciente.`CONTRASENA_PAC`='$password' AND  paciente.`ESTADO_PAC`='1'") or die("Problemas en el select" . mysqli_error($conexion));
 
     while ($f = mysqli_fetch_array($existenciausuario)) {
@@ -32,43 +26,67 @@ if ($tipoP == 'paciente') {
             'estadoP' => $f['ESTADO_PAC'],
             'contrasenaP' => $f['CONTRASENA_PAC']);
     }
-    echo "eres paciente";
-    header('Location: ../../admin.php');
-}
-
-if($tipoP =='administrador' && $cargo == 'medico'){
-    $existenciausuario = mysqli_query($conexion, "SELECT * FROM medico WHERE medico.`CEDULA_MED`='$username' AND  medico.`CONTRASENA_MED`='$password' AND  medico.`ESTADO_MED`='1'") or die("Problemas en el select" . mysqli_error($conexion));
-
-    while ($f = mysqli_fetch_array($existenciausuario)) {
-        $arreglo_medico[] = array('cedulaM' => $f['CEDULA_MED'],
-            'nombreM' => $f['NOMBRE_MED'],
-            'apellidoM' => $f['APELLIDO_MED'],
-            'telefonoM' => $f['TELEFONO_MED'],
-            'especialidadM' => $f['ESPECIALIDAD'],
-            'estadoM' => $f['ESTADO_MED'],
-            'contrasenaM' => $f['CONTRASENA_MED'],);
+    if ($arreglo_paciente != null) {
+        echo "eres paciente";
+        header('Location: ../../admin.php');
+    } else {
+        header('Location: ../../index.php?error=Datos Incorrectos');
     }
-    echo "eres medico";
-    header('Location: ../../admin.php');
-}
+} else {
+    if ($tipoP == 'administrador' && $cargo == 'medico' && $username != "" && $username != null && $password != "" && $password != null) {
+        $existenciausuario = mysqli_query($conexion, "SELECT * FROM medico WHERE medico.`CEDULA_MED`='$username' AND  medico.`CONTRASENA_MED`='$password' AND  medico.`ESTADO_MED`='1'") or die("Problemas en el select" . mysqli_error($conexion));
 
-if($tipoP =='administrador' && $cargo == 'auxiliar'){
-    $existenciausuario = mysqli_query($conexion, "SELECT * FROM auxiliar WHERE auxiliar.`CEDULA_AUX`='$username' AND  auxiliar.`CONTRASENA_AUX`='$password' AND  auxiliar.`ESTADO_AUX`='1'") or die("Problemas en el select" . mysqli_error($conexion));
+        while ($f = mysqli_fetch_array($existenciausuario)) {
+            $arreglo_medico[] = array('cedulaM' => $f['CEDULA_MED'],
+                'nombreM' => $f['NOMBRE_MED'],
+                'apellidoM' => $f['APELLIDO_MED'],
+                'telefonoM' => $f['TELEFONO_MED'],
+                'especialidadM' => $f['ESPECIALIDAD'],
+                'estadoM' => $f['ESTADO_MED'],
+                'contrasenaM' => $f['CONTRASENA_MED']);
+        }
 
-    while ($f = mysqli_fetch_array($existenciausuario)) {
-        $arreglo_auxiliar[] = array('cedulaM' => $f['CEDULA_AUX'],
-            'nombreA' => $f['NOMBRE_AUX'],
-            'apellidoA' => $f['APELLIDO_AUX'],
-            'direccionA' => $f['DIRECCION_AUX'],
-            'telefonoA' => $f['TELEFONO_AUX'],
-            'fechaNacA' => $f['FECH_NAC_AUX'],
-            'edadA' => $f['EDAD_AUX'],
-            'estadoA' => $f['ESTADO_AUX'],
-            'contrasenaA' => $f['CONTRASENA_AUX'],);
+        if ($arreglo_medico != null) {
+            echo "eres medico";
+            header('Location: ../../admin.php');
+        } else {
+            header('Location: ../../index2.php?error=Datos Incorrectos');
+        }
+
+    } else {
+        if ($tipoP == 'administrador' && $cargo == 'auxiliar' && $username != "" && $username != null && $password != "" && $password != null) {
+            $existenciausuario = mysqli_query($conexion, "SELECT * FROM auxiliar WHERE auxiliar.`CEDULA_AUX`='$username' AND  auxiliar.`CONTRASENA_AUX`='$password' AND  auxiliar.`ESTADO_AUX`='1'") or die("Problemas en el select" . mysqli_error($conexion));
+
+            while ($f = mysqli_fetch_array($existenciausuario)) {
+                $arreglo_auxiliar[] = array('cedulaM' => $f['CEDULA_AUX'],
+                    'nombreA' => $f['NOMBRE_AUX'],
+                    'apellidoA' => $f['APELLIDO_AUX'],
+                    'direccionA' => $f['DIRECCION_AUX'],
+                    'telefonoA' => $f['TELEFONO_AUX'],
+                    'fechaNacA' => $f['FECH_NAC_AUX'],
+                    'edadA' => $f['EDAD_AUX'],
+                    'estadoA' => $f['ESTADO_AUX'],
+                    'contrasenaA' => $f['CONTRASENA_AUX']);
+            }
+
+            if ($arreglo_auxiliar != null) {
+                echo "eres auxiliar";
+                header('Location: ../../admin.php');
+            } else {
+                header('Location: ../../index2.php?error=Datos Incorrectos');
+            }
+
+        } else {
+            if ($tipoP == 'administrador') {
+                header('Location: ../../index2.php?error=Datos Incorrectos');
+            } else {
+                header('Location: ../../index.php?error=Datos Incorrectos');
+            }
+
+        }
     }
-    echo "eres auxiliar";
-    header('Location: ../../admin.php');
 }
 
 cerrar($conexion);
+
 ?>
