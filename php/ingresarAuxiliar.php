@@ -15,7 +15,17 @@ $inputPassword=$_POST['inputPassword'];
     echo "hola tefo", $cedula;
         $conexion=conectar();
          
-         mysqli_query( $conexion, "insert into medico(CEDULA_MED,NOMBRE_MED,APELLIDO_MED,TELEFONO_MED,ESPECIALIDAD,ESTADO_MED,CONTRASENA_MED) values
+         mysqli_query( $conexion, "insert into auxiliar(CEDULA_AUX 
+         CEDULA_PAC, 
+         ID_HC,
+         NOMBRE_AUX,
+         APELLIDO_AUX, 
+         DIRECCION_AUX,
+         TELEFONO_AUX, 
+         FECH_NAC_AUX, 
+         EDAD_AUX, 
+         ESTADO_AUX, 
+         CONTRASENA_AUX ) values
            ('$cedula','$nombre','$apellido',' $telefono','$especialidad','0',' $inputPassword')" ) or die("Problemas en el select".mysqli_error($conexion));
 
          cerrar($conexion);
