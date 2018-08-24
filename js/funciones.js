@@ -1,46 +1,46 @@
- function showMedico(str) {
+function showMedico(str) {
 
-     document.getElementById("div_nuevoauxiliar").innerHTML = "";
-     document.getElementById("div_reporte").innerHTML = "";
+    document.getElementById("div_nuevoauxiliar").innerHTML = "";
+    document.getElementById("div_reporte").innerHTML = "";
 
-     var xmlhttp = new XMLHttpRequest();
-     xmlhttp.onreadystatechange = function () {
-         if (this.readyState == 4 && this.status == 200) {
-             document.getElementById("div_nuevomedico").innerHTML = this.responseText;
-         }
-     }
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_nuevomedico").innerHTML = this.responseText;
+        }
+    }
 
-     xmlhttp.open("GET", "nuevo_medico.php?q=" + str, true);
-     xmlhttp.send();
- }
-
-
- function showAuxiliar(str) {
-
-     document.getElementById("div_nuevomedico").innerHTML = "";
-     document.getElementById("div_reporte").innerHTML = "";
-
-     var xmlhttp = new XMLHttpRequest();
-     xmlhttp.onreadystatechange = function () {
-         if (this.readyState == 4 && this.status == 200) {
-             document.getElementById("div_nuevoauxiliar").innerHTML = this.responseText;
-         }
-     }
-
-     xmlhttp.open("GET", "nuevo_auxiliar.php?q=" + str, true);
-     xmlhttp.send();
- }
+    xmlhttp.open("GET", "nuevo_medico.php?q=" + str, true);
+    xmlhttp.send();
+}
 
 
- 
- 
-
-
-
- function showReporte(str) {
+function showAuxiliar(str) {
 
     document.getElementById("div_nuevomedico").innerHTML = "";
-    document.getElementById("div_nuevoauxiliar").innerHTML = "";    
+    document.getElementById("div_reporte").innerHTML = "";
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_nuevoauxiliar").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "nuevo_auxiliar.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+
+
+
+
+
+
+function showReporte(str) {
+
+    document.getElementById("div_nuevomedico").innerHTML = "";
+    document.getElementById("div_nuevoauxiliar").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -56,98 +56,92 @@
 
 
 function guardarDoctor() {
-   
-  
-    var dataString = 'cedula='+ document.getElementById('cedula').value+
-    '&nombre='+ document.getElementById('nombre').value+
-    '&apellido='+ document.getElementById('apellido').value+
-    '&telefono='+document.getElementById('telefono').value+
-    '&especialidad='+document.getElementById('especialidad').value+
-    '&inputPassword='+document.getElementById('inputPassword').value;
+
+
+    var dataString = 'cedula=' + document.getElementById('cedula').value +
+        '&nombre=' + document.getElementById('nombre').value +
+        '&apellido=' + document.getElementById('apellido').value +
+        '&telefono=' + document.getElementById('telefono').value +
+        '&especialidad=' + document.getElementById('especialidad').value +
+        '&inputPassword=' + document.getElementById('inputPassword').value;
 
 
     $.ajax({
         type: "POST",
         url: "php/ingresarMedico.php",
         data: dataString,
-        success: function() {
-
+        success: function () {
+            showMedico("gh");
             alert("Ha sido ejecutada la acción.");
             //recuperando las variables
 
         }
 
     });
-   
-    /*
+
+}
+
+
+
+function guardarAux() {
+
+
+    var dataString = 'cedula=' + document.getElementById('cedula').value +
+        '&nombre=' + document.getElementById('nombre').value +
+        '&apellido=' + document.getElementById('apellido').value +
+        '&telefono=' + document.getElementById('telefono').value +
+        '&especialidad=' + document.getElementById('especialidad').value +
+        '&inputPassword=' + document.getElementById('inputPassword').value;
+
+
+    $.ajax({
+        type: "POST",
+        url: "php/ingresarMedico.php",
+        data: dataString,
+        success: function () {
+            showMedico("gh");
+            alert("Ha sido ejecutada la acción.");
+            //recuperando las variables
+
+        }
+
+    });
+
+}
+
+
+function showPaciente(str) {
+
+    document.getElementById("div_modificaraux").innerHTML = "";
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert("GUATDADO CORRECTAMENTE")
-    
-        }
-        alert("params 3",params);
+            document.getElementById("div_nuevopaciente").innerHTML = this.responseText;
 
-       
+        }
     }
 
-    xmlhttp.open("POST", "php/ingresarMedico.php", true);
-    xmlhttp.send(params);
-*/
-    //a/sdasd
-       /* document.getElementById("div_nuevoauxiliar").innerHTML = "";
-        document.getElementById("div_reporte").innerHTML = "";
-    
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("div_nuevomedico").innerHTML = this.responseText;
-            }
-        }
-    
-        xmlhttp.open("GET", "nuevo_medico.php?q=" + str, true);
-        xmlhttp.send();*/
-    
-
-
-        //asdasd
-       
-
-
-}
-function showPaciente(str) {
-
-    document.getElementById("div_modificaraux").innerHTML = "";   
-
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onreadystatechange = function () {
-       if (this.readyState == 4 && this.status == 200) {
-           document.getElementById("div_nuevopaciente").innerHTML = this.responseText;
-           
-       }
-   }
-
-   xmlhttp.open("GET", "nuevopaciente.php?q=" + str, true);
-   xmlhttp.send();
+    xmlhttp.open("GET", "nuevopaciente.php?q=" + str, true);
+    xmlhttp.send();
 }
 
 function showModificarAuxiliar(str) {
 
-    document.getElementById("div_nuevopaciente").innerHTML = "";    
+    document.getElementById("div_nuevopaciente").innerHTML = "";
 
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onreadystatechange = function () {
-       if (this.readyState == 4 && this.status == 200) {
-           document.getElementById("div_modificaraux").innerHTML = this.responseText;
-       }
-   }
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_modificaraux").innerHTML = this.responseText;
+        }
+    }
 
-   xmlhttp.open("GET", "modificar_auxiliar.php?q=" + str, true);
-   xmlhttp.send();
+    xmlhttp.open("GET", "modificar_auxiliar.php?q=" + str, true);
+    xmlhttp.send();
 }
 
-function habilitarcampos()
-{
+function habilitarcampos() {
     document.getElementById("cedula").removeAttribute("disabled");
     document.getElementById("nombre").removeAttribute("disabled");
     document.getElementById("apellido").removeAttribute("disabled");
@@ -156,5 +150,5 @@ function habilitarcampos()
     document.getElementById("telefono").removeAttribute("disabled");
     document.getElementById("edad").removeAttribute("disabled");
     document.getElementById("contrasena").removeAttribute("disabled");
-    
+
 }
