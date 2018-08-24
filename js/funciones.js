@@ -118,6 +118,9 @@ function habilitarcampos()
 function showCita(str) {
 
     document.getElementById("div_buscarcita").innerHTML = "";
+    document.getElementById("div_reservarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendiente").innerHTML = "";
+    document.getElementById("div_reportecita").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -133,6 +136,9 @@ function showCita(str) {
 function buscarCita(str) {
 
     document.getElementById("div_nuevacita").innerHTML = "";
+    document.getElementById("div_reservarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendiente").innerHTML = "";
+    document.getElementById("div_reportecita").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -144,5 +150,64 @@ function buscarCita(str) {
     xmlhttp.open("GET", "buscar_cita.php?q=" + str, true);
     xmlhttp.send();
 }
+
+function reservarCita(str) {
+
+    document.getElementById("div_nuevacita").innerHTML = "";
+    document.getElementById("div_buscarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendiente").innerHTML = "";
+    document.getElementById("div_reportecita").innerHTML = "";
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_reservarcita").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "reservar_cita.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+
+function listarCitaPendiente(str) {
+
+    document.getElementById("div_nuevacita").innerHTML = "";
+    document.getElementById("div_buscarcita").innerHTML = "";
+    document.getElementById("div_reservarcita").innerHTML = "";
+    document.getElementById("div_reportecita").innerHTML = "";
+    
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_listarcitapendiente").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "listar_citapendiente.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+function reporteCita(str) {
+
+    document.getElementById("div_nuevacita").innerHTML = "";
+    document.getElementById("div_buscarcita").innerHTML = "";
+    document.getElementById("div_reservarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendiente").innerHTML = "";
+    
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_reportecita").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "reporte_cita.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+
 
 
