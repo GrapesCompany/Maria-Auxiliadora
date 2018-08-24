@@ -32,34 +32,37 @@
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="telefono" class="form-control" placeholder="Teléfono" required="required">
-         <label for="telefono">Teléfono</label>
+         <input type="text" id="fec_nac" class="form-control" placeholder="Fecha de Nacimiento" required="required">
+         <label for="fec_nac">Fecha de Nacimiento</label>
        </div>
      </div>
    </div>         
  </div>
+ 
+   <div class="form-group">
+   <div class="form-label-group">
+     <input type="email" id="direccion" class="form-control" placeholder="Dirección" required="required">
+     <label for="direccion">Dirección</label>
+   </div>
+ </div> 
+ 
  <div class="form-group">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="especialidad" class="form-control" placeholder="Especialidad" required="required" autofocus="autofocus">
-         <label for="especialidad">Especialidad</label>
+         <input type="text" id="telefono" class="form-control" placeholder="Telefono" required="required" autofocus="autofocus">
+         <label for="telefono">Teléfono</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="estado" class="form-control" placeholder="Estado" required="required">
-         <label for="estado">Estado</label>
+         <input type="text" id="estado" class="form-control" placeholder="Edad" required="required">
+         <label for="edad">Edad</label>
        </div>
      </div>
    </div>         
  </div>
-<!--  <div class="form-group">
-   <div class="form-label-group">
-     <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-     <label for="inputEmail">Email address</label>
-   </div>
- </div> -->
+ 
  <div class="form-group">
    <div class="form-row">
      <div class="col-md-6">
@@ -68,18 +71,17 @@
          <label for="inputPassword">Contraseña</label>
        </div>
      </div>
-   
    </div>
  </div>
   
  <button class="btn btn-block col-md-2 btn-ttc" href="login.html">Registrar</button>
  
-</form>
-</div>
-<br>
-<div class="card-footer small text-muted">Agregando médico...</div>
-</div>
-
-</div>';
+ </form>
+ </div>
+ <br>
+ <div class="card-footer small text-muted">Agregando auxiliar...</div>
+ </div>
+ 
+ </div>';
 echo $pep;
 ?>
