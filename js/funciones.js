@@ -108,7 +108,7 @@ function guardarAux() {
 }
 
 
-function showPaciente(str) {
+ 
 
 
 function showModificarAuxiliar(str) {
@@ -126,7 +126,7 @@ function showModificarAuxiliar(str) {
    xmlhttp.open("GET", "modificar_auxiliar.php?q=" + str, true);
    xmlhttp.send();
 }
-    }
+    
 
 function showPaciente(str) {
 

@@ -83,9 +83,6 @@
  </div>               
 </div> 
 </div>
-  
-
- 
 </form>
 <button class="btn btn-block col-md-2 btn-ttc" onclick="guardarDoctor()" href="login.html">Registrar</button>
 </div>
