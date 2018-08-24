@@ -177,6 +177,7 @@ function habilitarcampos()
 
 }
 
+/*____________________________________________________________________________________________________________*/
 
 function showCita(str) {
 
@@ -184,6 +185,7 @@ function showCita(str) {
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
+    document.getElementById("div_modificarmedico").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -202,6 +204,7 @@ function buscarCita(str) {
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
+    document.getElementById("div_modificarmedico").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -220,6 +223,7 @@ function reservarCita(str) {
     document.getElementById("div_buscarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
+    document.getElementById("div_modificarmedico").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -239,6 +243,7 @@ function listarCitaPendiente(str) {
     document.getElementById("div_buscarcita").innerHTML = "";
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
+    document.getElementById("div_modificarmedico").innerHTML = "";
     
 
     var xmlhttp = new XMLHttpRequest();
@@ -258,6 +263,7 @@ function reporteCita(str) {
     document.getElementById("div_buscarcita").innerHTML = "";
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
+    document.getElementById("div_modificarmedico").innerHTML = "";
     
 
     var xmlhttp = new XMLHttpRequest();
@@ -269,6 +275,40 @@ function reporteCita(str) {
 
     xmlhttp.open("GET", "reporte_cita.php?q=" + str, true);
     xmlhttp.send();
+}
+
+function showModificarMedico(str) {
+
+    document.getElementById("div_nuevacita").innerHTML = "";
+    document.getElementById("div_buscarcita").innerHTML = "";
+    document.getElementById("div_reservarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendiente").innerHTML = "";
+    document.getElementById("div_reportecita").innerHTML = "";
+    
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_modificarmedico").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "modificar_medico.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+
+function habilitarcamposmedico()
+{
+    document.getElementById("cedula").removeAttribute("disabled");
+    document.getElementById("nombre").removeAttribute("disabled");
+    document.getElementById("apellido").removeAttribute("disabled");
+    document.getElementById("fech_nac").removeAttribute("disabled");
+    document.getElementById("direccion").removeAttribute("disabled");
+    document.getElementById("correo").removeAttribute("disabled");
+    document.getElementById("telefono").removeAttribute("disabled");
+    document.getElementById("especialidad").removeAttribute("disabled");
+    document.getElementById("inputPassword").removeAttribute("disabled");
 }
 
 
