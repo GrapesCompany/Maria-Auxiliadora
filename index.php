@@ -48,7 +48,7 @@ document.nform.submit();}
             <form name="nform" action="login.php" method="post">
                 <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-                <input type="button" class="fadeIn fourth" value="Entrar" onClick="enviar('http://localhost/Maria-Auxiliadora/index2.php')">
+                <input type="button" class="fadeIn fourth" value="Entrar" onClick="enviar('http://localhost/Maria-Auxiliadora/admin.php')">
             </form>
              
             <div id="formFooter">
