@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Administración</title>
+    <title>MA Administración</title>
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
@@ -26,13 +26,15 @@
     <link href="css/administrar.css" rel="stylesheet">
     <link href="css/estilosadministrar.css" rel="stylesheet">
 
+
+
   </head>
 
   <body id="page-top">
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">M. Auxiliadora</a>
+      <a class="navbar-brand mr-1" href="index.html">Maria Auxiliadora</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -189,9 +191,11 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
+    
 
     <!-- Javascript Paginas-->
     <script src="js/funciones.js"></script>
+    <script src="js/chart-area-demo.js"></script>
 
   </body>
 
