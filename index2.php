@@ -24,7 +24,8 @@
 <script language="javascript" type="text/javascript">
 function enviar(pagina){
 document.nform.action = pagina;
-document.nform.submit();}
+document.nform.submit();
+}
 </script>
 
 </head>
@@ -45,9 +46,11 @@ document.nform.submit();}
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">  
 
                 <div class="radio">
-                <label class="checkbox-inline fadeIn third"><input type="radio" name="cargo" value="medico" checked>Médico</label> 
+                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio" checked><a href="http://localhost/Maria-Auxiliadora/admin.php"> Administrador</label></a> 
+                &nbsp;&nbsp;&nbsp;
+                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio"><a href="http://localhost/Maria-Auxiliadora/adminmedico.php">Médico</label></a>
                 &nbsp;&nbsp;&nbsp;           
-                <label class="checkbox-inline fadeIn third"><input type="radio" name="cargo" value="auxiliar">Auxiliar</label>
+                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio"><a href="http://localhost/Maria-Auxiliadora/adminauxiliar.php">Auxiliar</label></a>
                 </div>
                 <input type="submit" class="fadeIn fourth colorbutton" value="Entrar">
             </form>
@@ -55,6 +58,7 @@ document.nform.submit();}
              
             <div id="formFooter">
                 <a class="underlineHover" href="./error.php">¿Olvidaste la contraseña?</a>
+                <a  href="./index.php">Entrar como usuario</a>
                           
             </div>
 

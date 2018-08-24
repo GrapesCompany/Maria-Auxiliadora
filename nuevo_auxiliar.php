@@ -39,12 +39,22 @@
    </div>         
  </div>
  
-   <div class="form-group">
-   <div class="form-label-group">
-     <input type="text" id="direccion" class="form-control" placeholder="Dirección" required="required">
-     <label for="direccion">Dirección</label>
+ <div class="form-group">
+ <div class="form-row">
+   <div class="col-md-6">
+     <div class="form-label-group">
+       <input type="text" id="direccion" class="form-control" placeholder="Dirección" required="required" autofocus="autofocus">
+       <label for="direccion">Dirección</label>
+     </div>
    </div>
- </div> 
+   <div class="col-md-6">
+     <div class="form-label-group">
+       <input type="email" id="correo_e" class="form-control" placeholder="Correo electrónico" required="required">
+       <label for="correo_e">Correo electrónico</label>
+     </div>
+   </div>
+ </div>         
+</div> 
  
  <div class="form-group">
    <div class="form-row">
@@ -56,23 +66,13 @@
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="edad" class="form-control" placeholder="Edad" required="required">
-         <label for="edad">Edad</label>
+         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
+         <label for="inputPassword">Contraseña</label>
        </div>
      </div>
    </div>         
  </div>
  
- <div class="form-group">
-   <div class="form-row">
-     <div class="col-md-6">
-       <div class="form-label-group">
-         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
-         <label for="inputPassword">Contraseña</label>
-       </div>
-     </div>
-   </div>
- </div>
   
  <button class="btn btn-block col-md-2 btn-ttc" href="login.html">Registrar</button>
  

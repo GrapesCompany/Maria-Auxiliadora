@@ -1,5 +1,5 @@
 <?php
- $pep ='<div class="container">
+$pep = '<div class="container">
 
  <div class="card mb-3">
             <div class="card-header">
@@ -51,7 +51,7 @@
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="edad" class="form-control" placeholder="Edad" required="required">
+         <input type="number" id="edad" class="form-control" required="required">
          <label for="edad">Edad</label>
        </div>
      </div>
@@ -79,14 +79,23 @@
 <div class="form-row">
   <div class="col-md-6">
     <div class="form-label-group">
-      <input type="text" id="ecivil" class="form-control" placeholder="Estado Civil" required="required" autofocus="autofocus">
+      <select id="ecivil" class="form-control" placeholder="Estado Civil" required="required" autofocus="autofocus">
       <label for="ecivil">Estado Civil</label>
+      <option value="soltero">Soltero</option>
+      <option value="casado">Casado</option>
+      <option value="union_libre">Unión libre</option>
+      <option value="divorciado">Divorciado</option>
+      <option value="viudo">Viudo</option>
+      </select>
     </div>
   </div>
   <div class="col-md-6">
     <div class="form-label-group">
-      <input type="text" id="sexo" class="form-control" placeholder="Sexo" required="required">
+      <select id="sexo" class="form-control" placeholder="Sexo" required="required">
       <label for="sexo">Sexo</label>
+      <option value="femenino">Femenino</option>
+      <option value="masculino">Masculino</option>
+      </select>
     </div>
   </div>
 </div>         
@@ -108,6 +117,34 @@
   </div>
 </div>         
 </div>
+
+
+
+<div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-clipboard-list"></i>
+              Historia Clinica</div><br>
+            <div class="container">
+            <form> <div class="form-group">
+   <div class="form-row">     
+     <div class="col-md-6">
+       <div class="form-label-group">
+         <input type="text" id="responsable" class="form-control" placeholder="Responsable" required="required" autofocus="autofocus">
+         <label for="responsable">Responsable</label>
+       </div>
+     </div>
+     <div class="col-md-6">
+       <div class="form-label-group">        
+         <textarea type="text" id="observaciones" class="form-control" placeholder="Observaciones" rows="3"></textarea>
+       <label for="observaciones"></label>
+       </div>
+     </div>
+   </div> 
+   </div>
+   </div>        
+ </div>
+
+
   
  <button class="btn btn-block col-md-2 btn-ttc" href="login.html">Registrar</button>
  
