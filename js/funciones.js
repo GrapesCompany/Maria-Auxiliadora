@@ -32,16 +32,7 @@ function showAuxiliar(str) {
 }
 
 
-
-
-<<<<<<< HEAD
-
-
-
-function showReporte(str) {
-=======
  function showReporte(str) {
->>>>>>> JC
 
     document.getElementById("div_nuevomedico").innerHTML = "";
     document.getElementById("div_nuevoauxiliar").innerHTML = "";
