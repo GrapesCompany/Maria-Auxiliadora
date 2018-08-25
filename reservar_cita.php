@@ -10,7 +10,7 @@ $pep = '<div class="container">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="cedula" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
+         <input type="text" id="cedula"  name="cedula"class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
          <label for="cedula">Cédula</label>
        </div>
      </div>
@@ -37,7 +37,7 @@ $pep = '<div class="container">
 
    <div class="col-md-5">
      <div class="form-label-group">        
-     <select type="text" id="medico" class="form-control" placeholder="Medico" required="required" autofocus="autofocus">
+     <select type="text" id="medico" name="medico" class="form-control" placeholder="Medico" required="required" autofocus="autofocus">
      <label for="Medico"><p>Horario</p></label>
      <option value="1">Médico General</option>
      <option value="2">Odontólogo</option>
@@ -50,7 +50,12 @@ $pep = '<div class="container">
 
      </div>
        </div>
-
+     <div class="col-md-6">
+       <div class="form-label-group">
+         <input type="date" id="fech_consul" name="fech_consul"  class="form-control" placeholder="Fecha de Nacimiento" required="required">
+         <label for="fech_consul">Fecha de Nacimiento</label>
+       </div>
+     </div>
        <div class="col-md-6">   
        <div class="form-row">
     
@@ -62,7 +67,7 @@ $pep = '<div class="container">
     
        <div class="col-md-5">
          <div class="form-label-group">        
-         <select type="text" id="horario_med" class="form-control" placeholder="Horario Medico" required="required" autofocus="autofocus">
+         <select type="text" id="horario_med" name="horario_med" class="form-control" placeholder="Horario Medico" required="required" autofocus="autofocus">
          <label for="horario_med"><p>Horario Medico</p></label>
          <option value="1">08:00am - 08:30am</option>
          <option value="2">08:30am - 09:00am</option>
@@ -96,8 +101,9 @@ $pep = '<div class="container">
         
 
   
- <button class="btn btn-block col-md-2 btn-ttc" href="#">Reservar</button>
+ 
  </form>
+ <button onclick="reservarCitaPorMedico()" class="btn btn-block col-md-2 btn-ttc" href="#">Reservar</button>
  </div>
  <br>
  <div class="card-footer small text-muted">Reservando Cita Médica...</div>
