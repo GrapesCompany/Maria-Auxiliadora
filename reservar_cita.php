@@ -13,15 +13,16 @@ $pep = '<div class="container">
          <input type="text" id="cedula"  name="cedula"class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
          <label for="cedula">Cédula</label>
        </div>
+     </div> 
+     <div class="col-md-6">
+     <div class="form-label-group">
+       <input type="date" id="fech_consul" name="fech_consul"  class="form-control" placeholder="Fecha de Consulta" required="required">
+       <label for="fech_consul">Fecha de Consulta</label>
      </div>
-    
-       
-           
+   </div>
  </div>
  </div>
-  
- 
-   
+
  
  <div class="form-group">
    <div class="form-row">
@@ -50,13 +51,11 @@ $pep = '<div class="container">
 
      </div>
        </div>
-     <div class="col-md-6">
-       <div class="form-label-group">
-         <input type="date" id="fech_consul" name="fech_consul"  class="form-control" placeholder="Fecha de Nacimiento" required="required">
-         <label for="fech_consul">Fecha de Nacimiento</label>
-       </div>
-     </div>
+
+
        <div class="col-md-6">   
+
+
        <div class="form-row">
     
        <div class="col-md-3 text-center">

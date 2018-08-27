@@ -35,7 +35,8 @@ function showAuxiliar(str) {
  function showReporte(str) {
 
     document.getElementById("div_nuevomedico").innerHTML = "";
-    document.getElementById("div_nuevoauxiliar").innerHTML = "";
+    document.getElementById("div_nuevoauxiliar").innerHTML = "";   
+    document.getElementById("div_buscador").innerHTML = ""; 
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -382,6 +383,27 @@ function habilitarcamposmedico()
     document.getElementById("especialidad").removeAttribute("disabled");
     document.getElementById("inputPassword").removeAttribute("disabled");
 }
+
+
+/*Buscador Medicos y Pacientes*/
+
+function showBuscador(str) {    
+
+    document.getElementById("div_reporte").innerHTML = "";
+   
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_buscador").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "listar_ma.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+
 
 
 
