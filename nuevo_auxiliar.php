@@ -32,8 +32,8 @@
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="date" id="fec_nac" class="form-control" placeholder="Fecha de Nacimiento" required="required">
-         <label for="fec_nac">Fecha de Nacimiento</label>
+         <input type="date" id="fech_nac" name="fech_nac" class="form-control" placeholder="Fecha de Nacimiento" required="required">
+         <label for="fech_nac">Fecha de Nacimiento</label>
        </div>
      </div>
    </div>         
@@ -43,14 +43,14 @@
  <div class="form-row">
    <div class="col-md-6">
      <div class="form-label-group">
-       <input type="text" id="direccion" class="form-control" placeholder="Dirección" required="required" autofocus="autofocus">
+       <input type="text" id="direccion"  name="direccion"class="form-control" placeholder="Dirección" required="required" autofocus="autofocus">
        <label for="direccion">Dirección</label>
      </div>
    </div>
    <div class="col-md-6">
      <div class="form-label-group">
-       <input type="email" id="correo_e" class="form-control" placeholder="Correo electrónico" required="required">
-       <label for="correo_e">Correo electrónico</label>
+       <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo electrónico" required="required">
+       <label for="correo">Correo electrónico</label>
      </div>
    </div>
  </div>         
@@ -60,13 +60,13 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="telefono" class="form-control" placeholder="Telefono" required="required" autofocus="autofocus">
+         <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Telefono" required="required" autofocus="autofocus">
          <label for="telefono">Teléfono</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="required">
+         <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Contraseña" required="required">
          <label for="inputPassword">Contraseña</label>
        </div>
      </div>
@@ -74,9 +74,10 @@
  </div>
  
   
- <button class="btn btn-block col-md-2 btn-ttc" href="login.html">Registrar</button>
+
  
  </form>
+ <button onclick="guardarAux()" class="btn btn-block col-md-2 btn-ttc" href="login.html">Registrar</button>
  </div>
  <br>
  <div class="card-footer small text-muted">Agregando auxiliar...</div>

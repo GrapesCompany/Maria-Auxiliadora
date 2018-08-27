@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "conexion.php";
 ?>
 
 <!DOCTYPE html>
@@ -43,19 +44,28 @@ document.nform.submit();}
             </div>
             <div class="fadeIn first">
                 <img src="https://s15.postimg.cc/3n4ejdm0r/portada.gif" id="icon" alt="User Icon" />
-            </div>  
+            </div>
 
-            <form name="nform" action="login.php" method="post">
-                <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
-                <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-                <input type="button" class="fadeIn fourth" value="Entrar" onClick="enviar('http://localhost/Maria-Auxiliadora/admin.php')">
+            <form name="nform" action="./login/verificar.php/?tipoP=paciente" method="post">
+                <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario" require>
+                <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña" require>
+                <input type="submit" class="fadeIn fourth" value="Entrar">
             </form>
-             
+
+
             <div id="formFooter">
-                <a class="underlineHover" href="./error.php">¿Olvidaste la contraseña?</a><br>
-                <a class="underlineHover letrape" href="./index2.php">Ingresar al Sistema Administrativo</a>
+
+                <?php
+                if (isset($_GET['error'])) { ?>
+                <div class="alert alert-danger" role="alert">
+                     Datos no válidos
+                </div>
+                 <?php } ?>
+
                 
-                        
+
+                <!-- <a class="underlineHover" href="./error.php">¿Olvidaste la contraseña?</a><br> -->
+                <a class="underlineHover letrape" href="./index2.php">Ingresar al Sistema Administrativo</a>
             </div>
 
         </div>

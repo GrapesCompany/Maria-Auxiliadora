@@ -64,7 +64,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
           <div class="dropdown-divider"></div>
-            <a class="dropdown-item" onclick="showModificarAuxiliar(this.value)" href="#">Mi cuenta</a>
+            <a class="dropdown-item" onclick="showModificarMedico(this.value)" href="#">Mi cuenta</a>
              
              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ccontrasena">Cambiar contraseña</a>
              <div class="dropdown-divider"></div>
@@ -131,6 +131,8 @@
          <!--Reporte Cita Médicas--> 
          <div id="div_reportecita" class="container"></div>
         
+        <!--Modificar Medico--> 
+        <div id="div_modificarmedico" class="container"></div>
 
         </div>
         

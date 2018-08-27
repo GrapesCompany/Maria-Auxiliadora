@@ -41,9 +41,9 @@ document.nform.submit();
                 <img src="https://s15.postimg.cc/3n4ejdm0r/portada.gif" id="icon" alt="Maria Auxiliadora" />
             </div>  
 
-            <form name="nform" action="login.php" method="post">
-                <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario">
-                <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">  
+            <form name="nform" action="./login/verificar.php/?tipoP=administrador" method="post">
+                <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario" require>
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña" require>  
 
                 <div class="radio">
                 <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio" checked><a href="http://localhost/Maria-Auxiliadora/admin.php"> Administrador</label></a> 
@@ -52,12 +52,18 @@ document.nform.submit();
                 &nbsp;&nbsp;&nbsp;           
                 <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio"><a href="http://localhost/Maria-Auxiliadora/adminauxiliar.php">Auxiliar</label></a>
                 </div>
-                <input type="button" class="fadeIn fourth colorbutton" value="Entrar" onClick="enviar('/administracion.php')">
+                <input type="submit" class="fadeIn fourth colorbutton" value="Entrar">
             </form>
            
              
             <div id="formFooter">
-                <a class="underlineHover" href="./error.php">¿Olvidaste la contraseña?</a>
+            <?php
+                if (isset($_GET['error'])) { ?>
+                <div class="alert alert-danger" role="alert">
+                     Datos no válidos
+                </div>
+                 <?php } ?>
+                <a class="underlineHover" href="./index.php">Regresar</a>
                 <a  href="./index.php">Entrar como usuario</a>
                           
             </div>
