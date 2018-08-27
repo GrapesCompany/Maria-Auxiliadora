@@ -13,15 +13,10 @@ $pep = '<div class="container">
          <input type="text" id="cedula" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
          <label for="cedula">Cédula</label>
        </div>
-     </div>
-    
-       
-           
+     </div> 
  </div>
  </div>
-  
- 
-   
+
  
  <div class="form-group">
    <div class="form-row">
