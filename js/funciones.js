@@ -68,7 +68,8 @@ function guardarDoctor() {
         url: "php/ingresarMedico.php",
         data: dataString,
         success: function () {
-            showAuxiliar("gh");
+            showMedico("gh");
+            
             alert("Ha sido ejecutada la acción.");
             //recuperando las variables
 
@@ -97,7 +98,7 @@ function guardarAux() {
         url: "php/ingresarAuxiliar.php",
         data: dataString,
         success: function () {
-            showMedico("gh");
+            showAuxiliar("gh");
             alert("Ha sido ejecutada la acción.");
             //recuperando las variables
 
@@ -106,6 +107,77 @@ function guardarAux() {
     });
 
 }
+
+
+function guardarHistoriaClinicaPasiente() {
+
+
+    var dataString = 'cedulaHist=' + document.getElementById('cedula').value +
+        '&nombreHist=' + document.getElementById('nombre').value +
+        '&apellidoHist=' + document.getElementById('apellido').value +
+        '&fech_nacHist='+document.getElementById('fech_nac').value+
+        '&telefonoHist=' + document.getElementById('telefono').value +
+        '&direccionHist='+document.getElementById('direccion').value+
+        '&provinciaHist='+document.getElementById('provincia').value+
+        '&cantonHist='+document.getElementById('canton').value+
+        '&ecivilHist='+document.getElementById('ecivil').value+
+        '&sexoHist='+document.getElementById('sexo').value+
+        '&profesionHist='+document.getElementById('profesion').value+
+        '&contrasenaHist='+document.getElementById('contrasena').value+
+        '&responsableHist='+document.getElementById('responsable').value+
+        '&observacionesHist='+document.getElementById('observaciones').value+
+        '&correoHist='+document.getElementById('correo').value+
+        '&responsableHist='+document.getElementById('responsable').value+
+        '&observacionesHist='+document.getElementById('observaciones').value;
+        
+       
+        /// historia clinica 
+
+
+        
+        
+
+    $.ajax({
+        type: "POST",
+        url: "php/ingresarHistoriaClinicaPaciente.php",
+        data: dataString,
+        success: function () {
+            showPaciente("fg");
+            alert("Ha sido ejecutada la acción.");
+            //recuperando las variables
+
+        }
+
+    });
+
+}
+
+
+function reservarCitaPorMedico()
+{
+    var dataString = 'cedulaReserva=' + document.getElementById('cedula').value +
+        '&medicoReserva=' + document.getElementById('medico').value +
+      
+        '&fech_consulReserva=' + document.getElementById('fech_consul').value +
+        '&horario_medReserva=' + document.getElementById('horario_med').value+
+        '&fech_nacAux='+document.getElementById('fech_nac').value+
+ 
+
+    $.ajax({
+        type: "POST",
+        url: "php/citaMedica.php",
+        data: dataString,
+        success: function () {
+            showCitaMedica("sad");
+            alert("Ha sido ejecutada la acción.");
+            //recuperando las variables
+
+        }
+
+    });
+
+}
+
 
 
  
