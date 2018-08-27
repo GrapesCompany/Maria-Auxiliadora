@@ -180,10 +180,6 @@ function reservarCitaPorMedico()
 }
 
 
-
- 
-
-
 function showModificarAuxiliar(str) {
 
     document.getElementById("div_nuevopaciente").innerHTML = "";  
@@ -389,6 +385,8 @@ function habilitarcamposmedico()
 
 function showBuscador(str) {    
 
+    document.getElementById("div_nuevomedico").innerHTML = "";
+    document.getElementById("div_nuevoauxiliar").innerHTML = "";
     document.getElementById("div_reporte").innerHTML = "";
    
 
@@ -402,6 +400,26 @@ function showBuscador(str) {
     xmlhttp.open("GET", "listar_ma.php?q=" + str, true);
     xmlhttp.send();
 }
+
+
+/*__________________________________________Inicio Administrador - Paciente________________________________________________________*/
+
+function showModificarPaciente(str) {    
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_modificarpaciente").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "modificar_paciente.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+
+
+/*__________________________________________Fin Administrador - Paciente___________________________________________________________*/
 
 
 
