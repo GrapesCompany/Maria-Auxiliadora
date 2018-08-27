@@ -1,3 +1,10 @@
+<?php
+ include 'conexion.php';
+ $conexion=conectar();
+ $sql = "SELECT * FROM medico";
+   $result = mysqli_query ($conexion,$sql);
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,6 +125,9 @@
 
         <!--Reservar Cita Medica--> 
         <div id="div_reservarcita" class="container"></div>
+       
+        
+        
 
         <!--Nueva Cita Medica--> 
         <div id="div_nuevacita" class="container"></div>

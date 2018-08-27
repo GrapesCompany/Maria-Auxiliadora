@@ -50,7 +50,42 @@ function showAuxiliar(str) {
 
 
 
+function cambiarContrasenaAdministrador()
+{
+
+    ccverinueva
+}
+
 function guardarDoctor() {
+
+
+    var dataString = 'cedula=' + document.getElementById('cedula').value +
+        '&nombre=' + document.getElementById('nombre').value +
+        '&apellido=' + document.getElementById('apellido').value +
+        '&telefono=' + document.getElementById('telefono').value +
+        '&especialidad=' + document.getElementById('especialidad').value+
+        '&inputPassword=' + document.getElementById('inputPassword').value+
+        '&fech_nac='+document.getElementById('fech_nac').value+
+        '&direccion='+document.getElementById('direccion').value+
+        '&correo='+document.getElementById('correo').value;
+
+    $.ajax({
+        type: "POST",
+        url: "php/ingresarMedico.php",
+        data: dataString,
+        success: function () {
+            showMedico("gh");
+            
+            alert("Ha sido ejecutada la acción.");
+            //recuperando las variables
+
+        }
+
+    });
+
+}
+
+function actualizarDoctor() {
 
 
     var dataString = 'cedula=' + document.getElementById('cedula').value +
@@ -157,10 +192,9 @@ function reservarCitaPorMedico()
 {
     var dataString = 'cedulaReserva=' + document.getElementById('cedula').value +
         '&medicoReserva=' + document.getElementById('medico').value +
-      
         '&fech_consulReserva=' + document.getElementById('fech_consul').value +
-        '&horario_medReserva=' + document.getElementById('horario_med').value+
-        '&fech_nacAux='+document.getElementById('fech_nac').value+
+        '&horario_medReserva=' + document.getElementById('horario_med').value;
+
  
 
     $.ajax({

@@ -179,7 +179,7 @@
 
             <div class="form-group">
    <div class="form-label-group">
-     <input type="text" id="ccactual" class="form-control" placeholder="Contraseña actual" required="required">
+     <input type="text" id="ccactual"  class="form-control" placeholder="Contraseña actual" required="required">
      <label for="ccactual">Contraseña actual</label>
    </div>
  </div> 
@@ -204,6 +204,7 @@
 </form>
 </div>
           <div class="modal-footer">
+          <button class="btn btn-primary btn-ttc" onclick="cambiarContrasenaAdministrador()" type="button" data-dismiss="modal">Aplicar</button>
           <a class="btn btn-primary btn-ttc " href="./admin.php">Aplicar</a>
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
             
