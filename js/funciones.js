@@ -254,7 +254,11 @@ function showModificarMedico(str) {
 
 /*__________________________________________Inicio Administrador - Paciente________________________________________________________*/
 
-function showModificarPaciente(str) {    
+function showModificarPaciente(str) {  
+    
+    document.getElementById("div_agregarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendientea").innerHTML = ""; 
+    document.getElementById("div_listarcitapendientep").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -264,6 +268,59 @@ function showModificarPaciente(str) {
     }
 
     xmlhttp.open("GET", "modificar_paciente.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+function showAgregarCita(str) {     
+   
+    document.getElementById("div_listarcitapendientea").innerHTML = ""; 
+    document.getElementById("div_listarcitapendientep").innerHTML = "";
+    document.getElementById("div_modificarpaciente").innerHTML = "";
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_agregarcita").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "agregar_cita.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+
+function showlistarCitaAtendida(str) {
+
+    document.getElementById("div_agregarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendientep").innerHTML = "";  
+    document.getElementById("div_modificarpaciente").innerHTML = "";   
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_listarcitapendientea").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "listar_citapendientea.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+function showlistarCitaPendiente(str) {
+
+     document.getElementById("div_agregarcita").innerHTML = "";
+     document.getElementById("div_listarcitapendientea").innerHTML = ""; 
+     document.getElementById("div_modificarpaciente").innerHTML = "";
+            
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_listarcitapendientep").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "listar_citapendientep.php?q=" + str, true);
     xmlhttp.send();
 }
 
@@ -300,6 +357,24 @@ function habilitarcamposmedico()
     document.getElementById("especialidad").removeAttribute("disabled");
     document.getElementById("inputPassword").removeAttribute("disabled");
 }
+
+function habilitarcampospaciente()
+{
+    document.getElementById("cedula").removeAttribute("disabled");
+    document.getElementById("nombre").removeAttribute("disabled");
+    document.getElementById("apellido").removeAttribute("disabled");
+    document.getElementById("fech_nac").removeAttribute("disabled");
+    document.getElementById("telefono").removeAttribute("disabled");
+    document.getElementById("direccion").removeAttribute("disabled");
+    document.getElementById("provincia").removeAttribute("disabled");
+    document.getElementById("canton").removeAttribute("disabled");
+    document.getElementById("ecivil").removeAttribute("disabled");
+    document.getElementById("sexo").removeAttribute("disabled");    
+    document.getElementById("correo").removeAttribute("disabled");
+    document.getElementById("profesion").removeAttribute("disabled");
+    document.getElementById("contrasena").removeAttribute("disabled");
+}
+ 
 
 /*Fin - Modificar campos*/
 

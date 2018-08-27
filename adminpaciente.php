@@ -43,11 +43,8 @@
       <!-- Navbar Search -->
       <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
-          <input type="text" class="form-control" size="40" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
-          <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" onclick="showCita(this.value)" title="Buscar Paciente" type="button">
-              <i class="fas fa-user-md"></i>
-            </button>            
+           <div class="input-group-append">
+                  
           </div>
         </div>
       </form>
@@ -82,23 +79,15 @@
         <li class="nav-item">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-calendar-alt"></i>
+            <i class="fas fa-fw fa-calendar-check"></i>
             <span>Citas médicas</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">            
-            <a class="dropdown-item" onclick="reservarCita(this.value)" href="#">Reservar cita</a>            
-            <a class="dropdown-item" onclick="buscarCita(this.value)" href="#">Buscar cita</a>   
-            <a class="dropdown-item" onclick="listarCitaPendiente(this.value)" href="#">Listar cita pendiente</a>                      
+            <a class="dropdown-item" onclick="showAgregarCita(this.value)" href="#">Reservar cita</a>            
+            <a class="dropdown-item" onclick="showlistarCitaAtendida(this.value)" href="#">Listar cita atendida</a>   
+            <a class="dropdown-item" onclick="showlistarCitaPendiente(this.value)" href="#">Listar cita pendiente</a>                      
           </div>
-
-         <!--  onclick="showCita(this.value)" -->
-        </li>
-
-         <li class="nav-item">
-          <a class="nav-link" onclick="reporteCita(this.value)" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Reporte</span></a>
-        </li> 
+        </li>        
       </ul>
 
       <div id="content-wrapper">
@@ -116,23 +105,18 @@
 
           <!-- Pagina Principal -->        
 
-        <!--Reservar Cita Medica--> 
-        <div id="div_reservarcita" class="container"></div>
+        <!--Agregar Cita Medica--> 
+        <div id="div_agregarcita" class="container"></div>
 
-        <!--Nueva Cita Medica--> 
-        <div id="div_nuevacita" class="container"></div>
-
-        <!--Buscar Cita Medica--> 
-        <div id="div_buscarcita" class="container"></div>
+         <!--Listar Cita Atendida--> 
+         <div id="div_listarcitapendientea" class="container"></div>
 
          <!--Listar Cita Pendiente--> 
-         <div id="div_listarcitapendiente" class="container"></div>
+         <div id="div_listarcitapendientep" class="container"></div>    
 
-         <!--Reporte Cita Médicas--> 
-         <div id="div_reportecita" class="container"></div>
-        
-        <!--Modificar Paciente--> 
-        <div id="div_modificarpaciente" class="container"></div>
+         <!--Modificar Datos Paciente--> 
+         <div id="div_modificarpaciente" class="container"></div>    
+ 
 
         </div>
         

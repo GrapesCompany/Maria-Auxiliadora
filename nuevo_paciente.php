@@ -51,8 +51,8 @@ $pep = '<div class="container">
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="TEXT" id="direccion"  name="direccion" class="form-control" required="required">
-         <label for="direccion">Direccion</label>
+         <input type="TEXT" id="direccion"  name="direccion" placeholder="Dirección" class="form-control" required="required">
+         <label for="direccion">Dirección</label>
        </div>
      </div>
    </div>         
@@ -105,27 +105,32 @@ $pep = '<div class="container">
 <div class="form-row">
   <div class="col-md-6">
     <div class="form-label-group">
-      <input type="text" id="profesion"  name="profesion" class="form-control" placeholder="Profesión" required="required" autofocus="autofocus">
-      <label for="profesion">Profesión</label>
+      <input type="mail" id="correo" name="correo" class="form-control" placeholder="Correo" required="required">
+      <label for="correo">Correo</label>
     </div>
   </div>
   <div class="col-md-6">
     <div class="form-label-group">
-      <input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required="required">
-      <label for="contrasena">Contraseña</label>
+    <input type="text" id="profesion"  name="profesion" class="form-control" placeholder="Profesión" required="required" autofocus="autofocus">
+    <label for="profesion">Profesión</label>
     </div>
   </div>
+
   
-  <div class="col-md-12">
-<div class="form-label-group">
-  <input type="mail" id="correo" name="correo" class="form-control" placeholder="Correo" required="required">
-  <label for="correo">Correo</label>
-</div>
-</div>
-
-
+  
 </div>  
        
+</div>
+
+<div class="form-group">
+<div class="form-row">
+  <div class="col-md-6">
+    <div class="form-label-group">
+    <input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="Contraseña" required="required">
+    <label for="contrasena">Contraseña</label>
+    </div>
+  </div> 
+</div>         
 </div>
 
 

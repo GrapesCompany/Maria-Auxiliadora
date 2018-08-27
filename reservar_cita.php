@@ -92,15 +92,6 @@ $pep = '<div class="container">
      </div>
    </div>         
  
-
-  
-
- 
- 
-        
-
-  
- 
  </form>
  <button onclick="reservarCitaPorMedico()" class="btn btn-block col-md-2 btn-ttc" href="#">Reservar</button>
  </div>
