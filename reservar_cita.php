@@ -16,8 +16,8 @@ $pep = '<div class="container">
      </div> 
      <div class="col-md-6">
      <div class="form-label-group">
-       <input type="date" id="fech_consul" name="fech_consul"  class="form-control" placeholder="Fecha de Nacimiento" required="required">
-       <label for="fech_consul">Fecha de Nacimiento</label>
+       <input type="date" id="fech_consul" name="fech_consul"  class="form-control" placeholder="Fecha de Consulta" required="required">
+       <label for="fech_consul">Fecha de Consulta</label>
      </div>
    </div>
  </div>
