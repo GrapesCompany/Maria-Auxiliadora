@@ -438,7 +438,7 @@ function habilitarcamposmedico()
 
 function habilitarcampospaciente()
 {
-    document.getElementById("cedula").removeAttribute("disabled");
+   // document.getElementById("cedula").removeAttribute("disabled");
     document.getElementById("nombre").removeAttribute("disabled");
     document.getElementById("apellido").removeAttribute("disabled");
     document.getElementById("fech_nac").removeAttribute("disabled");
@@ -450,7 +450,7 @@ function habilitarcampospaciente()
     document.getElementById("sexo").removeAttribute("disabled");    
     document.getElementById("correo").removeAttribute("disabled");
     document.getElementById("profesion").removeAttribute("disabled");
-    document.getElementById("contrasena").removeAttribute("disabled");
+   
 }
  
 
@@ -502,12 +502,9 @@ function guardarDoctor() {
         '&direccion='+document.getElementById('direccion').value+
         '&correo='+document.getElementById('correo').value;
 
-        if(document.getElementById('cedula').value&&document.getElementById('nombre').value && document.getElementById('apellido').value
-    &&document.getElementById('telefono').value && document.getElementById('especialidad').value && document.getElementById('inputPassword').value
-&& document.getElementById('fech_nac').value && document.getElementById('direccion').value && document.getElementById('correo').value )
-        {
-          alert("Faltan parametros por llenar");
-        }else
+        if(document.getElementById('cedula').value && document.getElementById('nombre').value && document.getElementById('apellido').value && 
+        document.getElementById('telefono').value && document.getElementById('especialidad').value && document.getElementById('inputPassword').value && 
+        document.getElementById('fech_nac').value && document.getElementById('direccion').value && document.getElementById('correo').value )
         {
             $.ajax({
                 type: "POST",
@@ -525,6 +522,10 @@ function guardarDoctor() {
                 }
         
             });
+         
+        }else
+        {
+            alert("Faltan parametros por llenar");
         }
 
 
@@ -565,7 +566,6 @@ function cambiarContrasenaDoctor() {
 }
 
 
-
 function cambiarContrasenaAuxiliar() {
 
 
@@ -597,9 +597,6 @@ function cambiarContrasenaAuxiliar() {
 
 
 }
-
-
-
 
 
 
@@ -645,9 +642,6 @@ function guardarAux() {
 }
 
 
-
-
-
 function guardarHistoriaClinicaPasiente() {
 
 
@@ -663,8 +657,6 @@ function guardarHistoriaClinicaPasiente() {
         '&sexoHist='+document.getElementById('sexo').value+
         '&profesionHist='+document.getElementById('profesion').value+
         '&contrasenaHist='+document.getElementById('contrasena').value+
-        '&responsableHist='+document.getElementById('responsable').value+
-        '&observacionesHist='+document.getElementById('observaciones').value+
         '&correoHist='+document.getElementById('correo').value+
         '&responsableHist='+document.getElementById('responsable').value+
         '&observacionesHist='+document.getElementById('observaciones').value;
@@ -672,9 +664,8 @@ function guardarHistoriaClinicaPasiente() {
         if(document.getElementById('cedula').value && document.getElementById('nombre').value && document.getElementById('apellido').value
           &&  document.getElementById('fech_nac').value && document.getElementById('telefono').value && document.getElementById('direccion').value &&
           document.getElementById('provincia').value&& document.getElementById('canton').value && document.getElementById('ecivil').value&& document.getElementById('sexo').value
-          &&document.getElementById('profesion').value && document.getElementById('contrasena').value && document.getElementById('responsable').value
-        && document.getElementById('observaciones').value &&  document.getElementById('correo').value && document.getElementById('responsable').value
-          && document.getElementById('observaciones').value)
+          &&document.getElementById('profesion').value && document.getElementById('contrasena').value && document.getElementById('responsable').value &&  document.getElementById('correo').value && document.getElementById('responsable').value
+          )
         {
             $.ajax({
                 type: "POST",
@@ -810,3 +801,44 @@ function cambiarContrasenaPaciente() {
 
 }
 
+
+function modificarPaciente()
+{
+  
+
+    var dataString ='nombreHist=' + document.getElementById('nombre').value +
+    '&apellidoHist=' + document.getElementById('apellido').value +
+    '&fech_nacHist='+document.getElementById('fech_nac').value+
+    '&telefonoHist=' + document.getElementById('telefono').value +
+    '&direccionHist='+document.getElementById('direccion').value+
+    '&provinciaHist='+document.getElementById('provincia').value+
+    '&cantonHist='+document.getElementById('canton').value+
+    '&ecivilHist='+document.getElementById('ecivil').value+
+    '&sexoHist='+document.getElementById('sexo').value+
+    '&profesionHist='+document.getElementById('profesion').value+
+  
+    '&correoHist='+document.getElementById('correo').value;
+
+    if(document.getElementById('nombre').value && document.getElementById('apellido').value
+          &&  document.getElementById('fech_nac').value && document.getElementById('telefono').value && document.getElementById('direccion').value &&
+          document.getElementById('provincia').value&& document.getElementById('canton').value && document.getElementById('ecivil').value&& document.getElementById('sexo').value
+          &&document.getElementById('profesion').value &&  document.getElementById('correo').value )
+        {
+            $.ajax({
+                type: "POST",
+                url: "php/modificarMiCuentaPaciente.php",
+                data: dataString,
+                success: function (data) {
+                    showModificarPaciente("a");
+                    alert(data);
+                    //recuperando las variables
+        
+                }
+             });
+        }else
+        {
+            alert("Faltan parametros por llenar");
+        }
+
+
+}
