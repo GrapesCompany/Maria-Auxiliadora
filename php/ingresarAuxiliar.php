@@ -21,7 +21,7 @@ $inputPassword=$_POST['inputPasswordAux'];
         $sql = "SELECT `CEDULA_AUX` FROM `auxiliar` WHERE `CEDULA_AUX`='$cedula'" ;
       $result = mysqli_query($conexion,$sql) or die("Problemas al Reservar cita verifique que sea un usuario del sistema.  ");
          
-    if($result)
+    if(mysqli_fetch_array($result))
     {
        echo "El Auxiliar que desea registrar ya existe en la base de datos.  ";
     }else{

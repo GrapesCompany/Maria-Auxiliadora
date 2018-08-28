@@ -20,7 +20,7 @@ $correo=$_POST['correo'];
       $sql = "SELECT `CEDULA_MED` FROM `medico` WHERE `CEDULA_MED`='$cedula'" ;
       $result = mysqli_query($conexion,$sql) or die("Problemas al Reservar cita verifique que sea un usuario del sistema  ");
          
-    if($result)
+    if(mysqli_fetch_array($result))
     {
        echo "El Medico que desea registrar ya existe en la base de datos.  ";
     }else{

@@ -1,4 +1,14 @@
+<?php
+session_start();
+if(isset($_SESSION['userAuxiliar'])){
+  $auxiliar=$_SESSION['userAuxiliar'];
+}else
+{
+  header("Location: index2.php");
+}
+?>
 <!DOCTYPE html>
+
 <html lang="en">
 
   <head>

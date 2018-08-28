@@ -1,5 +1,6 @@
 /*__________________________________________Inicio Administrador - Administrador___________________________________________________*/
 
+
 function showMedico(str) {
 
     document.getElementById("div_nuevoauxiliar").innerHTML = "";

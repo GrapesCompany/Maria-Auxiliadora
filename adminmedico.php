@@ -1,4 +1,14 @@
 <?php
+session_start();
+if(isset($_SESSION['userMedico'])){
+  $medico=$_SESSION['userMedico'];
+}else
+{
+  header("Location: index2.php");
+}
+
+
+
  include 'conexion.php';
  $conexion=conectar();
  $sql = "SELECT * FROM medico";

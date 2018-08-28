@@ -1,9 +1,15 @@
 
+
 <?php
 
-echo "hola";
 include '../conexion.php';
-
+session_start();
+if(isset($_SESSION['userAuxiliar'])){
+  $auxiliar=$_SESSION['userAuxiliar'];
+}else
+{
+  header("Location: /index2.php");
+}
 
 $cedulaHist=$_POST['cedulaHist'];
 $nombreHist=$_POST['nombreHist'];
@@ -22,6 +28,11 @@ $observacionesHist=$_POST['observacionesHist'];
 $contrasenaHist=$_POST['contrasenaHist'];
 $correoHist=$_POST['correoHist'];
 
+$cedulaAuxiliar=$auxiliar[0]['cedulaA'];
+
+
+
+
 // hsitoria clinica
 
 $conexion=conectar();
@@ -30,12 +41,12 @@ $conexion=conectar();
 $sql = "SELECT `CEDULA_PAC` FROM `paciente` WHERE `CEDULA_PAC`='$cedulaHist'" ;
 $result = mysqli_query($conexion,$sql) or die("Problemas al verificar usuarios en el sistema.  ");
    
-if($result)
+if(mysqli_fetch_array($result))
 {
  echo "El Usuario que desea registrar ya existe en la base de datos.  ";
 }else{
 
-  mysqli_query( $conexion, "insert into paciente(CEDULA_PAC, 
+  mysqli_query( $conexion, "INSERT into paciente(CEDULA_PAC, 
          NOMBRE_PAC, 
          APELLIDO_PAC,
          TELEFONO_PAC, 
@@ -59,7 +70,7 @@ if($result)
             RESPONSABLE, 
             OBSERVACIONES
             ) values
-             ('$cedulaHist','1711779825','','$responsableHist', '$observacionesHist')" ) or die("Problemas en el select.  ".mysqli_error($conexion));
+             ('$cedulaHist','$cedulaAuxiliar','','$responsableHist', '$observacionesHist')" ) or die("Problemas en el select.  ".mysqli_error($conexion));
           
 
          cerrar($conexion);
