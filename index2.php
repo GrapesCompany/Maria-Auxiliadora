@@ -45,11 +45,11 @@ document.nform.submit();
                 <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario" require>
                 <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña" require>  
                 <div class="radio">
-                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio"  id="optradio" value="administrador" checked><a href="http://localhost/Maria-Auxiliadora/admin.php"> Administrador</label></a> 
+                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio"  id="optradio" value="administrador" checked>Administrador</label>
                 &nbsp;&nbsp;&nbsp;
-                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio" id="optradio" value="medico"><a href="http://localhost/Maria-Auxiliadora/adminmedico.php">Médico</label></a>
+                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio" id="optradio" value="medico">Médico</label>
                 &nbsp;&nbsp;&nbsp;           
-                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio" id="optradio" value="auxiliar"><a href="http://localhost/Maria-Auxiliadora/adminauxiliar.php">Auxiliar</label></a>
+                <label class="checkbox-inline fadeIn third"><input type="radio" name="optradio" id="optradio" value="auxiliar">Auxiliar</label>
                 </div>
                 <input type="submit" class="fadeIn fourth colorbutton" value="Entrar">
             </form>
@@ -62,8 +62,7 @@ document.nform.submit();
                      Datos no válidos
                 </div>
                  <?php } ?>
-                <a class="underlineHover" href="./index.php">Regresar</a>
-                <a  href="./index.php">Entrar como usuario</a>
+                <a class="underlineHover" href="./index.php">Entrar como usuario</a>
                           
             </div>
 

@@ -1,12 +1,13 @@
 <?php
 session_start();
 if(isset($_SESSION['userAuxiliar'])){
-  $auxiliar=$_SESSION['userAuxiliar'];
+ // $auxiliar=$_SESSION['userAuxiliar'];
 }else
 {
-  header("Location: index2.php");
+  header("Location: index2.php?error=Datos Incorrectos");
 }
 ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
