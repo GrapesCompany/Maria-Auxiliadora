@@ -1,126 +1,12 @@
 <?php
-include 'conexion.php';
-$strBuscar = $_GET['strPalabra'];
-$conexion = conectar();
+include '../conexion.php';
+$conexion = conectar();     //pasar la conexion de inicio al principio de cada funcion y borrar la funcion global de conexion
+$strBuscar = '17'; //quitar cuando ya se implemente
+
 buscarAuxiliares($strBuscar);
 buscarMedicos($strBuscar);
-cerrar($conexion);
+cerrar($conexion);      //pasar la conexion de cerrar al final de cada funcion
 
-echo '
-<div class="container">
-<div class="card mb-3">
-           <div class="card-header">
-             <i class="fas fa-list-ul"></i>
-             Listado de Auxiliares</div><br>
-           <div class="container">          
-           <form> 
-           <div class="form-group">
-  <div class="form-row">';
-  $auxiliares = $_SESSION['auxiliares'];
-  if($auxiliares != null){
-  echo '
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Cédula</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Dirección</th>
-      <th scope="col">Teléfono</th>
-      <th scope="col">Correo</th>
-      <th scope="col">Opciones</th>
-    </tr>
-  </thead>
-  <tbody>';
- $c = 1;
- for ($i = 0; $i < count($auxiliares); $i++) {
-   echo '<tr>
-      <th scope="row">'.$c.'</th>
-      <td>'.$auxiliares[$i]['cedulaA'].'</td>
-      <td>'.$auxiliares[$i]['nombreA']. '&nbsp;' .$auxiliares[$i]['apellidoA'].'</td>
-      <td>'.$auxiliares[$i]['direccionA'].'</td>
-      <td>'.$auxiliares[$i]['telefonoA'].'</td>
-      <td>'.$auxiliares[$i]['correoA'].'</td>
-      <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-    </tr>';
-    $c++;
-  }
-unset($_SESSION['auxiliares']);
-echo  '</tbody>
-</table>
-  </div>
-</div>         
-</form>
-</div>';
-}
-else{
-  unset($_SESSION['auxiliares']);
-  echo 'No hay registros de auxiliares en la Base de Datos...';
-}
-echo '
-</div>
-</div> 
- ';
- /////////////////////////////////////////////////////////////////////////////////////////////////
- echo '
-<div class="container">
-<div class="card mb-3">
-           <div class="card-header">
-             <i class="fas fa-list-ul"></i>
-             Listado de Medicos</div><br>
-           <div class="container">          
-           <form> 
-           <div class="form-group">
-  <div class="form-row">';
-  $medicos = $_SESSION['medicos'];
-  if($medicos != null){
-  echo '
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Cédula</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Dirección</th>
-      <th scope="col">Teléfono</th>
-      <th scope="col">Correo</th>
-      <th scope="col">Opciones</th>
-    </tr>
-  </thead>
-  <tbody>';
- $c = 1;
- for ($i = 0; $i < count($medicos); $i++) {
-   echo '<tr>
-      <th scope="row">'.$c.'</th>
-      <td>'.$medicos[$i]['cedulaM'].'</td>
-      <td>'.$medicos[$i]['nombreM']. '&nbsp;' .$medicos[$i]['apellidoM'].'</td>
-      <td>'.$medicos[$i]['direccionM'].'</td>
-      <td>'.$medicos[$i]['telefonoM'].'</td>
-      <td>'.$medicos[$i]['correoM'].'</td>
-      <td><button type="button" class="btn btn-danger">Eliminar</button></td>
-    </tr>';
-    $c++;
-  }
-unset($_SESSION['medicos']);
-echo  '</tbody>
-</table>
-  </div>
-</div>         
-</form>
-</div>';
-}
-else{
-  echo 'No hay registros de medicos en la Base de Datos...';
-}
-echo '
-</div>
-</div> 
- ';
-
-
-?>
-
-<?php
 function buscarAuxiliares($_strBuscar) //metodo para buscar auxiliares
 {
     global $conexion;
@@ -152,7 +38,7 @@ function buscarAuxiliares($_strBuscar) //metodo para buscar auxiliares
     if (isset($_auxiliares)) { //condicional if para ver si el vector esta lleno
         $_SESSION['auxiliares'] = $_auxiliares; //almacenando el vector en una sesion para utilizarlo en otra pagina
         $auxiliares = $_SESSION['auxiliares']; //forma para recuperar los valores de la sesion
-        /*echo "*********************************AUXILIARES";
+        echo "*********************************AUXILIARES";
         echo "<br>";
         for ($i = 0; $i < count($auxiliares); $i++) { //for para imprimir los valores del vector recuperado de la sesion, conunt es para la dimension del vector
             echo 'cedula', $auxiliares[$i]['cedulaA'];
@@ -175,9 +61,7 @@ function buscarAuxiliares($_strBuscar) //metodo para buscar auxiliares
             echo "<br>";
             echo '------------------------------------------------------------';
             echo "<br>";
-        }*/
-    }else{
-      $_SESSION['auxiliares'] = null;
+        }
     }
 
 }
@@ -217,10 +101,10 @@ function buscarMedicos($_strBuscar) //metodo para buscar auxiliares
     if (isset($_medicos)) { //condicional if para ver si el vector esta lleno
         $_SESSION['medicos'] = $_medicos; //almacenando el vector en una sesion para utilizarlo en otra pagina
         $medicos = $_SESSION['medicos']; //forma para recuperar los valores de la sesion
-        //echo "*********************************MEDICOS";
-        //echo "<br>";
+        echo "*********************************MEDICOS";
+        echo "<br>";
         for ($i = 0; $i < count($medicos); $i++) { //for para imprimir los valores del vector recuperado de la sesion, conunt es para la dimension del vector
-            /*echo 'cedula', $medicos[$i]['cedulaM'];
+            echo 'cedula', $medicos[$i]['cedulaM'];
             echo "<br>";
             echo 'nombre', $medicos[$i]['nombreM'];
             echo "<br>";
@@ -241,13 +125,34 @@ function buscarMedicos($_strBuscar) //metodo para buscar auxiliares
             echo 'correo', $medicos[$i]['correoM'];
             echo "<br>";
             echo '------------------------------------------------------------';
-            echo "<br>";*/
+            echo "<br>";
         }
     }
-    else{
-      $_SESSION['medicos'] = null;
-    }
 
+}
+
+function eliminarAuxiliar($_strBuscar)
+{
+    global $conexion;
+
+    mysqli_query($conexion, "UPDATE `auxiliar`
+                            SET `ESTADO_AUX` = '1'
+                            WHERE `auxiliar`.`CEDULA_AUX` = '$_strBuscar'")
+    or die("Problemas en el select" . mysqli_error($conexion));
+
+    echo 'El auxiliar ha sido eliminado correctamente';
+}
+
+function eliminarMedico($_strBuscar)
+{
+    global $conexion;
+
+    mysqli_query($conexion, "UPDATE `medico`
+                            SET `ESTADO_MED` = '1'
+                            WHERE `medico`.`CEDULA_MED` = '$_strBuscar'")
+    or die("Problemas en el select" . mysqli_error($conexion));
+
+    echo 'El medioc ha sido eliminado correctamente';
 }
 
 ?>
