@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(isset($_SESSION['userAdministrador'])){
+ // $administrador=$_SESSION['userAdministrador'];
+}else
+{
+  header("Location: index2.php?error=Datos Incorrectos");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -43,8 +43,11 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
                 'apellidoM' => $f['APELLIDO_MED'],
                 'telefonoM' => $f['TELEFONO_MED'],
                 'especialidadM' => $f['ESPECIALIDAD'],
+                'contrasenaM' => $f['CONTRASENA_MED'],
                 'estadoM' => $f['ESTADO_MED'],
-                'contrasenaM' => $f['CONTRASENA_MED']);
+                'fechNacM' => $f['FECHA_NAC_MED'],
+                'direccionM' => $f['DIRECCION_MED'],
+                'correoM' => $f['CORREO_MED']);
         }
 
         if ($arreglo_medico != null) {

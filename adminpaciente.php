@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(isset($_SESSION['userPaciente'])){
+  //$paciente=$_SESSION['userPaciente'];
+}else
+{
+  header("Location: index.php?error=Datos Incorrectos");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

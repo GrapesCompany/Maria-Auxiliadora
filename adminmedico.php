@@ -1,13 +1,11 @@
 <?php
 session_start();
 if(isset($_SESSION['userMedico'])){
-  $medico=$_SESSION['userMedico'];
+ // $medico=$_SESSION['userMedico'];
 }else
 {
-  header("Location: index2.php");
+  header("Location: index2.php?error=Datos Incorrectos");
 }
-
-
 
  include 'conexion.php';
  $conexion=conectar();
