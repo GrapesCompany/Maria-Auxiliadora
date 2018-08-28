@@ -33,12 +33,9 @@ $result = mysqli_query($conexion,$sql) or die("Problemas al verificar usuarios e
 if($result)
 {
  echo "El Usuario que desea registrar ya existe en la base de datos.  ";
-}
+}else{
 
-
-     
-         
-         mysqli_query( $conexion, "insert into paciente(CEDULA_PAC, 
+  mysqli_query( $conexion, "insert into paciente(CEDULA_PAC, 
          NOMBRE_PAC, 
          APELLIDO_PAC,
          TELEFONO_PAC, 
@@ -68,6 +65,12 @@ if($result)
          cerrar($conexion);
 
          echo "La historia clinica se ha creado correctamente.  ";
+}
+
+
+     
+         
+         
          
           ?>
              

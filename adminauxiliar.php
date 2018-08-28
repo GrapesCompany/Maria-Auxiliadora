@@ -222,7 +222,7 @@
 </div>
           <div class="modal-footer">
         
-          <button class="btn btn-primary btn-ttc" onclick="cambiarContrasenaAuxiliar()" type="button" data-dismiss="modal">Aplicarrrr</button>
+          <button class="btn btn-primary btn-ttc" onclick="cambiarContrasenaAuxiliar()" type="button" data-dismiss="modal">Aplicar</button>
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
             
           </div>

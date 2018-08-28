@@ -23,7 +23,7 @@ $correo=$_POST['correo'];
     if($result)
     {
        echo "El Medico que desea registrar ya existe en la base de datos.  ";
-    }
+    }else{
 
 
          mysqli_query( $conexion, "insert into medico(CEDULA_MED, 
@@ -40,6 +40,8 @@ $correo=$_POST['correo'];
 
          cerrar($conexion);
          echo "La historia clinica se ha creado correctamente.  ";
+
+        }
           ?>
              
 

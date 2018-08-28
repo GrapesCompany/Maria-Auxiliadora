@@ -24,7 +24,7 @@ $inputPassword=$_POST['inputPasswordAux'];
     if($result)
     {
        echo "El Auxiliar que desea registrar ya existe en la base de datos.  ";
-    }
+    }else{
          
          mysqli_query( $conexion, "INSERT INTO `auxiliar` (
            `CEDULA_AUX`, 
@@ -41,6 +41,7 @@ $inputPassword=$_POST['inputPasswordAux'];
 
          cerrar($conexion);
          echo "El Auxiliar se ha registrado correctamente.  ";
+        }
           ?>
              
 
