@@ -62,8 +62,8 @@ $pep = '<div class="container">
  <div class="form-row">
    <div class="col-md-6">
      <div class="form-label-group">
-       <input type="date" id="fec_prox_cita" class="form-control" placeholder="Fecha próxima cita" required="required" autofocus="autofocus">
-       <label for="fec_prox_cita">Fecha próxima cita</label>
+     <input type="number" id="profesion" class="form-control" placeholder="Altura" step="any" required="required" autofocus="autofocus">
+     <label for="profesion">Altura (metros)</label>
      </div>
    </div>
    <div class="col-md-6">
@@ -74,20 +74,6 @@ $pep = '<div class="container">
    </div>
  </div>         
 </div>
-
- 
- 
-<div class="form-group">
-<div class="form-row">
-  <div class="col-md-6">
-    <div class="form-label-group">
-      <input type="number" id="profesion" class="form-control" placeholder="Altura" step="any" required="required" autofocus="autofocus">
-       <label for="profesion">Altura (metros)</label>
-    </div>
-  </div>
-</div>         
-</div>
-
   
  <button class="btn btn-block col-md-2 btn-ttc" href="login.html">Reservar</button>
  
