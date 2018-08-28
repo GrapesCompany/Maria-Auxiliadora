@@ -57,6 +57,7 @@ function showBuscador(str) {
     document.getElementById("div_nuevomedico").innerHTML = "";
     document.getElementById("div_nuevoauxiliar").innerHTML = "";
     document.getElementById("div_reporte").innerHTML = "";
+    var strBuscar = document.getElementById('strBuscar').value;
    
 
     var xmlhttp = new XMLHttpRequest();
@@ -66,7 +67,7 @@ function showBuscador(str) {
         }
     }
 
-    xmlhttp.open("GET", "listar_ma.php?q=" + str, true);
+    xmlhttp.open("GET", "listar_ma.php?strPalabra=" + strBuscar, true);
     xmlhttp.send();
 }
 
@@ -78,6 +79,8 @@ function showPaciente(str) {
 
     document.getElementById("div_modificaraux").innerHTML = ""; 
     document.getElementById("div_modificarcita").innerHTML = "";  
+    document.getElementById("div_historiasClinicas").innerHTML = "";
+    document.getElementById("div_CitasMedicas").innerHTML = "";
 
    var xmlhttp = new XMLHttpRequest();
    xmlhttp.onreadystatechange = function () {
@@ -96,6 +99,8 @@ function showModificarAuxiliar(str) {
 
     document.getElementById("div_nuevopaciente").innerHTML = "";  
     document.getElementById("div_modificarcita").innerHTML = "";  
+    document.getElementById("div_historiasClinicas").innerHTML = "";
+    document.getElementById("div_CitasMedicas").innerHTML = "";
 
    var xmlhttp = new XMLHttpRequest();
    xmlhttp.onreadystatechange = function () {
@@ -112,6 +117,8 @@ function showCitaMedica(str) {
 
     document.getElementById("div_nuevopaciente").innerHTML = ""; 
     document.getElementById("div_modificaraux").innerHTML = ""; 
+    document.getElementById("div_historiasClinicas").innerHTML = "";
+    document.getElementById("div_CitasMedicas").innerHTML = "";
      
 
    var xmlhttp = new XMLHttpRequest();
@@ -123,6 +130,46 @@ function showCitaMedica(str) {
 
    xmlhttp.open("GET", "modificar_citamedica.php?q=" + str, true);
    xmlhttp.send();
+}
+
+function showBuscadorHC(str) {    
+
+    document.getElementById("div_nuevopaciente").innerHTML = "";
+    document.getElementById("div_modificaraux").innerHTML = "";
+    document.getElementById("div_modificarcita").innerHTML = "";
+    document.getElementById("div_CitasMedicas").innerHTML = "";
+    var strBuscar = document.getElementById('strBuscar').value;
+   
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_historiasClinicas").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "listar_hc.php?strPalabra=" + strBuscar, true);
+    xmlhttp.send();
+}
+
+function showBuscadorCitasMedicasPendientes(str) {    
+
+    document.getElementById("div_nuevopaciente").innerHTML = "";
+    document.getElementById("div_modificaraux").innerHTML = "";
+    document.getElementById("div_modificarcita").innerHTML = "";
+    document.getElementById("div_historiasClinicas").innerHTML = "";
+    var strBuscar = document.getElementById('strBuscar').value;
+   
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_CitasMedicas").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "listarCitasPendientes.php?strPalabra=" + strBuscar, true);
+    xmlhttp.send();
 }
 
 /*__________________________________________Fin Administrador - Auxiliar________________________________________________________*/
