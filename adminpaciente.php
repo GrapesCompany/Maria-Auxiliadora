@@ -4,7 +4,7 @@ if(isset($_SESSION['userPaciente'])){
   //$paciente=$_SESSION['userPaciente'];
 }else
 {
-  header("Location: index.php?error=Datos Incorrectos");
+  header("Location: index.php?denegado=peligro");
 }
 ?>
 
@@ -163,7 +163,7 @@ if(isset($_SESSION['userPaciente'])){
           </div>
          
           <div class="modal-footer">
-          <a class="btn btn-primary btn-ttc " href="./index.php">Aceptar</a>
+          <a class="btn btn-primary btn-ttc " href="./index.php?tipo=paciente">Aceptar</a>
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
             
           </div>

@@ -31,7 +31,7 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
         echo "eres paciente";
         header('Location: ../../adminpaciente.php');
     } else {
-        header('Location: ../../index.php?error=Datos Incorrectos');
+        header('Location: ../../index.php?error=fail');
     }
 } else {
     if ($tipoP == 'administrador' && $cargo == 'medico' && $username != "" && $username != null && $password != "" && $password != null) {
@@ -55,7 +55,7 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
             echo "eres medico";
             header('Location: ../../adminmedico.php');
         } else {
-            header('Location: ../../index2.php?error=Datos Incorrectos');
+            header('Location: ../../index2.php?error=fail');
         }
 
     } else {
@@ -79,7 +79,7 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
                 echo "eres auxiliar";
                 header('Location: ../../adminauxiliar.php');
             } else {
-                header('Location: ../../index2.php?error=Datos Incorrectos');
+                header('Location: ../../index2.php?error=fail');
             }
 
         } else {
@@ -96,13 +96,13 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
                     echo "eres administrador";
                     header('Location: ../../admin.php');
                 } else {
-                    header('Location: ../../index2.php?error=Datos Incorrectos');
+                    header('Location: ../../index2.php?error=fail');
                 }
             }else{
                 if ($tipoP == 'administrador') {
-                    header('Location: ../../index2.php?error=Datos Incorrectos');
+                    header('Location: ../../index2.php?error=fail');
                 } else {
-                    header('Location: ../../index.php?error=Datos Incorrectos');
+                    header('Location: ../../index.php?error=fail');
                 }
             }
 
