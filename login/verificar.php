@@ -27,6 +27,7 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
             'contrasenaP' => $f['CONTRASENA_PAC']);
     }
     if ($arreglo_paciente != null) {
+        $_SESSION['userPaciente']=$arreglo_paciente;
         echo "eres paciente";
         header('Location: ../../adminpaciente.php');
     } else {
@@ -47,6 +48,7 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
         }
 
         if ($arreglo_medico != null) {
+            $_SESSION['userMedico']=$arreglo_medico;
             echo "eres medico";
             header('Location: ../../adminmedico.php');
         } else {
@@ -70,6 +72,7 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
             }
 
             if ($arreglo_auxiliar != null) {
+                $_SESSION['userAuxiliar']=$arreglo_auxiliar;
                 echo "eres auxiliar";
                 header('Location: ../../adminauxiliar.php');
             } else {
@@ -86,6 +89,7 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
                 }
     
                 if ($arreglo_administrador != null) {
+                    $_SESSION['userAdministrador']=$arreglo_administrador;
                     echo "eres administrador";
                     header('Location: ../../admin.php');
                 } else {
