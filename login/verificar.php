@@ -60,7 +60,7 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
             $existenciausuario = mysqli_query($conexion, "SELECT * FROM auxiliar WHERE auxiliar.`CEDULA_AUX`='$username' AND  auxiliar.`CONTRASENA_AUX`='$password' AND  auxiliar.`ESTADO_AUX`='0'") or die("Problemas en el select" . mysqli_error($conexion));
 
             while ($f = mysqli_fetch_array($existenciausuario)) {
-                $arreglo_auxiliar[] = array('cedulaM' => $f['CEDULA_AUX'],
+                $arreglo_auxiliar[] = array('cedulaA' => $f['CEDULA_AUX'],
                     'nombreA' => $f['NOMBRE_AUX'],
                     'apellidoA' => $f['APELLIDO_AUX'],
                     'direccionA' => $f['DIRECCION_AUX'],
