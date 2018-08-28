@@ -52,8 +52,8 @@ echo '<div class="container">
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="date" id="fec_nac" class="form-control" placeholder="Fecha de Nacimiento" disabled required="required" value="'; echo $fechaAuxiliar; echo'">
-         <label for="fec_nac">Fecha de Nacimiento</label>
+         <input type="date" id="fech_nac" class="form-control" placeholder="Fecha de Nacimiento" disabled required="required" value="'; echo $fechaAuxiliar; echo'">
+         <label for="fech_nac">Fecha de Nacimiento</label>
        </div>
      </div>
    </div>         
@@ -85,7 +85,7 @@ echo '<div class="container">
  </div>
   
  <button class="btn col-md-2 btn-ttc inline-block" onclick="habilitarcampos()" href="#">Modificar</button>
- <button class="btn col-md-2 btn-ttc inline-block" href="login.html">Guardar</button>
+ <button class="btn col-md-2 btn-ttc inline-block" onclick="modificarAuxiliar()" href="login.html">Guardar</button>
  
  </form>
  </div>

@@ -411,13 +411,13 @@ function showlistarCitaPendiente(str) {
 
 function habilitarcampos()
 {
-    document.getElementById("cedula").removeAttribute("disabled");
+    
     document.getElementById("nombre").removeAttribute("disabled");
     document.getElementById("apellido").removeAttribute("disabled");
-    document.getElementById("fec_nac").removeAttribute("disabled");
+    document.getElementById("fech_nac").removeAttribute("disabled");
     document.getElementById("direccion").removeAttribute("disabled");
     document.getElementById("telefono").removeAttribute("disabled");
-    document.getElementById("contrasena").removeAttribute("disabled");
+   
 
 }
 
@@ -885,8 +885,7 @@ function modificarMedico()
 
 function modificarAuxiliar()
 {
-    var dataString = 'cedulaAux=' + document.getElementById('cedula').value +
-    '&nombreAux=' + document.getElementById('nombre').value +
+    var dataString = 'nombreAux=' + document.getElementById('nombre').value +
     '&apellidoAux=' + document.getElementById('apellido').value +
     '&telefonoAux=' + document.getElementById('telefono').value +
     '&fech_nacAux='+document.getElementById('fech_nac').value+
@@ -899,10 +898,10 @@ function modificarAuxiliar()
 {
     $.ajax({
         type: "POST",
-        url: "php/ingresarAuxiliar.php",
+        url: "php/modificarMiCuentaAuxiliar.php",
         data: dataString,
         success: function (data) {
-            showAuxiliar("gh");
+            showModificarAuxiliar("gh");
             alert(data);
             //recuperando las variables
 
