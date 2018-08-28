@@ -4,8 +4,8 @@
 
 include '../conexion.php';
 session_start();
-if(isset($_SESSION['userMedico'])){
-  $medico=$_SESSION['userMedico'];
+if(isset($_SESSION['userPaciente'])){
+  $medico=$_SESSION['userPaciente'];
 }else
 {
   header("Location: ../index2.php");
@@ -16,11 +16,11 @@ $ccactual=$_POST['ccactual'];
 $ccnueva=$_POST['ccnueva'];
 $ccverinueva=$_POST['ccverinueva'];
 
-$cedulaMedico=$medico[0]['cedulaM'];
-$conrasenaMedico=$medico[0]['contrasenaM'];
+$cedulaPaciente=$medico[0]['cedulaP'];
+$conrasenaPaciente=$medico[0]['contrasenaP'];
 
 
-if($conrasenaMedico!=$ccactual)
+if($conrasenaPaciente!=$ccactual)
 {
     echo "La contraseña actual no es correcta";
 }else
@@ -31,14 +31,14 @@ if($conrasenaMedico!=$ccactual)
 
 
          
-         mysqli_query( $conexion, "UPDATE  `medico` SET `CONTRASENA_MED`='$ccverinueva' where `CEDULA_MED`='$cedulaMedico'" ) or die("Problemas en el select.  ".mysqli_error($conexion));
+         mysqli_query( $conexion, "UPDATE  `paciente` SET `CONTRASENA_PAC`='$ccverinueva' where `CEDULA_PAC`='$cedulaPaciente'" ) or die("Problemas en el select.  ".mysqli_error($conexion));
 
          cerrar($conexion);
          
          echo "Se ha modificado correctamente la contraseña.  ";
-         unset($_SESSION['userMedico']);
+         unset($_SESSION['userPaciente']);
 
       header('Location: ../index2.php');
  
 }
-          ?>
+ ?>

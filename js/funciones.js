@@ -403,7 +403,7 @@ function habilitarcamposmedico()
     document.getElementById("correo").removeAttribute("disabled");
     document.getElementById("telefono").removeAttribute("disabled");
     document.getElementById("especialidad").removeAttribute("disabled");
-    document.getElementById("inputPassword").removeAttribute("disabled");
+    
 }
 
 function habilitarcampospaciente()
@@ -746,4 +746,37 @@ function reservarCitaPorPaciente()
 
 }
 
+
+function cambiarContrasenaPaciente() {
+
+
+    var dataString = 'ccactual=' + document.getElementById('ccactual').value +
+    '&ccnueva=' + document.getElementById('ccnueva').value +
+    '&ccverinueva=' + document.getElementById('ccverinueva').value;
+     
+
+    if(document.getElementById('ccnueva').value!=document.getElementById('ccverinueva').value)
+    {
+       alert("Las contraseñas no coinciden");
+    }else
+    {
+        $.ajax({
+            type: "POST",
+            url: "php/modificarContrasenaDoctor.php",
+            data: dataString,
+            success: function (data) {
+                      
+                alert(data);
+                //recuperando las variables
+        
+            },error: function (errorThrown) 
+            {
+               alert("Existe un error"+errorThrown);
+            }
+        
+        });
+    }
+
+
+}
 
