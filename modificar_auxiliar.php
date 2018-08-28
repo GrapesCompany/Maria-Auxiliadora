@@ -39,25 +39,18 @@
    </div>         
  </div>
  
-   <div class="form-group">
-   <div class="form-label-group">
-     <input type="text" id="direccion" class="form-control" placeholder="Dirección" disabled required="required">
-     <label for="direccion">Dirección</label>
-   </div>
- </div> 
- 
  <div class="form-group">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="telefono" class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus">
-         <label for="telefono">Teléfono</label>
+       <input type="text" id="direccion" class="form-control" placeholder="Dirección" disabled required="required">
+       <label for="direccion">Dirección</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="edad" class="form-control" placeholder="Edad" disabled required="required">
-         <label for="edad">Edad</label>
+       <input type="text" id="telefono" class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus">
+       <label for="telefono">Teléfono</label>
        </div>
      </div>
    </div>         
