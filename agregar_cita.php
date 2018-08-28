@@ -1,5 +1,16 @@
 <?php
 include 'conexion.php';
+session_start();
+if(isset($_SESSION['userPaciente'])){
+  $medico=$_SESSION['userPaciente'];
+}else
+{
+  header("Location: ../index2.php");
+}
+
+$cedulaPaciente=$medico[0]['cedulaP'];
+
+
 $conexion=conectar();
 $sql = "SELECT * FROM medico";
   $result = mysqli_query ($conexion,$sql);
@@ -15,8 +26,8 @@ echo'<div class="container">
   <div class="form-row">
     <div class="col-md-6">
       <div class="form-label-group">
-        <input type="text" id="cedula"  name="cedula"class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
-        <label for="cedula">Cédula</label>
+        <input type="text" id="cedula" disabled name="cedula"class="form-control" placeholder="Cédula" required="required" autofocus="autofocus" >
+        <label for="cedula">'; echo $cedulaPaciente;  echo'</label>
       </div>
     </div> 
     <div class="col-md-6">

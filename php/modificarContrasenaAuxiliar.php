@@ -9,7 +9,7 @@ if(isset($_SESSION['userAuxiliar'])){
   $auxiliar=$_SESSION['userAuxiliar'];
 }else
 {
-  header("Location: /index2.php");
+  header("Location: ../index2.php");
 }
 
 $ccactual=$_POST['ccactual'];
