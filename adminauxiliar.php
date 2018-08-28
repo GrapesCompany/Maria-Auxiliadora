@@ -43,20 +43,22 @@
       <!-- Navbar Search -->
       <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
-          <input type="text" class="form-control" size="40" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" size="40" id='strBuscar' placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
          
           <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" title="Historias Clínicas" type="button">
+            <button class="btn btn-primary colorsecb" title="Historias Clínicas" type="button" onclick="showBuscadorHC(this.value)">
               <i class="fas fa-user-md"></i>
-            </button>            
+            </button>               
           </div>
          
 
             <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" onclick="showCitaMedica(this.value)" title="Citas Médicas Pendientes" type="button">
+            <button class="btn btn-primary colorsecb" onclick="showBuscadorCitasMedicasPendientes(this.value)" title="Citas Médicas Pendientes" type="button">
               <i class="fas fa-book-open"></i>
             </button>            
           </div>
+
+          <!-- onclick="showCitaMedica(this.value)" -->
 
         </div>
       </form>
@@ -126,7 +128,15 @@
         <!--Modificar Cita Medica--> 
         <div id="div_modificarcita" class="container"></div>
 
+        <!-- Listar Historias Clinicas --> 
+        <div id="div_historiasClinicas" class="container"></div>
+
+        <!-- Listar Citas Medicas Pendientes --> 
+        <div id="div_CitasMedicas" class="container"></div>
+
         </div>
+
+
         
 
         <!-- Sticky Footer -->
