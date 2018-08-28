@@ -30,14 +30,14 @@ echo '<div class="container">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="cedula" class="form-control" placeholder="Cédula" required="required" disabled autofocus="autofocus" value="'; echo $cedulaAuxiliar; echo'">
-         <label for="cedula">Cédula</label>
+         <input type="text" id="cedulaa" class="form-control" placeholder="Cédula" required="required" disabled autofocus="autofocus" value="'; echo $cedulaAuxiliar; echo'">
+         <label for="cedulaa">Cédula</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="nombre" class="form-control" placeholder="Nombre" disabled required="required" value="'; echo $nombreAuxiliar; echo'">
-         <label for="nombre">Nombre</label>
+         <input type="text" id="nombrea" class="form-control" placeholder="Nombre" disabled required="required" value="'; echo $nombreAuxiliar; echo'">
+         <label for="nombrea">Nombre</label>
        </div>
      </div>
    </div>         
@@ -46,32 +46,32 @@ echo '<div class="container">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="apellido" class="form-control" placeholder="Apellido" disabled required="required" autofocus="autofocus" value="'; echo $apellidoAuxiliar; echo'">
-         <label for="apellido">Apellido</label>
+         <input type="text" id="apellidoa" class="form-control" placeholder="Apellido" disabled required="required" autofocus="autofocus" value="'; echo $apellidoAuxiliar; echo'">
+         <label for="apellidoa">Apellido</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="date" id="fec_nac" class="form-control" placeholder="Fecha de Nacimiento" disabled required="required" value="'; echo $fechaAuxiliar; echo'">
-         <label for="fec_nac">Fecha de Nacimiento</label>
+         <input type="date" id="fec_naca" class="form-control" placeholder="Fecha de Nacimiento" disabled required="required" value="'; echo $fechaAuxiliar; echo'">
+         <label for="fec_naca">Fecha de Nacimiento</label>
        </div>
      </div>
    </div>         
  </div>
  
-   <div class="form-group">
-   <div class="form-label-group">
-     <input type="text" id="direccion" class="form-control" placeholder="Dirección" disabled required="required" value="'; echo $direccionAuxiliar; echo'">
-     <label for="direccion">Dirección</label>
-   </div>
- </div> 
  
  <div class="form-group">
    <div class="form-row">
      <div class="col-md-6">
+       <div class="form-label-group"> 
+       <input type="text" id="direcciona" class="form-control" placeholder="Dirección" disabled required="required" value="'; echo $direccionAuxiliar; echo'">
+       <label for="direcciona">Dirección</label>
+       </div>
+     </div>
+     <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="telefono" class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus" value="'; echo $telefonoAuxiliar; echo'">
-         <label for="telefono">Teléfono</label>
+       <input type="text" id="telefonoa" class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus" value="'; echo $telefonoAuxiliar; echo'">
+       <label for="telefonoa">Teléfono</label>
        </div>
      </div>
    
@@ -80,7 +80,18 @@ echo '<div class="container">
  
  <div class="form-group">
    <div class="form-row">
-   
+   <div class="col-md-6">
+       <div class="form-label-group">
+         <input type="email" id="correoea" class="form-control" placeholder="Correo electrónico" disabled required="required">
+         <label for="correoea">Correo electrónico</label>
+       </div>
+     </div>
+     <div class="col-md-6">
+       <div class="form-label-group">
+         <input type="password" id="contrasenaa" class="form-control" placeholder="Contraseña" disabled required="required">
+         <label for="contrasenaa">Contraseña</label>
+       </div>
+     </div>
    </div>
  </div>
   
