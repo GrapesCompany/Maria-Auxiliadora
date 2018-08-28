@@ -49,7 +49,7 @@ if(isset($_SESSION['userMedico'])){
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1" href="index.php">Maria Auxiliadora - Médico</a>
+      <a class="navbar-brand mr-1"  onclick="showNuevoHistoriaCc(this.value)" href="#">Maria Auxiliadora - Médico</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-arrows-alt-h fa-lg"></i>
@@ -60,7 +60,7 @@ if(isset($_SESSION['userMedico'])){
         <div class="input-group">
           <input type="text" class="form-control" size="40" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
           <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" onclick="showCita(this.value)" title="Buscar Paciente" type="button">
+            <button class="btn btn-primary colorsecb" onclick="showCita(this.value)" href="#" title="Buscar Paciente" type="button">
               <i class="fas fa-user-md"></i>
             </button>            
           </div>
@@ -151,6 +151,9 @@ if(isset($_SESSION['userMedico'])){
         
         <!--Modificar Medico--> 
         <div id="div_modificarmedico" class="container"></div>
+
+         <!--Nueva Historia Clinica--> 
+         <div id="div_nuevahistclinica" class="container"></div>
 
         </div>
         

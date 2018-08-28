@@ -184,6 +184,8 @@ function reservarCita(str) {
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
+    document.getElementById("div_nuevahistclinica").innerHTML = "";
+    
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -204,6 +206,8 @@ function showCita(str) {
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
+    document.getElementById("div_nuevahistclinica").innerHTML = "";
+    
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -223,6 +227,8 @@ function buscarCita(str) {
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
+    document.getElementById("div_nuevahistclinica").innerHTML = "";
+     
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -243,6 +249,7 @@ function listarCitaPendiente(str) {
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
+    document.getElementById("div_nuevahistclinica").innerHTML = "";     
     
 
     var xmlhttp = new XMLHttpRequest();
@@ -263,6 +270,7 @@ function reporteCita(str) {
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
+    document.getElementById("div_nuevahistclinica").innerHTML = "";     
     
 
     var xmlhttp = new XMLHttpRequest();
@@ -283,7 +291,7 @@ function showModificarMedico(str) {
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
-    
+    document.getElementById("div_nuevahistclinica").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -293,6 +301,28 @@ function showModificarMedico(str) {
     }
 
     xmlhttp.open("GET", "modificar_medico.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+
+function showNuevoHistoriaCc(str) {
+
+    document.getElementById("div_nuevacita").innerHTML = "";
+    document.getElementById("div_buscarcita").innerHTML = "";
+    document.getElementById("div_reservarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendiente").innerHTML = "";
+    document.getElementById("div_reportecita").innerHTML = "";
+    document.getElementById("div_modificarmedico").innerHTML = "";
+    
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_modificarmedico").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "nuevo_historiaclinica.php?q=" + str, true);
     xmlhttp.send();
 }
 
