@@ -411,13 +411,14 @@ function showlistarCitaPendiente(str) {
 
 function habilitarcampos()
 {
-    
-    document.getElementById("nombre").removeAttribute("disabled");
-    document.getElementById("apellido").removeAttribute("disabled");
-    document.getElementById("fech_nac").removeAttribute("disabled");
-    document.getElementById("direccion").removeAttribute("disabled");
-    document.getElementById("telefono").removeAttribute("disabled");
    
+    document.getElementById("nombrea").removeAttribute("disabled");
+    document.getElementById("apellidoa").removeAttribute("disabled");
+    document.getElementById("fec_naca").removeAttribute("disabled");
+    document.getElementById("direcciona").removeAttribute("disabled");
+    document.getElementById("telefonoa").removeAttribute("disabled");
+    document.getElementById("correoea").removeAttribute("disabled");
+ 
 
 }
 
