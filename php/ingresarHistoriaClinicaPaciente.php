@@ -27,6 +27,14 @@ $correoHist=$_POST['correoHist'];
 $conexion=conectar();
 
 
+$sql = "SELECT `CEDULA_PAC` FROM `paciente` WHERE `CEDULA_PAC`='$cedulaHist'" ;
+$result = mysqli_query($conexion,$sql) or die("Problemas al verificar usuarios en el sistema.  ");
+   
+if($result)
+{
+ echo "El Usuario que desea registrar ya existe en la base de datos.  ";
+}
+
 
      
          
@@ -54,10 +62,12 @@ $conexion=conectar();
             RESPONSABLE, 
             OBSERVACIONES
             ) values
-             ('$cedulaHist','1711779825','','$responsableHist', '$observacionesHist')" ) or die("Problemas en el select".mysqli_error($conexion));
+             ('$cedulaHist','1711779825','','$responsableHist', '$observacionesHist')" ) or die("Problemas en el select.  ".mysqli_error($conexion));
           
 
          cerrar($conexion);
+
+         echo "La historia clinica se ha creado correctamente.  ";
          
           ?>
              

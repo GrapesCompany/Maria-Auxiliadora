@@ -1,7 +1,7 @@
 
 <?php
 
-echo "hola";
+
 
 include '../conexion.php';
 $cedula=$_POST['cedulaAux'];
@@ -16,8 +16,15 @@ $correo=$_POST['correoAux'];
 $inputPassword=$_POST['inputPasswordAux'];
 
 
-    echo "hola tefo", $cedula;
+  
         $conexion=conectar();
+        $sql = "SELECT `CEDULA_AUX` FROM `auxiliar` WHERE `CEDULA_AUX`='$cedula'" ;
+      $result = mysqli_query($conexion,$sql) or die("Problemas al Reservar cita verifique que sea un usuario del sistema.  ");
+         
+    if($result)
+    {
+       echo "El Auxiliar que desea registrar ya existe en la base de datos.  ";
+    }
          
          mysqli_query( $conexion, "INSERT INTO `auxiliar` (
            `CEDULA_AUX`, 
@@ -29,13 +36,11 @@ $inputPassword=$_POST['inputPasswordAux'];
            `CONTRASENA_AUX`, 
            `ESTADO_AUX`, 
            `CORREO_AUX`) values
-           ('$cedula' , '$nombre' , '$apellido' , '$direccion', '$telefono','$fech_nac','$inputPassword','0','$correo')" ) or die("Problemas en el select".mysqli_error($conexion));
+           ('$cedula' , '$nombre' , '$apellido' , '$direccion', '$telefono','$fech_nac','$inputPassword','0','$correo')" ) or die("Problemas en el select.  ".mysqli_error($conexion));
 
-echo "hola tefo", $cedula;
-echo "hola tefo", $cedula;
-echo "hola tefo", $cedula;
+
          cerrar($conexion);
-         
+         echo "El Auxiliar se ha registrado correctamente.  ";
           ?>
              
 

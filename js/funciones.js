@@ -390,11 +390,14 @@ $.ajax({
     type: "POST",
     url: "php/admin.php",
     data: dataString,
-    success: function () {
+    success: function (data) {
               
-        alert("Ha sido ejecutada la acción.");
-        //recuperando las variables
+        alert(data);
+       
 
+    },error: function (errorThrown) 
+    {
+       alert("Existe un error"+errorThrown);
     }
 
 });
@@ -418,12 +421,15 @@ function guardarDoctor() {
         type: "POST",
         url: "php/ingresarMedico.php",
         data: dataString,
-        success: function () {
+        success: function (data) {
             showMedico("gh");
             
-            alert("Ha sido ejecutada la acción.");
+            alert(data);
             //recuperando las variables
 
+        },error: function (errorThrown) 
+        {
+           alert("Existe un error"+errorThrown);
         }
 
     });
@@ -441,11 +447,14 @@ function cambiarContrasenaDoctor() {
     type: "POST",
     url: "php/modificarContrasenaDoctor.php",
     data: dataString,
-    success: function () {
+    success: function (data) {
               
-        alert("Ha sido ejecutada la acción.");
+        alert(data);
         //recuperando las variables
 
+    },error: function (errorThrown) 
+    {
+       alert("Existe un error"+errorThrown);
     }
 
 });
@@ -465,11 +474,14 @@ function cambiarContrasenaAuxiliar() {
     type: "POST",
     url: "php/modificarContrasenaAuxiliar.php",
     data: dataString,
-    success: function () {
+    success: function (data) {
               
-        alert("Ha sido ejecutada la acción.");
+        alert(data);
         //recuperando las variables
 
+    },error: function (errorThrown) 
+    {
+       alert("Existe un error"+errorThrown);
     }
 
 });
@@ -497,12 +509,16 @@ function guardarAux() {
         type: "POST",
         url: "php/ingresarAuxiliar.php",
         data: dataString,
-        success: function () {
+        success: function (data) {
             showAuxiliar("gh");
-            alert("Ha sido ejecutada la acción.");
+            alert(data);
             //recuperando las variables
 
+        },error: function (errorThrown) 
+        {
+           alert("Existe un error"+errorThrown);
         }
+    
 
     });
 
@@ -541,12 +557,16 @@ function guardarHistoriaClinicaPasiente() {
         type: "POST",
         url: "php/ingresarHistoriaClinicaPaciente.php",
         data: dataString,
-        success: function () {
+        success: function (data) {
             showPaciente("fg");
-            alert("Ha sido ejecutada la acción.");
+            alert(data);
             //recuperando las variables
 
+        },error: function (errorThrown) 
+        {
+           alert("Existe un error"+errorThrown);
         }
+    
 
     });
 
@@ -566,75 +586,23 @@ function reservarCitaPorMedico()
         type: "POST",
         url: "php/citaMedica.php",
         data: dataString,
-        success: function () {
+        success: function (data) {
             show("sad");
-            alert("Ha sido ejecutada la acción.");
+            alert(data);
             //recuperando las variables
-
-
-
-
+        },error: function (errorThrown) 
+        {
+           alert("Existe un error"+errorThrown);
         }
+    
     });
 }
 
 
-function guardarDoctor() {
 
 
-    var dataString = 'cedula=' + document.getElementById('cedula').value +
-        '&nombre=' + document.getElementById('nombre').value +
-        '&apellido=' + document.getElementById('apellido').value +
-        '&telefono=' + document.getElementById('telefono').value +
-        '&especialidad=' + document.getElementById('especialidad').value+
-        '&inputPassword=' + document.getElementById('inputPassword').value+
-        '&fech_nac='+document.getElementById('fech_nac').value+
-        '&direccion='+document.getElementById('direccion').value+
-        '&correo='+document.getElementById('correo').value;
-
-    $.ajax({
-        type: "POST",
-        url: "php/ingresarMedico.php",
-        data: dataString,
-        success: function () {
-            showMedico("gh");
-            
-            alert("Ha sido ejecutada la acción.");
-            //recuperando las variables
-
-        }
-
-    });
-
-}
 
 
-function guardarAux() {
-
-
-    var dataString = 'cedulaAux=' + document.getElementById('cedula').value +
-        '&nombreAux=' + document.getElementById('nombre').value +
-        '&apellidoAux=' + document.getElementById('apellido').value +
-        '&telefonoAux=' + document.getElementById('telefono').value +
-        '&inputPasswordAux=' + document.getElementById('inputPassword').value+
-        '&fech_nacAux='+document.getElementById('fech_nac').value+
-        '&direccionAux='+document.getElementById('direccion').value+
-        '&correoAux='+document.getElementById('correo').value;
-
-    $.ajax({
-        type: "POST",
-        url: "php/ingresarAuxiliar.php",
-        data: dataString,
-        success: function () {
-            showAuxiliar("gh");
-            alert("Ha sido ejecutada la acción.");
-            //recuperando las variables
-
-        }
-
-    });
-
-}
 
 
 function guardarHistoriaClinicaPasiente() {
@@ -666,9 +634,9 @@ function guardarHistoriaClinicaPasiente() {
         type: "POST",
         url: "php/ingresarHistoriaClinicaPaciente.php",
         data: dataString,
-        success: function () {
+        success: function (data) {
             showPaciente("fg");
-            alert("Ha sido ejecutada la acción.");
+            alert(data);
             //recuperando las variables
 
         }
@@ -693,9 +661,41 @@ function reservarCitaPorMedico()
         data: dataString,
         success: function () {
             reservarCita("sad");
-            alert("Ha sido ejecutada la acción.");
+            alert(data);
             //recuperando las variables
 
+        },error: function (errorThrown) 
+        {
+           alert("Existe un error"+errorThrown);
+        }
+    
+
+    });
+
+}
+
+
+function reservarCitaPorPaciente()
+{
+    var dataString = 'cedulaReserva=' + document.getElementById('cedula').value +
+        '&medicoReserva=' + document.getElementById('medico').value +
+      
+        '&fech_consulReserva=' + document.getElementById('fech_consul').value +
+        '&horario_medReserva=' + document.getElementById('horario_med').value;
+      
+
+    $.ajax({
+        type: "POST",
+        url: "php/citaMedica.php",
+        data: dataString,
+        success: function (data) {
+            showAgregarCita("sad");
+            alert(data);
+            //recuperando las variables
+
+        },  error: function (errorThrown) 
+        {
+           alert(errorThrown);
         }
 
     });

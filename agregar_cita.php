@@ -103,7 +103,7 @@ echo'<div class="container">
   </div>         
 
 </form>
-<button onclick="reservarCitaPorMedico()" class="btn btn-block col-md-2 btn-ttc" href="#">Reservar</button>
+<button onclick="reservarCitaPorPaciente()" class="btn btn-block col-md-2 btn-ttc" href="#">Reservar</button>
 </div>
 <br>
 <div class="card-footer small text-muted">Reservando Cita Médica...</div>

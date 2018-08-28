@@ -1,7 +1,7 @@
 
 <?php
 
-echo "hola";
+
 
 include '../conexion.php';
 
@@ -11,15 +11,15 @@ $ccverinueva=$_POST['ccverinueva'];
 
 
 
-echo "hola";
 
         $conexion=conectar();
 
 
          
-         mysqli_query( $conexion, "UPDATE  `auxiliar` SET `CONTRASENA_AUX`='$ccverinueva' where `CEDULA_AUX`='060111111'" ) or die("Problemas en el select".mysqli_error($conexion));
+         mysqli_query( $conexion, "UPDATE  `auxiliar` SET `CONTRASENA_AUX`='$ccverinueva' where `CEDULA_AUX`='060111111'" ) or die("Problemas en el select.  ".mysqli_error($conexion));
 
          cerrar($conexion);
          
+         echo "Se ha modificado correctamente la contraseña.  ";
          
           ?>
