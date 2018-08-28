@@ -260,6 +260,7 @@ if(isset($_SESSION['userMedico'])){
 
     <!-- Javascript Paginas-->
     <script src="js/funciones.js"></script>
+    <script src="js/validaciones.js"></script>
  
   </body>
 

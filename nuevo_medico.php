@@ -10,13 +10,13 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text"  name="cedula" id="cedula" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
+         <input type="text"  name="cedula" id="cedula" onkeyup="this.value=soloNumeros(this.value)" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
          <label for="cedula">Cédula</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required="required">
+         <input type="text" name="nombre" id="nombre" onkeyup="this.value=soloLetras(this.value)" class="form-control" placeholder="Nombre" required="required">
          <label for="nombre">Nombre</label>
        </div>
      </div>
@@ -26,7 +26,7 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido" required="required" autofocus="autofocus">
+         <input type="text" name="apellido" id="apellido" onkeyup="this.value=soloLetras(this.value)" class="form-control" placeholder="Apellido" required="required" autofocus="autofocus">
          <label for="apellido">Apellido</label>
        </div>
      </div>
