@@ -363,14 +363,14 @@ function showlistarCitaPendiente(str) {
 
 function habilitarcampos()
 {
-    document.getElementById("cedula").removeAttribute("disabled");
-    document.getElementById("nombre").removeAttribute("disabled");
-    document.getElementById("apellido").removeAttribute("disabled");
-    document.getElementById("fec_nac").removeAttribute("disabled");
-    document.getElementById("direccion").removeAttribute("disabled");
-    document.getElementById("telefono").removeAttribute("disabled");
-    document.getElementById("edad").removeAttribute("disabled");
-    document.getElementById("contrasena").removeAttribute("disabled");
+    document.getElementById("cedulaa").removeAttribute("disabled");
+    document.getElementById("nombrea").removeAttribute("disabled");
+    document.getElementById("apellidoa").removeAttribute("disabled");
+    document.getElementById("fec_naca").removeAttribute("disabled");
+    document.getElementById("direcciona").removeAttribute("disabled");
+    document.getElementById("telefonoa").removeAttribute("disabled");
+    document.getElementById("correoea").removeAttribute("disabled");
+    document.getElementById("contrasenaa").removeAttribute("disabled");
 
 }
 

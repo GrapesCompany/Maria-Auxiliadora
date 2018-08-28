@@ -10,14 +10,14 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="cedula" class="form-control" placeholder="Cédula" required="required" disabled autofocus="autofocus">
-         <label for="cedula">Cédula</label>
+         <input type="text" id="cedulaa" class="form-control" placeholder="Cédula" required="required" disabled autofocus="autofocus">
+         <label for="cedulaa">Cédula</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="nombre" class="form-control" placeholder="Nombre" disabled required="required">
-         <label for="nombre">Nombre</label>
+         <input type="text" id="nombrea" class="form-control" placeholder="Nombre" disabled required="required">
+         <label for="nombrea">Nombre</label>
        </div>
      </div>
    </div>         
@@ -26,31 +26,14 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="apellido" class="form-control" placeholder="Apellido" disabled required="required" autofocus="autofocus">
-         <label for="apellido">Apellido</label>
+         <input type="text" id="apellidoa" class="form-control" placeholder="Apellido" disabled required="required" autofocus="autofocus">
+         <label for="apellidoa">Apellido</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="date" id="fec_nac" class="form-control" placeholder="Fecha de Nacimiento" disabled required="required">
-         <label for="fec_nac">Fecha de Nacimiento</label>
-       </div>
-     </div>
-   </div>         
- </div>
- 
- <div class="form-group">
-   <div class="form-row">
-     <div class="col-md-6">
-       <div class="form-label-group">
-       <input type="text" id="direccion" class="form-control" placeholder="Dirección" disabled required="required">
-       <label for="direccion">Dirección</label>
-       </div>
-     </div>
-     <div class="col-md-6">
-       <div class="form-label-group">
-       <input type="text" id="telefono" class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus">
-       <label for="telefono">Teléfono</label>
+         <input type="date" id="fec_naca" class="form-control" placeholder="Fecha de Nacimiento" disabled required="required">
+         <label for="fec_naca">Fecha de Nacimiento</label>
        </div>
      </div>
    </div>         
@@ -60,8 +43,31 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="password" id="contrasena" class="form-control" placeholder="Contraseña" disabled required="required">
-         <label for="contrasena">Contraseña</label>
+       <input type="text" id="direcciona" class="form-control" placeholder="Dirección" disabled required="required">
+       <label for="direcciona">Dirección</label>
+       </div>
+     </div>
+     <div class="col-md-6">
+       <div class="form-label-group">
+       <input type="text" id="telefonoa" class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus">
+       <label for="telefonoa">Teléfono</label>
+       </div>
+     </div>
+   </div>         
+ </div>
+ 
+ <div class="form-group">
+   <div class="form-row">
+   <div class="col-md-6">
+       <div class="form-label-group">
+         <input type="email" id="correoea" class="form-control" placeholder="Correo electrónico" disabled required="required">
+         <label for="correoea">Correo electrónico</label>
+       </div>
+     </div>
+     <div class="col-md-6">
+       <div class="form-label-group">
+         <input type="password" id="contrasenaa" class="form-control" placeholder="Contraseña" disabled required="required">
+         <label for="contrasenaa">Contraseña</label>
        </div>
      </div>
    </div>
