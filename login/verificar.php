@@ -6,10 +6,10 @@ $conexion = conectar();
 $username = $_POST['username'];
 $password = $_POST['password'];
 $tipoP = $_GET['tipoP'];
-$cargo = $_POST['cargo'];
+$cargo = $_POST['optradio'];
 
 if ($tipoP == 'paciente' && $username != "" && $username != null && $password != "" && $password != null) {
-    $existenciausuario = mysqli_query($conexion, "SELECT * FROM paciente WHERE paciente.`CEDULA_PAC`='$username' AND  paciente.`CONTRASENA_PAC`='$password' AND  paciente.`ESTADO_PAC`='1'") or die("Problemas en el select" . mysqli_error($conexion));
+    $existenciausuario = mysqli_query($conexion, "SELECT * FROM paciente WHERE paciente.`CEDULA_PAC`='$username' AND  paciente.`CONTRASENA_PAC`='$password' AND  paciente.`ESTADO_PAC`='0'") or die("Problemas en el select" . mysqli_error($conexion));
 
     while ($f = mysqli_fetch_array($existenciausuario)) {
         $arreglo_paciente[] = array('cedulaP' => $f['CEDULA_PAC'],
@@ -28,13 +28,13 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
     }
     if ($arreglo_paciente != null) {
         echo "eres paciente";
-        header('Location: ../../admin.php');
+        header('Location: ../../adminpaciente.php');
     } else {
         header('Location: ../../index.php?error=Datos Incorrectos');
     }
 } else {
     if ($tipoP == 'administrador' && $cargo == 'medico' && $username != "" && $username != null && $password != "" && $password != null) {
-        $existenciausuario = mysqli_query($conexion, "SELECT * FROM medico WHERE medico.`CEDULA_MED`='$username' AND  medico.`CONTRASENA_MED`='$password' AND  medico.`ESTADO_MED`='1'") or die("Problemas en el select" . mysqli_error($conexion));
+        $existenciausuario = mysqli_query($conexion, "SELECT * FROM medico WHERE medico.`CEDULA_MED`='$username' AND  medico.`CONTRASENA_MED`='$password' AND  medico.`ESTADO_MED`='0'") or die("Problemas en el select" . mysqli_error($conexion));
 
         while ($f = mysqli_fetch_array($existenciausuario)) {
             $arreglo_medico[] = array('cedulaM' => $f['CEDULA_MED'],
@@ -48,14 +48,14 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
 
         if ($arreglo_medico != null) {
             echo "eres medico";
-            header('Location: ../../admin.php');
+            header('Location: ../../adminmedico.php');
         } else {
             header('Location: ../../index2.php?error=Datos Incorrectos');
         }
 
     } else {
         if ($tipoP == 'administrador' && $cargo == 'auxiliar' && $username != "" && $username != null && $password != "" && $password != null) {
-            $existenciausuario = mysqli_query($conexion, "SELECT * FROM auxiliar WHERE auxiliar.`CEDULA_AUX`='$username' AND  auxiliar.`CONTRASENA_AUX`='$password' AND  auxiliar.`ESTADO_AUX`='1'") or die("Problemas en el select" . mysqli_error($conexion));
+            $existenciausuario = mysqli_query($conexion, "SELECT * FROM auxiliar WHERE auxiliar.`CEDULA_AUX`='$username' AND  auxiliar.`CONTRASENA_AUX`='$password' AND  auxiliar.`ESTADO_AUX`='0'") or die("Problemas en el select" . mysqli_error($conexion));
 
             while ($f = mysqli_fetch_array($existenciausuario)) {
                 $arreglo_auxiliar[] = array('cedulaM' => $f['CEDULA_AUX'],
@@ -71,16 +71,32 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
 
             if ($arreglo_auxiliar != null) {
                 echo "eres auxiliar";
-                header('Location: ../../admin.php');
+                header('Location: ../../adminauxiliar.php');
             } else {
                 header('Location: ../../index2.php?error=Datos Incorrectos');
             }
 
         } else {
-            if ($tipoP == 'administrador') {
-                header('Location: ../../index2.php?error=Datos Incorrectos');
-            } else {
-                header('Location: ../../index.php?error=Datos Incorrectos');
+            if($tipoP == 'administrador' && $cargo == 'administrador' && $username != "" && $username != null && $password != "" && $password != null){
+                $existenciausuario = mysqli_query($conexion, "SELECT * FROM admin WHERE admin.`USUARIO`='$username' AND  admin.`CONTRASENA`='$password'") or die("Problemas en el select" . mysqli_error($conexion));
+
+                while ($f = mysqli_fetch_array($existenciausuario)) {
+                    $arreglo_administrador[] = array('usuarioA' => $f['USUARIO'],
+                        'contrasenaA' => $f['CONTRASENA']);
+                }
+    
+                if ($arreglo_administrador != null) {
+                    echo "eres administrador";
+                    header('Location: ../../admin.php');
+                } else {
+                    header('Location: ../../index2.php?error=Datos Incorrectos');
+                }
+            }else{
+                if ($tipoP == 'administrador') {
+                    header('Location: ../../index2.php?error=Datos Incorrectos');
+                } else {
+                    header('Location: ../../index.php?error=Datos Incorrectos');
+                }
             }
 
         }
