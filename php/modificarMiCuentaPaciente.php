@@ -25,7 +25,27 @@ $cantonHist=$_POST['cantonHist'];
 $profesionHist=$_POST['profesionHist'];
 $correoHist=$_POST['correoHist'];
 
+
+
+
+
 $_SESSION['userPaciente'][0]['nombreP']=$nombreHist;
+$_SESSION['userPaciente'][0]['apellidoP']=$apellidoHist;
+$_SESSION['userPaciente'][0]['telefonoP']=$telefonoHist;
+$_SESSION['userPaciente'][0]['fechaNacP']=$fech_nacHist;
+$_SESSION['userPaciente'][0]['provinciaP']=$provinciaHist;
+$_SESSION['userPaciente'][0]['cantonP']=$cantonHist;
+$_SESSION['userPaciente'][0]['profesionP']=$provinciaHist;
+$_SESSION['userPaciente'][0]['estadoCivilP']=$ecivilHist;
+$_SESSION['userPaciente'][0]['sexoP']=$sexoHist;
+$_SESSION['userPaciente'][0]['correoP']=$correoHist;
+$_SESSION['userPaciente'][0]['direccionP']=$direccionHist;
+
+
+
+
+
+
 $cedulaPaciente=$medico[0]['cedulaP'];
 
         $conexion=conectar();

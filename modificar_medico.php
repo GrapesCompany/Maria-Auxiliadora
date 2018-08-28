@@ -101,7 +101,7 @@ $correoMedico=$medico[0]['correoM'];
 </form>
  
 <button class="btn col-md-2 btn-ttc inline-block" onclick="habilitarcamposmedico()" href="#">Modificar</button>
-<button class="btn col-md-2 btn-ttc inline-block" href="login.html">Guardar</button>
+<button class="btn col-md-2 btn-ttc inline-block" onclick="modificarMedico()" href="login.html">Guardar</button>
 </div>
 <br>
 <div class="card-footer small text-muted">Guardando cambios...</div>

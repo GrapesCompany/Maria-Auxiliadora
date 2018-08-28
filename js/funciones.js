@@ -417,7 +417,6 @@ function habilitarcampos()
     document.getElementById("fec_nac").removeAttribute("disabled");
     document.getElementById("direccion").removeAttribute("disabled");
     document.getElementById("telefono").removeAttribute("disabled");
-    document.getElementById("edad").removeAttribute("disabled");
     document.getElementById("contrasena").removeAttribute("disabled");
 
 }
@@ -841,4 +840,81 @@ function modificarPaciente()
         }
 
 
+}
+
+
+function modificarMedico()
+{
+  
+    var dataString = 'cedula=' + document.getElementById('cedula').value +
+    '&nombre=' + document.getElementById('nombre').value +
+    '&apellido=' + document.getElementById('apellido').value +
+    '&telefono=' + document.getElementById('telefono').value +
+    '&especialidad=' + document.getElementById('especialidad').value+
+    '&fech_nac='+document.getElementById('fech_nac').value+
+    '&direccion='+document.getElementById('direccion').value+
+    '&correo='+document.getElementById('correo').value;
+
+    if(document.getElementById('cedula').value && document.getElementById('nombre').value && document.getElementById('apellido').value && 
+    document.getElementById('telefono').value && document.getElementById('especialidad').value  && document.getElementById('fech_nac').value && 
+    document.getElementById('direccion').value && document.getElementById('correo').value )
+    {
+        $.ajax({
+            type: "POST",
+            url: "php/modificarMiCuentaDoctor.php",
+            data: dataString,
+            success: function (data) {
+                showModificarMedico("a");
+                
+                alert(data);
+                //recuperando las variables
+    
+            },error: function (errorThrown) 
+            {
+               alert("Existe un error"+errorThrown);
+            }
+    
+        });
+     
+    }else
+    {
+        alert("Faltan parametros por llenar");
+    }
+
+}
+
+function modificarAuxiliar()
+{
+    var dataString = 'cedulaAux=' + document.getElementById('cedula').value +
+    '&nombreAux=' + document.getElementById('nombre').value +
+    '&apellidoAux=' + document.getElementById('apellido').value +
+    '&telefonoAux=' + document.getElementById('telefono').value +
+    '&fech_nacAux='+document.getElementById('fech_nac').value+
+    '&direccionAux='+document.getElementById('direccion').value+
+    '&correoAux='+document.getElementById('correo').value;
+
+    if(document.getElementById('cedula').value && document.getElementById('nombre').value &&
+    document.getElementById('apellido').value && document.getElementById('telefono').value&& 
+    document.getElementById('fech_nac').value &&  document.getElementById('direccion').value && document.getElementById('correo').value )
+{
+    $.ajax({
+        type: "POST",
+        url: "php/ingresarAuxiliar.php",
+        data: dataString,
+        success: function (data) {
+            showAuxiliar("gh");
+            alert(data);
+            //recuperando las variables
+
+        },error: function (errorThrown) 
+        {
+           alert("Existe un error"+errorThrown);
+        }
+    
+
+    });
+} else
+{
+    alert("Faltan parmetros por llenar");
+}
 }
