@@ -15,8 +15,9 @@ $telefonoMedico=$medico[0]['telefonoM'];
 $especialidadMedico=$medico[0]['especialidadM'];
 $estadoMedico=$medico[0]['estadoM'];
 $contrasenaMedico=$medico[0]['contrasenaM'];
-
-
+$fechaMedico=$medico[0]['fechNacM'];
+$direccionMedico=$medico[0]['direccionM'];
+$correoMedico=$medico[0]['correoM'];
 
  echo '<div class="container">
 
@@ -51,7 +52,7 @@ $contrasenaMedico=$medico[0]['contrasenaM'];
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="date" id="fech_nac" name="fech_nac"  class="form-control" disabled placeholder="Fecha de Nacimiento" required="required" value="'; echo $apellidoMedico; echo'">
+         <input type="date" id="fech_nac" name="fech_nac"  class="form-control" disabled placeholder="Fecha de Nacimiento" required="required" value="'; echo $fechaMedico; echo'">
          <label for="fech_nac">Fecha de Nacimiento</label>
        </div>
      </div>
@@ -62,13 +63,13 @@ $contrasenaMedico=$medico[0]['contrasenaM'];
  <div class="form-row">
    <div class="col-md-6">
      <div class="form-label-group">
-       <input type="text" id="direccion" name="direccion" class="form-control" disabled placeholder="Dirección" required="required" autofocus="autofocus" value="'; echo $apellidoMedico; echo'">
+       <input type="text" id="direccion" name="direccion" class="form-control" disabled placeholder="Dirección" required="required" autofocus="autofocus" value="'; echo $direccionMedico; echo'">
        <label for="direccion">Dirección</label>
      </div>
    </div>
    <div class="col-md-6">
      <div class="form-label-group">
-       <input type="email" id="correo" name="correo" class="form-control" disabled placeholder="Correo electrónico" required="required">
+       <input type="email" id="correo" name="correo" class="form-control" disabled placeholder="Correo electrónico" required="required" value="'; echo $correoMedico; echo'">
        <label for="correo">Correo electrónico</label>
      </div>
    </div>

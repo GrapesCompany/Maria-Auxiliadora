@@ -24,7 +24,11 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
             'estadoCivilP' => $f['ESTADOCIVIL'],
             'sexoP' => $f['SEXO'],
             'estadoP' => $f['ESTADO_PAC'],
-            'contrasenaP' => $f['CONTRASENA_PAC']);
+            'contrasenaP' => $f['CONTRASENA_PAC'],
+            'correoP'=> $f['CORREO_PAC'],
+            'direccionP'=> $f['DIRECCION_PAC']
+            
+        );
     }
     if ($arreglo_paciente != null) {
         $_SESSION['userPaciente']=$arreglo_paciente;
@@ -71,7 +75,9 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
                     'fechaNacA' => $f['FECH_NAC_AUX'],
                     'edadA' => $f['EDAD_AUX'],
                     'estadoA' => $f['ESTADO_AUX'],
-                    'contrasenaA' => $f['CONTRASENA_AUX']);
+                    'contrasenaA' => $f['CONTRASENA_AUX'],
+                    'correoA'=>$f['CORREO_AUX']
+                );
             }
 
             if ($arreglo_auxiliar != null) {
