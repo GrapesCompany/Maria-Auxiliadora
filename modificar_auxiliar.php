@@ -65,12 +65,7 @@
  
  <div class="form-group">
    <div class="form-row">
-     <div class="col-md-6">
-       <div class="form-label-group">
-         <input type="password" id="contrasena" class="form-control" placeholder="Contraseña" disabled required="required">
-         <label for="contrasena">Contraseña</label>
-       </div>
-     </div>
+   
    </div>
  </div>
   

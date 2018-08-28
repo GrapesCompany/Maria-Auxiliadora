@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MA Administración</title>
+    <title>MA Paciente</title>
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
@@ -34,24 +34,23 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1" href="index.php">Maria Auxiliadora - Administrador</a>
+      <a class="navbar-brand mr-1" href="index.php">Maria Auxiliadora - Paciente</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <i class="fas fa-arrows-alt-h fa-lg"></i>
-
+        <i class="fas fa-arrows-alt-h fa-lg"></i>
       </button>
 
       <!-- Navbar Search -->
       <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" type="button" onclick="showBuscador(this.value)">
-              <i class="fas fa-search"></i>
-            </button>
+           <div class="input-group-append">
+                  
           </div>
         </div>
       </form>
+      <div class="input-group-append">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+      </div>
 
       <!-- Navbar -->
       <ul class="navbar-nav ml-auto ml-md-0">      
@@ -61,7 +60,10 @@
             <i class="fas fa-user-circle fa-fw fa-lg"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ccontrasena">Cambiar contraseña</a>
+          <div class="dropdown-divider"></div>
+            <a class="dropdown-item" onclick="showModificarPaciente(this.value)" href="#">Mi cuenta</a>
+             
+             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ccontrasena">Cambiar contraseña</a>
              <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Salir</a>
           </div>
@@ -77,23 +79,16 @@
         <li class="nav-item">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Nuevo</span>
+            <i class="fas fa-fw fa-calendar-check"></i>
+            <span>Citas médicas</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">            
-            <a class="dropdown-item" onclick="showMedico(this.value)" href="#">Médico</a>            
-            <a class="dropdown-item" onclick="showAuxiliar(this.value)" href="#">Auxiliar</a>                         
+            <a class="dropdown-item" onclick="showAgregarCita(this.value)" href="#">Reservar cita</a>            
+            <a class="dropdown-item" onclick="showlistarCitaAtendida(this.value)" href="#">Listar cita atendida</a>   
+            <a class="dropdown-item" onclick="showlistarCitaPendiente(this.value)" href="#">Listar cita pendiente</a>                      
           </div>
-        </li>
-
-         <li class="nav-item">
-          <a class="nav-link" onclick="showReporte(this.value)" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Reporte</span></a>
-        </li> 
+        </li>        
       </ul>
-
-     <!--Contenido Pagina--> 
 
       <div id="content-wrapper">
 
@@ -109,19 +104,19 @@
           <hr>
 
           <!-- Pagina Principal -->        
-                
-          <!--Nuevo Medico-->              
-          <div id="div_nuevomedico" class="container"></div>
 
-          <!--Nuevo Auxiliar--> 
-          <div id="div_nuevoauxiliar" class="container"></div>
+        <!--Agregar Cita Medica--> 
+        <div id="div_agregarcita" class="container"></div>
 
-          <!--Reporte--> 
-          <div id="div_reporte" class="container"></div>
+         <!--Listar Cita Atendida--> 
+         <div id="div_listarcitapendientea" class="container"></div>
 
-          <!--Buscador--> 
-          <div id="div_buscador" class="container"></div>
+         <!--Listar Cita Pendiente--> 
+         <div id="div_listarcitapendientep" class="container"></div>    
 
+         <!--Modificar Datos Paciente--> 
+         <div id="div_modificarpaciente" class="container"></div>    
+ 
 
         </div>
         
@@ -183,7 +178,7 @@
 
             <div class="form-group">
    <div class="form-label-group">
-     <input type="text" id="ccactual"  class="form-control" placeholder="Contraseña actual" required="required">
+     <input type="text" id="ccactual" class="form-control" placeholder="Contraseña actual" required="required">
      <label for="ccactual">Contraseña actual</label>
    </div>
  </div> 
@@ -208,8 +203,7 @@
 </form>
 </div>
           <div class="modal-footer">
-          <button class="btn btn-primary btn-ttc" onclick="cambiarContrasenaAdministrador()"  href="./admin.php" type="button" data-dismiss="modal">Aplicar</button>
-         
+          <a class="btn btn-primary btn-ttc " href="./admin.php">Aplicar</a>
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
             
           </div>
@@ -231,8 +225,13 @@
 
     <!-- Javascript Paginas-->
     <script src="js/funciones.js"></script>
-    <script src="js/chart-area-demo.js"></script>
-
+ 
   </body>
 
 </html>
+
+
+
+
+
+

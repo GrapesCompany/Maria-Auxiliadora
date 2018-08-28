@@ -228,8 +228,9 @@
 
 </form>
 </div>
+
           <div class="modal-footer">
-          <a class="btn btn-primary btn-ttc " href="./admin.php">Aplicar</a>
+          <button class="btn btn-primary btn-ttc" onclick="cambiarContrasenaDoctor()"  ref="./admin.php" type="button" data-dismiss="modal">Aplicar</button>
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
             
           </div>
