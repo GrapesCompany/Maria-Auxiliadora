@@ -150,23 +150,18 @@ echo '<div class="container">
 
 <div class="form-group">
 <div class="form-row">
- <div class="col-md-6">
-   <div class="form-label-group">
-   <input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="Contraseña" disabled required="required" value="'; echo $conrasenaPaciente; echo'">
-   <label for="contrasena">Contraseña</label>
-   </div>
- </div> 
+
 </div>         
 </div>
 
 </form>
 <button class="btn col-md-2 btn-ttc inline-block" onclick="habilitarcampospaciente()" href="#">Modificar</button>
-<button class="btn col-md-2 btn-ttc inline-block" href="login.html">Guardar</button>
+<button class="btn col-md-2 btn-ttc inline-block"  onclick="modificarPaciente()" href="login.html">Guardar</button>
 </div>
 <br>
 <div class="card-footer small text-muted">Actualizando paciente...</div>
 </div>
 
 </div>';
-echo $pep;
+
 ?>
