@@ -61,7 +61,16 @@ document.nform.submit();
                 <div class="alert alert-danger" role="alert">
                      Datos no válidos
                 </div>
-                 <?php } ?>
+                 <?php } 
+                 if(isset($_GET['salir'])){?>
+                <div class="alert alert-info" role="alert">
+                     Gracias por usar nuestros servicios
+                </div>
+                 <?php }
+                 if(isset($_GET['denegado'])){?>
+                    <div class="alert alert-danger" role="alert">
+                         Acceso denegado
+                    </div> <?php } ?>
                 <a class="underlineHover" href="./index.php">Entrar como usuario</a>
                           
             </div>

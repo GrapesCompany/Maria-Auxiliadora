@@ -1,8 +1,3 @@
-<?php
-session_start();
-include "conexion.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,8 +55,16 @@ document.nform.submit();}
                 <div class="alert alert-danger" role="alert">
                      Datos no válidos
                 </div>
-                 <?php } ?>
-
+                 <?php } 
+                 if(isset($_GET['salir'])){?>
+                <div class="alert alert-info" role="alert">
+                     Gracias por usar nuestros servicios
+                </div>
+                 <?php }
+                 if(isset($_GET['denegado'])){?>
+                    <div class="alert alert-danger" role="alert">
+                         Acceso denegado
+                    </div> <?php } ?>
                  <a class="underlineHover letrape" href="./index2.php">Ingresar al Sistema Administrativo</a>
             </div>
 

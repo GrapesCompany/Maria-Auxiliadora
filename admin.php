@@ -4,7 +4,7 @@ if(isset($_SESSION['userAdministrador'])){
  // $administrador=$_SESSION['userAdministrador'];
 }else
 {
-  header("Location: index2.php?error=Datos Incorrectos");
+  header("Location: index2.php?denegado=peligro");
 }
 ?>
 
@@ -168,7 +168,7 @@ if(isset($_SESSION['userAdministrador'])){
           </div>
          
           <div class="modal-footer">
-          <a class="btn btn-primary btn-ttc " href="./index.php">Aceptar</a>
+          <a class="btn btn-primary btn-ttc " href="./login/cerrar.php/?tipo=administrador">Aceptar</a>
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
             
           </div>

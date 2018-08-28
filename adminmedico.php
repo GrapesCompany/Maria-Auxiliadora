@@ -4,7 +4,7 @@ if(isset($_SESSION['userMedico'])){
  // $medico=$_SESSION['userMedico'];
 }else
 {
-  header("Location: index2.php?error=Datos Incorrectos");
+  header("Location: index2.php?denegado=peligro");
 }
 
  include 'conexion.php';
@@ -187,7 +187,7 @@ if(isset($_SESSION['userMedico'])){
           </div>
          
           <div class="modal-footer">
-          <a class="btn btn-primary btn-ttc " href="./index.php">Aceptar</a>
+          <a class="btn btn-primary btn-ttc " href="./login/cerrar.php/?tipo=medico">Aceptar</a>
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
             
           </div>
