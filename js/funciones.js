@@ -452,6 +452,17 @@ function habilitarcampospaciente()
     document.getElementById("profesion").removeAttribute("disabled");
    
 }
+
+function habilitarcamposcmedica()
+{
+
+    document.getElementById("peso").removeAttribute("disabled");
+    document.getElementById("altura").removeAttribute("disabled");
+    document.getElementById("presion").removeAttribute("disabled");
+    document.getElementById("motivo_cita").removeAttribute("disabled");
+
+
+}
  
 
 /*Fin - Modificar campos*/

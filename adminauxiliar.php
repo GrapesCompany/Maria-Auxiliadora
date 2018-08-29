@@ -69,7 +69,7 @@ if(isset($_SESSION['userAuxiliar'])){
             </button>            
           </div>
 
-          <!-- onclick="showCitaMedica(this.value)" -->
+          <!-- onclick="showCitaMedica(this.value)" showBuscadorCitasMedicasPendientes-->
 
         </div>
       </form>
@@ -154,7 +154,7 @@ if(isset($_SESSION['userAuxiliar'])){
         <footer class="sticky-footer colorf">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © J Choto 2018</span>
+              <span></span>
             </div>
           </div>
         </footer>

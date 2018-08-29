@@ -135,7 +135,7 @@ if(isset($_SESSION['userPaciente'])){
         <footer class="sticky-footer colorf">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © J Choto 2018</span>
+              <span></span>
             </div>
           </div>
         </footer>
