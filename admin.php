@@ -241,6 +241,7 @@ if(isset($_SESSION['userAdministrador'])){
 
     <!-- Javascript Paginas-->
     <script src="js/funciones.js"></script>
+    <script src="js/validaciones.js"></script>
     <script src="js/chart-area-demo.js"></script>
 
   </body>

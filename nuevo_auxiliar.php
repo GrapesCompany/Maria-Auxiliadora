@@ -11,13 +11,13 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="cedula" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
+         <input type="text" id="cedula" onkeyup="this.value=soloNumeros(this.value)" minlength="10" maxlength="10" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
          <label for="cedula">Cédula</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="nombre" class="form-control" placeholder="Nombre" required="required">
+         <input type="text" id="nombre" onkeyup="this.value=soloLetras(this.value)" class="form-control" placeholder="Nombre" required="required">
          <label for="nombre">Nombre</label>
        </div>
      </div>
@@ -27,7 +27,7 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="apellido" class="form-control" placeholder="Apellido" required="required" autofocus="autofocus">
+         <input type="text" id="apellido" onkeyup="this.value=soloLetras(this.value)" class="form-control" placeholder="Apellido" required="required" autofocus="autofocus">
          <label for="apellido">Apellido</label>
        </div>
      </div>
@@ -61,7 +61,7 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Telefono" required="required" autofocus="autofocus">
+         <input type="text" id="telefono" name="telefono" onkeyup="this.value=soloNumeros(this.value)" maxlength="10" class="form-control" placeholder="Telefono" required="required" autofocus="autofocus">
          <label for="telefono">Teléfono</label>
        </div>
      </div>
@@ -73,10 +73,6 @@
      </div>
    </div>         
  </div>
- 
-  
-
- 
  </form>
  <button onclick="guardarAux()" class="btn btn-block col-md-2 btn-ttc" href="login.html">Registrar</button>
  </div>

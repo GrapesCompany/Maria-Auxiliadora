@@ -255,6 +255,7 @@ if(isset($_SESSION['userAuxiliar'])){
 
     <!-- Javascript Paginas-->
     <script src="js/funciones.js"></script>
+    <script src="js/validaciones.js"></script>
  
   </body>
 
