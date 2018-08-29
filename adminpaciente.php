@@ -163,7 +163,7 @@ if(isset($_SESSION['userPaciente'])){
           </div>
          
           <div class="modal-footer">
-          <a class="btn btn-primary btn-ttc " href="./index.php?tipo=paciente">Aceptar</a>
+          <a class="btn btn-primary btn-ttc " href="./login/cerrar.php/?tipo=paciente">Aceptar</a>
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
             
           </div>

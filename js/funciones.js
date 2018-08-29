@@ -813,6 +813,10 @@ function cambiarContrasenaPaciente() {
 
 function modificarPaciente() {
 
+    
+    var correito = document.getElementById('correo').value;
+    var valcorreo = validateMail(correito);
+
 
     var dataString = 'nombreHist=' + document.getElementById('nombre').value +
         '&apellidoHist=' + document.getElementById('apellido').value +
@@ -831,22 +835,23 @@ function modificarPaciente() {
         && document.getElementById('fech_nac').value && document.getElementById('telefono').value && document.getElementById('direccion').value &&
         document.getElementById('provincia').value && document.getElementById('canton').value && document.getElementById('ecivil').value && document.getElementById('sexo').value
         && document.getElementById('profesion').value && document.getElementById('correo').value) {
-        $.ajax({
-            type: "POST",
-            url: "php/modificarMiCuentaPaciente.php",
-            data: dataString,
-            success: function (data) {
-                showModificarPaciente("a");
-                alert(data);
-                //recuperando las variables
-
+            if (valcorreo == true) {
+                $.ajax({
+                    type: "POST",
+                    url: "php/modificarMiCuentaPaciente.php",
+                    data: dataString,
+                    success: function (data) {
+                        showModificarPaciente("a");
+                        alert(data);
+                        //recuperando las variables
+                    }
+                });
+            } else {
+                alert("El correo electronico ingresado es incorrecto");
             }
-        });
     } else {
         alert("Faltan parametros por llenar");
     }
-
-
 }
 
 
