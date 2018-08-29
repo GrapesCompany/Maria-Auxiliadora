@@ -40,9 +40,9 @@
    </div>
    <div class="col-md-4"><p></p>
    <label>Año</label>:
-   <div class="form-label-group altmes">   
+   <div class="form-label-group">   
    <input type="text" id="anio" name="anio"  class="form-control" placeholder="Año" required="required">
-   <label for="anio" class="altmes">Año</label>
+   <label for="anio">Año</label>
  </div>
    </div>
    
