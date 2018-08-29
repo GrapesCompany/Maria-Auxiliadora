@@ -886,16 +886,16 @@ function modificarMedico()
 
 function modificarAuxiliar()
 {
-    var dataString = 'nombreAux=' + document.getElementById('nombre').value +
-    '&apellidoAux=' + document.getElementById('apellido').value +
-    '&telefonoAux=' + document.getElementById('telefono').value +
-    '&fech_nacAux='+document.getElementById('fech_nac').value+
-    '&direccionAux='+document.getElementById('direccion').value+
-    '&correoAux='+document.getElementById('correo').value;
+    var dataString = 'nombreAux=' + document.getElementById('nombrea').value +
+    '&apellidoAux=' + document.getElementById('apellidoa').value +
+    '&telefonoAux=' + document.getElementById('telefonoa').value +
+    '&fech_nacAux='+document.getElementById('fec_naca').value+
+    '&direccionAux='+document.getElementById('direcciona').value+
+    '&correoAux='+document.getElementById('correoea').value;
 
-    if(document.getElementById('cedula').value && document.getElementById('nombre').value &&
-    document.getElementById('apellido').value && document.getElementById('telefono').value&& 
-    document.getElementById('fech_nac').value &&  document.getElementById('direccion').value && document.getElementById('correo').value )
+    if(document.getElementById('nombrea').value &&
+    document.getElementById('apellidoa').value && document.getElementById('telefonoa').value&& 
+    document.getElementById('fec_naca').value &&  document.getElementById('direcciona').value && document.getElementById('correoea').value )
 {
     $.ajax({
         type: "POST",

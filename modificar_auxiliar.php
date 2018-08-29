@@ -82,16 +82,11 @@ echo '<div class="container">
    <div class="form-row">
    <div class="col-md-6">
        <div class="form-label-group">
-         <input type="email" id="correoea" class="form-control" placeholder="Correo electrónico" disabled required="required">
+         <input type="email" id="correoea" class="form-control" placeholder="Correo electrónico" disabled required="required" value="'; echo $correoAuxiliar; echo'">
          <label for="correoea">Correo electrónico</label>
        </div>
      </div>
-     <div class="col-md-6">
-       <div class="form-label-group">
-         <input type="password" id="contrasenaa" class="form-control" placeholder="Contraseña" disabled required="required">
-         <label for="contrasenaa">Contraseña</label>
-       </div>
-     </div>
+     
    </div>
  </div>
   
