@@ -38,7 +38,7 @@ echo '
       <td>'.$historiasClinicas[$i]['cedulaPac']. '&nbsp;</td>
       <td>'.$historiasClinicas[$i]['nombrePaciente'].'</td>
       <td>'.$historiasClinicas[$i]['apellidoPac'].'</td>
-      <td><button type="button" class="btn btn-warning">Modificar</button></td>
+      <td><button type="button" class="btn btn-warning" onclick="showModificarHClinica(this.value)">Modificar</button></td>
     </tr>';
     $c++;
   }
