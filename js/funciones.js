@@ -409,16 +409,15 @@ function showlistarCitaPendiente(str) {
 /*Inicio - Modificar campos*/
 
 
-function habilitarcampos()
-{
-   
+function habilitarcampos() {
+
     document.getElementById("nombrea").removeAttribute("disabled");
     document.getElementById("apellidoa").removeAttribute("disabled");
     document.getElementById("fec_naca").removeAttribute("disabled");
     document.getElementById("direcciona").removeAttribute("disabled");
     document.getElementById("telefonoa").removeAttribute("disabled");
     document.getElementById("correoea").removeAttribute("disabled");
- 
+
 
 }
 
@@ -521,7 +520,7 @@ function guardarDoctor() {
                     }
 
                 });
-            } else { 
+            } else {
                 alert("El correo electronico ingresado es incorrecto");
             }
         } else {
@@ -614,29 +613,29 @@ function guardarAux() {
     if (document.getElementById('cedula').value && document.getElementById('nombre').value &&
         document.getElementById('apellido').value && document.getElementById('telefono').value && document.getElementById('inputPassword').value
         && document.getElementById('fech_nac').value && document.getElementById('direccion').value && document.getElementById('correo').value) {
-            if (cedulaVerificada == true) {
-                if (valcorreo == true) {
-                    $.ajax({
-                        type: "POST",
-                        url: "php/ingresarAuxiliar.php",
-                        data: dataString,
-                        success: function (data) {
-                            showAuxiliar("gh");
-                            alert(data);
-                            //recuperando las variables
-            
-                        }, error: function (errorThrown) {
-                            alert("Existe un error" + errorThrown);
-                        }
-            
-            
-                    });
-                } else { 
-                    alert("El correo electronico ingresado es incorrecto");
-                }
+        if (cedulaVerificada == true) {
+            if (valcorreo == true) {
+                $.ajax({
+                    type: "POST",
+                    url: "php/ingresarAuxiliar.php",
+                    data: dataString,
+                    success: function (data) {
+                        showAuxiliar("gh");
+                        alert(data);
+                        //recuperando las variables
+
+                    }, error: function (errorThrown) {
+                        alert("Existe un error" + errorThrown);
+                    }
+
+
+                });
             } else {
-                alert("La cédula ingresada es incorrecta");
+                alert("El correo electronico ingresado es incorrecto");
             }
+        } else {
+            alert("La cédula ingresada es incorrecta");
+        }
     } else {
         alert("Faltan parmetros por llenar");
     }
@@ -832,77 +831,124 @@ function modificarPaciente() {
 }
 
 
-function modificarMedico()
-{
-  
-    var dataString = 'cedula=' + document.getElementById('cedula').value +
-    '&nombre=' + document.getElementById('nombre').value +
-    '&apellido=' + document.getElementById('apellido').value +
-    '&telefono=' + document.getElementById('telefono').value +
-    '&especialidad=' + document.getElementById('especialidad').value+
-    '&fech_nac='+document.getElementById('fech_nac').value+
-    '&direccion='+document.getElementById('direccion').value+
-    '&correo='+document.getElementById('correo').value;
+function modificarMedico() {
 
-    if(document.getElementById('cedula').value && document.getElementById('nombre').value && document.getElementById('apellido').value && 
-    document.getElementById('telefono').value && document.getElementById('especialidad').value  && document.getElementById('fech_nac').value && 
-    document.getElementById('direccion').value && document.getElementById('correo').value )
-    {
+    var dataString = 'cedula=' + document.getElementById('cedula').value +
+        '&nombre=' + document.getElementById('nombre').value +
+        '&apellido=' + document.getElementById('apellido').value +
+        '&telefono=' + document.getElementById('telefono').value +
+        '&especialidad=' + document.getElementById('especialidad').value +
+        '&fech_nac=' + document.getElementById('fech_nac').value +
+        '&direccion=' + document.getElementById('direccion').value +
+        '&correo=' + document.getElementById('correo').value;
+
+    if (document.getElementById('cedula').value && document.getElementById('nombre').value && document.getElementById('apellido').value &&
+        document.getElementById('telefono').value && document.getElementById('especialidad').value && document.getElementById('fech_nac').value &&
+        document.getElementById('direccion').value && document.getElementById('correo').value) {
         $.ajax({
             type: "POST",
             url: "php/modificarMiCuentaDoctor.php",
             data: dataString,
             success: function (data) {
                 showModificarMedico("a");
-                
+
                 alert(data);
                 //recuperando las variables
-    
-            },error: function (errorThrown) 
-            {
-               alert("Existe un error"+errorThrown);
+
+            }, error: function (errorThrown) {
+                alert("Existe un error" + errorThrown);
             }
-    
+
         });
-     
-    }else
-    {
+
+    } else {
         alert("Faltan parametros por llenar");
     }
 
 }
 
-function modificarAuxiliar()
-{
-    var dataString = 'nombreAux=' + document.getElementById('nombrea').value +
-    '&apellidoAux=' + document.getElementById('apellidoa').value +
-    '&telefonoAux=' + document.getElementById('telefonoa').value +
-    '&fech_nacAux='+document.getElementById('fec_naca').value+
-    '&direccionAux='+document.getElementById('direcciona').value+
-    '&correoAux='+document.getElementById('correoea').value;
-
-    if(document.getElementById('nombrea').value &&
-    document.getElementById('apellidoa').value && document.getElementById('telefonoa').value&& 
-    document.getElementById('fec_naca').value &&  document.getElementById('direcciona').value && document.getElementById('correoea').value )
-{
+/*function eliminarAuxiliares() {
+    var tefo = 'asdasd';
+    var dataString = 'hola=' + tefo;
     $.ajax({
         type: "POST",
-        url: "php/modificarMiCuentaAuxiliar.php",
+        url: "php/eliminarauxiliares.php",
         data: dataString,
         success: function (data) {
-            showModificarAuxiliar("gh");
+            //showModificarAuxiliar("gh");
             alert(data);
             //recuperando las variables
-
-        },error: function (errorThrown) 
-        {
-           alert("Existe un error"+errorThrown);
+        }, error: function (errorThrown) {
+            alert("Existe un error" + errorThrown);
         }
-    
-
     });
-} else
-{
-    alert("Faltan parmetros por llenar");
+}*/
+
+function eliminarAuxiliares(str) {
+    alert('estoy en eliminar aux');
+    //var mandar = str;
+    var dataString = 'enviar=' + str;
+    $.ajax({
+        type: 'POST',
+        url: 'php/eliminarauxiliares.php',
+        data: dataString,
+        success: function(data){
+            alert('dentro del ajax',data);
+        }, error: function (errorThrown) {
+            alert("Existe un error" + errorThrown);
+        }
+    });
 }
+
+function eliminarMedicos(str) {
+    alert('estoy en eliminar med');
+    //var mandar = str;
+    var dataString = 'enviar=' + str;
+    $.ajax({
+        type: 'POST',
+        url: 'php/eliminarmedicos.php',
+        data: dataString,
+        success: function(data){
+            alert('dentro del ajax',data);
+        }, error: function (errorThrown) {
+            alert("Existe un error" + errorThrown);
+        }
+    });
 }
+
+function modificarAuxiliar() {
+    var dataString = 'nombreAux=' + document.getElementById('nombrea').value +
+        '&apellidoAux=' + document.getElementById('apellidoa').value +
+        '&telefonoAux=' + document.getElementById('telefonoa').value +
+        '&fech_nacAux=' + document.getElementById('fec_naca').value +
+        '&direccionAux=' + document.getElementById('direcciona').value +
+        '&correoAux=' + document.getElementById('correoea').value;
+
+    if (document.getElementById('nombrea').value &&
+        document.getElementById('apellidoa').value && document.getElementById('telefonoa').value &&
+        document.getElementById('fec_naca').value && document.getElementById('direcciona').value && document.getElementById('correoea').value) {
+        $.ajax({
+            type: "POST",
+            url: "php/modificarMiCuentaAuxiliar.php",
+            data: dataString,
+            success: function (data) {
+                showModificarAuxiliar("gh");
+                alert(data);
+                //recuperando las variables
+
+            }, error: function (errorThrown) {
+                alert("Existe un error" + errorThrown);
+            }
+
+
+        });
+    } else {
+        alert("Faltan parmetros por llenar");
+    }
+}
+
+
+
+
+
+

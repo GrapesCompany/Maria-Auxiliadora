@@ -41,7 +41,7 @@ echo '
       <td>'.$auxiliares[$i]['direccionA'].'</td>
       <td>'.$auxiliares[$i]['telefonoA'].'</td>
       <td>'.$auxiliares[$i]['correoA'].'</td>
-      <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+      <td><button type="button" class="btn btn-danger " value='.$auxiliares[$i]['cedulaA'].' onclick="eliminarAuxiliares(this.value)" >Eliminar</button></td>
     </tr>';
     $c++;
   }
@@ -97,7 +97,7 @@ echo '
       <td>'.$medicos[$i]['direccionM'].'</td>
       <td>'.$medicos[$i]['telefonoM'].'</td>
       <td>'.$medicos[$i]['correoM'].'</td>
-      <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+      <td><button type="button" class="btn btn-danger" value='.$medicos[$i]['cedulaM'].' onclick="eliminarMedicos(this.value)">Eliminar</button></td>
     </tr>';
     $c++;
   }
@@ -124,14 +124,15 @@ echo '
 function buscarAuxiliares($_strBuscar) //metodo para buscar auxiliares
 {
     global $conexion;
-
+    
     $ct = 0; //variable para el while
     $_auxiliares; //declaracion del vector para almacenar los datos de la consulta
-    $findAuxiliares = mysqli_query($conexion, "SELECT *  FROM `auxiliar`WHERE `CEDULA_AUX` LIKE '%$_strBuscar%'
-                                                    OR `NOMBRE_AUX` LIKE '%$_strBuscar%'
-                                                    OR `APELLIDO_AUX` LIKE '%$_strBuscar%'
-                                                    OR `DIRECCION_AUX` LIKE '%$_strBuscar%'
-                                                    OR `TELEFONO_AUX` LIKE '%$_strBuscar%' AND `ESTADO_AUX` = '0'")
+    
+    $findAuxiliares = mysqli_query($conexion, "SELECT *  FROM auxiliar WHERE (ESTADO_AUX = 0) AND (CEDULA_AUX LIKE '%$_strBuscar%' 
+                                                OR NOMBRE_AUX LIKE '%$_strBuscar%'
+                                                OR APELLIDO_AUX LIKE '%$_strBuscar%'
+                                                OR DIRECCION_AUX LIKE '%$_strBuscar%'
+                                                OR TELEFONO_AUX LIKE '%$_strBuscar%')")
     or die("Problemas en el select" . mysqli_error($conexion));
 
     while ($row = (mysqli_fetch_array($findAuxiliares))) { //ciclo while para almacenar todos los datos que vienen de la base
@@ -151,7 +152,7 @@ function buscarAuxiliares($_strBuscar) //metodo para buscar auxiliares
 
     if (isset($_auxiliares)) { //condicional if para ver si el vector esta lleno
         $_SESSION['auxiliares'] = $_auxiliares; //almacenando el vector en una sesion para utilizarlo en otra pagina
-        $auxiliares = $_SESSION['auxiliares']; //forma para recuperar los valores de la sesion
+        //$auxiliares = $_SESSION['auxiliares']; //forma para recuperar los valores de la sesion
         /*echo "*********************************AUXILIARES";
         echo "<br>";
         for ($i = 0; $i < count($auxiliares); $i++) { //for para imprimir los valores del vector recuperado de la sesion, conunt es para la dimension del vector
@@ -189,13 +190,14 @@ function buscarMedicos($_strBuscar) //metodo para buscar auxiliares
     $ct = 0; //variable para el while
     $_medicos; //declaracion del vector para almacenar los datos de la consulta
 
-    $findMedicos = mysqli_query($conexion, "SELECT *  FROM `medico` WHERE `CEDULA_MED` LIKE '%$_strBuscar%'
-                                                        OR `NOMBRE_MED` LIKE '%$_strBuscar%'
-                                                        OR `APELLIDO_MED` LIKE '%$_strBuscar%'
-                                                        OR `TELEFONO_MED` LIKE '%$_strBuscar%'
-                                                        OR `ESPECIALIDAD` LIKE '%$_strBuscar%' AND `ESTADO_MED` = 0
-                                                        OR `DIRECCION_MED` LIKE '%$_strBuscar%'
-                                                        OR `CORREO_MED` LIKE '%$_strBuscar%'")
+    $findMedicos = mysqli_query($conexion, "
+    SELECT *  FROM `medico` WHERE (ESTADO_MED = 0) AND (CEDULA_MED LIKE '%$_strBuscar%'
+                                                            OR `NOMBRE_MED` LIKE '%$_strBuscar%'
+                                                            OR `APELLIDO_MED` LIKE '%$_strBuscar%'
+                                                            OR `TELEFONO_MED` LIKE '%$_strBuscar%'
+                                                            OR `ESPECIALIDAD` LIKE '%$_strBuscar%'
+                                                            OR `DIRECCION_MED` LIKE '%$_strBuscar%'
+                                                            OR `CORREO_MED` LIKE '%$_strBuscar%')")
     or die("Problemas en el select" . mysqli_error($conexion));
 
     while ($row = (mysqli_fetch_array($findMedicos))) { //ciclo while para almacenar todos los datos que vienen de la base
