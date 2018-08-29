@@ -647,6 +647,12 @@ function guardarAux() {
 
 function guardarHistoriaClinicaPasiente() {
 
+    var verificarCedula = document.getElementById('cedula').value;
+    var correito = document.getElementById('correo').value;
+
+    var cedulaVerificada = validarCedula(verificarCedula);
+    var valcorreo = validateMail(correito);
+
 
     var dataString = 'cedulaHist=' + document.getElementById('cedula').value +
         '&nombreHist=' + document.getElementById('nombre').value +
@@ -669,18 +675,25 @@ function guardarHistoriaClinicaPasiente() {
         document.getElementById('provincia').value && document.getElementById('canton').value && document.getElementById('ecivil').value && document.getElementById('sexo').value
         && document.getElementById('profesion').value && document.getElementById('contrasena').value && document.getElementById('responsable').value && document.getElementById('correo').value && document.getElementById('responsable').value
     ) {
-        $.ajax({
-            type: "POST",
-            url: "php/ingresarHistoriaClinicaPaciente.php",
-            data: dataString,
-            success: function (data) {
-                showPaciente("fg");
-                alert(data);
-                //recuperando las variables
 
+        if (cedulaVerificada == true) {
+            if (valcorreo == true) {
+                $.ajax({
+                    type: "POST",
+                    url: "php/ingresarHistoriaClinicaPaciente.php",
+                    data: dataString,
+                    success: function (data) {
+                        showPaciente("fg");
+                        alert(data);
+                        //recuperando las variables
+                    }
+                });
+            } else {
+                alert("El correo electronico ingresado es incorrecto");
             }
-
-        });
+        } else {
+            alert("La cédula ingresada es incorrecta");
+        }
     } else {
         alert("Faltan parametros por llenar");
     }
