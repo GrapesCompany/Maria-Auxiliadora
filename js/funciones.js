@@ -39,8 +39,8 @@ function showAuxiliar(str) {
 function showReporte(str) {
 
     document.getElementById("div_nuevomedico").innerHTML = "";
-    document.getElementById("div_nuevoauxiliar").innerHTML = "";   
-    document.getElementById("div_buscador").innerHTML = ""; 
+    document.getElementById("div_nuevoauxiliar").innerHTML = "";
+    document.getElementById("div_buscador").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -53,13 +53,13 @@ function showReporte(str) {
     xmlhttp.send();
 }
 
-function showBuscador(str) {    
+function showBuscador(str) {
 
     document.getElementById("div_nuevomedico").innerHTML = "";
     document.getElementById("div_nuevoauxiliar").innerHTML = "";
     document.getElementById("div_reporte").innerHTML = "";
     var strBuscar = document.getElementById('strBuscar').value;
-   
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -78,69 +78,69 @@ function showBuscador(str) {
 
 function showPaciente(str) {
 
-    document.getElementById("div_modificaraux").innerHTML = ""; 
-    document.getElementById("div_modificarcita").innerHTML = "";  
+    document.getElementById("div_modificaraux").innerHTML = "";
+    document.getElementById("div_modificarcita").innerHTML = "";
     document.getElementById("div_historiasClinicas").innerHTML = "";
     document.getElementById("div_CitasMedicas").innerHTML = "";
 
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onreadystatechange = function () {
-       if (this.readyState == 4 && this.status == 200) {
-           document.getElementById("div_nuevopaciente").innerHTML = this.responseText;
-           
-       }
-   }
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_nuevopaciente").innerHTML = this.responseText;
 
-   xmlhttp.open("GET", "nuevo_paciente.php?q=" + str, true);
-   xmlhttp.send();
+        }
+    }
+
+    xmlhttp.open("GET", "nuevo_paciente.php?q=" + str, true);
+    xmlhttp.send();
 }
 
 
 function showModificarAuxiliar(str) {
 
-    document.getElementById("div_nuevopaciente").innerHTML = "";  
-    document.getElementById("div_modificarcita").innerHTML = "";  
+    document.getElementById("div_nuevopaciente").innerHTML = "";
+    document.getElementById("div_modificarcita").innerHTML = "";
     document.getElementById("div_historiasClinicas").innerHTML = "";
     document.getElementById("div_CitasMedicas").innerHTML = "";
 
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onreadystatechange = function () {
-       if (this.readyState == 4 && this.status == 200) {
-           document.getElementById("div_modificaraux").innerHTML = this.responseText;
-       }
-   }
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_modificaraux").innerHTML = this.responseText;
+        }
+    }
 
-   xmlhttp.open("GET", "modificar_auxiliar.php?q=" + str, true);
-   xmlhttp.send();
+    xmlhttp.open("GET", "modificar_auxiliar.php?q=" + str, true);
+    xmlhttp.send();
 }
 
 function showCitaMedica(str) {
 
-    document.getElementById("div_nuevopaciente").innerHTML = ""; 
-    document.getElementById("div_modificaraux").innerHTML = ""; 
+    document.getElementById("div_nuevopaciente").innerHTML = "";
+    document.getElementById("div_modificaraux").innerHTML = "";
     document.getElementById("div_historiasClinicas").innerHTML = "";
     document.getElementById("div_CitasMedicas").innerHTML = "";
-     
 
-   var xmlhttp = new XMLHttpRequest();
-   xmlhttp.onreadystatechange = function () {
-       if (this.readyState == 4 && this.status == 200) {
-           document.getElementById("div_modificarcita").innerHTML = this.responseText;
-       }
-   }
 
-   xmlhttp.open("GET", "modificar_citamedica.php?q=" + str, true);
-   xmlhttp.send();
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_modificarcita").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "modificar_citamedica.php?q=" + str, true);
+    xmlhttp.send();
 }
 
-function showBuscadorHC(str) {    
+function showBuscadorHC(str) {
 
     document.getElementById("div_nuevopaciente").innerHTML = "";
     document.getElementById("div_modificaraux").innerHTML = "";
     document.getElementById("div_modificarcita").innerHTML = "";
     document.getElementById("div_CitasMedicas").innerHTML = "";
     var strBuscar = document.getElementById('strBuscar').value;
-   
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -153,14 +153,14 @@ function showBuscadorHC(str) {
     xmlhttp.send();
 }
 
-function showBuscadorCitasMedicasPendientes(str) {    
+function showBuscadorCitasMedicasPendientes(str) {
 
     document.getElementById("div_nuevopaciente").innerHTML = "";
     document.getElementById("div_modificaraux").innerHTML = "";
     document.getElementById("div_modificarcita").innerHTML = "";
     document.getElementById("div_historiasClinicas").innerHTML = "";
     var strBuscar = document.getElementById('strBuscar').value;
-   
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -185,7 +185,7 @@ function reservarCita(str) {
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_nuevahistclinica").innerHTML = "";
-    
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -207,7 +207,7 @@ function showCita(str) {
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_nuevahistclinica").innerHTML = "";
-    
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -228,7 +228,7 @@ function buscarCita(str) {
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_nuevahistclinica").innerHTML = "";
-     
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -249,8 +249,8 @@ function listarCitaPendiente(str) {
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
-    document.getElementById("div_nuevahistclinica").innerHTML = "";     
-    
+    document.getElementById("div_nuevahistclinica").innerHTML = "";
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -270,8 +270,8 @@ function reporteCita(str) {
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
-    document.getElementById("div_nuevahistclinica").innerHTML = "";     
-    
+    document.getElementById("div_nuevahistclinica").innerHTML = "";
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -313,7 +313,7 @@ function showNuevoHistoriaCc(str) {
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
-    
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -332,10 +332,10 @@ function showNuevoHistoriaCc(str) {
 
 /*__________________________________________Inicio Administrador - Paciente________________________________________________________*/
 
-function showModificarPaciente(str) {  
-    
+function showModificarPaciente(str) {
+
     document.getElementById("div_agregarcita").innerHTML = "";
-    document.getElementById("div_listarcitapendientea").innerHTML = ""; 
+    document.getElementById("div_listarcitapendientea").innerHTML = "";
     document.getElementById("div_listarcitapendientep").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
@@ -349,9 +349,9 @@ function showModificarPaciente(str) {
     xmlhttp.send();
 }
 
-function showAgregarCita(str) {     
-   
-    document.getElementById("div_listarcitapendientea").innerHTML = ""; 
+function showAgregarCita(str) {
+
+    document.getElementById("div_listarcitapendientea").innerHTML = "";
     document.getElementById("div_listarcitapendientep").innerHTML = "";
     document.getElementById("div_modificarpaciente").innerHTML = "";
 
@@ -370,8 +370,8 @@ function showAgregarCita(str) {
 function showlistarCitaAtendida(str) {
 
     document.getElementById("div_agregarcita").innerHTML = "";
-    document.getElementById("div_listarcitapendientep").innerHTML = "";  
-    document.getElementById("div_modificarpaciente").innerHTML = "";   
+    document.getElementById("div_listarcitapendientep").innerHTML = "";
+    document.getElementById("div_modificarpaciente").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -386,10 +386,10 @@ function showlistarCitaAtendida(str) {
 
 function showlistarCitaPendiente(str) {
 
-     document.getElementById("div_agregarcita").innerHTML = "";
-     document.getElementById("div_listarcitapendientea").innerHTML = ""; 
-     document.getElementById("div_modificarpaciente").innerHTML = "";
-            
+    document.getElementById("div_agregarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendientea").innerHTML = "";
+    document.getElementById("div_modificarpaciente").innerHTML = "";
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -409,8 +409,7 @@ function showlistarCitaPendiente(str) {
 /*Inicio - Modificar campos*/
 
 
-function habilitarcampos()
-{
+function habilitarcampos() {
     document.getElementById("cedula").removeAttribute("disabled");
     document.getElementById("nombre").removeAttribute("disabled");
     document.getElementById("apellido").removeAttribute("disabled");
@@ -423,8 +422,7 @@ function habilitarcampos()
 }
 
 
-function habilitarcamposmedico()
-{
+function habilitarcamposmedico() {
     document.getElementById("cedula").removeAttribute("disabled");
     document.getElementById("nombre").removeAttribute("disabled");
     document.getElementById("apellido").removeAttribute("disabled");
@@ -433,12 +431,11 @@ function habilitarcamposmedico()
     document.getElementById("correo").removeAttribute("disabled");
     document.getElementById("telefono").removeAttribute("disabled");
     document.getElementById("especialidad").removeAttribute("disabled");
-    
+
 }
 
-function habilitarcampospaciente()
-{
-   // document.getElementById("cedula").removeAttribute("disabled");
+function habilitarcampospaciente() {
+    // document.getElementById("cedula").removeAttribute("disabled");
     document.getElementById("nombre").removeAttribute("disabled");
     document.getElementById("apellido").removeAttribute("disabled");
     document.getElementById("fech_nac").removeAttribute("disabled");
@@ -447,118 +444,117 @@ function habilitarcampospaciente()
     document.getElementById("provincia").removeAttribute("disabled");
     document.getElementById("canton").removeAttribute("disabled");
     document.getElementById("ecivil").removeAttribute("disabled");
-    document.getElementById("sexo").removeAttribute("disabled");    
+    document.getElementById("sexo").removeAttribute("disabled");
     document.getElementById("correo").removeAttribute("disabled");
     document.getElementById("profesion").removeAttribute("disabled");
-   
+
 }
- 
+
 
 /*Fin - Modificar campos*/
 
 
-function cambiarContrasenaAdministrador()
-{
+function cambiarContrasenaAdministrador() {
 
     var dataString = 'ccactual=' + document.getElementById('ccactual').value +
-    '&ccnueva=' + document.getElementById('ccnueva').value +
-    '&ccverinueva=' + document.getElementById('ccverinueva').value;
-    if(document.getElementById('ccnueva').value!=document.getElementById('ccverinueva').value)
-    {
-       alert("Las contraseñas no coinciden");
-    }else
-    {
+        '&ccnueva=' + document.getElementById('ccnueva').value +
+        '&ccverinueva=' + document.getElementById('ccverinueva').value;
+    if (document.getElementById('ccnueva').value != document.getElementById('ccverinueva').value) {
+        alert("Las contraseñas no coinciden");
+    } else {
 
-     
-$.ajax({
-    type: "POST",
-    url: "php/admin.php",
-    data: dataString,
-    success: function (data) {
-              
-        alert(data);
-       
 
-    },error: function (errorThrown) 
-    {
-       alert("Existe un error"+errorThrown);
+        $.ajax({
+            type: "POST",
+            url: "php/admin.php",
+            data: dataString,
+            success: function (data) {
+
+                alert(data);
+
+
+            }, error: function (errorThrown) {
+                alert("Existe un error" + errorThrown);
+            }
+
+        });
+
     }
-
-});
-
-}
 }
 
 function guardarDoctor() {
 
+    var verificarCedula = document.getElementById('cedula').value;
+    var correito = document.getElementById('correo').value;
+
+    var cedulaVerificada = validarCedula(verificarCedula);
+    var valcorreo = validateMail(correito);
 
     var dataString = 'cedula=' + document.getElementById('cedula').value +
         '&nombre=' + document.getElementById('nombre').value +
         '&apellido=' + document.getElementById('apellido').value +
         '&telefono=' + document.getElementById('telefono').value +
-        '&especialidad=' + document.getElementById('especialidad').value+
-        '&inputPassword=' + document.getElementById('inputPassword').value+
-        '&fech_nac='+document.getElementById('fech_nac').value+
-        '&direccion='+document.getElementById('direccion').value+
-        '&correo='+document.getElementById('correo').value;
+        '&especialidad=' + document.getElementById('especialidad').value +
+        '&inputPassword=' + document.getElementById('inputPassword').value +
+        '&fech_nac=' + document.getElementById('fech_nac').value +
+        '&direccion=' + document.getElementById('direccion').value +
+        '&correo=' + document.getElementById('correo').value;
 
-        if(document.getElementById('cedula').value && document.getElementById('nombre').value && document.getElementById('apellido').value && 
-        document.getElementById('telefono').value && document.getElementById('especialidad').value && document.getElementById('inputPassword').value && 
-        document.getElementById('fech_nac').value && document.getElementById('direccion').value && document.getElementById('correo').value )
-        {
-            $.ajax({
-                type: "POST",
-                url: "php/ingresarMedico.php",
-                data: dataString,
-                success: function (data) {
-                    showMedico("gh");
-                    
-                    alert(data);
-                    //recuperando las variables
-        
-                },error: function (errorThrown) 
-                {
-                   alert("Existe un error"+errorThrown);
-                }
-        
-            });
-         
-        }else
-        {
-            alert("Faltan parametros por llenar");
+    if (document.getElementById('cedula').value && document.getElementById('nombre').value && document.getElementById('apellido').value &&
+        document.getElementById('telefono').value && document.getElementById('especialidad').value && document.getElementById('inputPassword').value &&
+        document.getElementById('fech_nac').value && document.getElementById('direccion').value && document.getElementById('correo').value) {
+        if (cedulaVerificada == true) {
+            if (valcorreo == true) {
+                $.ajax({
+                    type: "POST",
+                    url: "php/ingresarMedico.php",
+                    data: dataString,
+                    success: function (data) {
+                        showMedico("gh");
+
+                        alert(data);
+                        //recuperando las variables
+
+                    }, error: function (errorThrown) {
+                        alert("Existe un error" + errorThrown);
+                    }
+
+                });
+            } else { 
+                alert("El correo electronico ingresado es incorrecto");
+            }
+        } else {
+            alert("La cédula ingresada es incorrecta");
         }
-
-
-
+    } else {
+        alert("Faltan parametros por llenar");
+    }
 }
 
 function cambiarContrasenaDoctor() {
 
 
     var dataString = 'ccactual=' + document.getElementById('ccactual').value +
-    '&ccnueva=' + document.getElementById('ccnueva').value +
-    '&ccverinueva=' + document.getElementById('ccverinueva').value;
-     
+        '&ccnueva=' + document.getElementById('ccnueva').value +
+        '&ccverinueva=' + document.getElementById('ccverinueva').value;
 
-    if(document.getElementById('ccnueva').value!=document.getElementById('ccverinueva').value)
-    {
-       alert("Las contraseñas no coinciden");
-    }else
-    {
+
+    if (document.getElementById('ccnueva').value != document.getElementById('ccverinueva').value) {
+        alert("Las contraseñas no coinciden");
+    } else {
         $.ajax({
             type: "POST",
             url: "php/modificarContrasenaDoctor.php",
             data: dataString,
             success: function (data) {
-                      
+
                 alert(data);
                 //recuperando las variables
-        
-            },error: function (errorThrown) 
-            {
-               alert("Existe un error"+errorThrown);
+
+            }, error: function (errorThrown) {
+                alert("Existe un error" + errorThrown);
             }
-        
+
         });
     }
 
@@ -570,27 +566,24 @@ function cambiarContrasenaAuxiliar() {
 
 
     var dataString = 'ccactual=' + document.getElementById('ccactual').value +
-    '&ccnueva=' + document.getElementById('ccnueva').value +
-    '&ccverinueva=' + document.getElementById('ccverinueva').value;
-    if(document.getElementById('ccnueva').value!=document.getElementById('ccverinueva').value)
-    {
-      alert("Las contraseñas no coinciden");
-    }else
-    {
+        '&ccnueva=' + document.getElementById('ccnueva').value +
+        '&ccverinueva=' + document.getElementById('ccverinueva').value;
+    if (document.getElementById('ccnueva').value != document.getElementById('ccverinueva').value) {
+        alert("Las contraseñas no coinciden");
+    } else {
         $.ajax({
             type: "POST",
             url: "php/modificarContrasenaAuxiliar.php",
             data: dataString,
             success: function (data) {
-                      
+
                 alert(data);
                 //recuperando las variables
-        
-            },error: function (errorThrown) 
-            {
-               alert("Existe un error"+errorThrown);
+
+            }, error: function (errorThrown) {
+                alert("Existe un error" + errorThrown);
             }
-        
+
         });
     }
 
@@ -602,42 +595,52 @@ function cambiarContrasenaAuxiliar() {
 
 function guardarAux() {
 
+    var verificarCedula = document.getElementById('cedula').value;
+    var correito = document.getElementById('correo').value;
+
+    var cedulaVerificada = validarCedula(verificarCedula);
+    var valcorreo = validateMail(correito);
 
     var dataString = 'cedulaAux=' + document.getElementById('cedula').value +
         '&nombreAux=' + document.getElementById('nombre').value +
         '&apellidoAux=' + document.getElementById('apellido').value +
         '&telefonoAux=' + document.getElementById('telefono').value +
-        '&inputPasswordAux=' + document.getElementById('inputPassword').value+
-        '&fech_nacAux='+document.getElementById('fech_nac').value+
-        '&direccionAux='+document.getElementById('direccion').value+
-        '&correoAux='+document.getElementById('correo').value;
+        '&inputPasswordAux=' + document.getElementById('inputPassword').value +
+        '&fech_nacAux=' + document.getElementById('fech_nac').value +
+        '&direccionAux=' + document.getElementById('direccion').value +
+        '&correoAux=' + document.getElementById('correo').value;
 
-        if(document.getElementById('cedula').value && document.getElementById('nombre').value &&
+    if (document.getElementById('cedula').value && document.getElementById('nombre').value &&
         document.getElementById('apellido').value && document.getElementById('telefono').value && document.getElementById('inputPassword').value
-    && document.getElementById('fech_nac').value &&  document.getElementById('direccion').value && document.getElementById('correo').value )
-    {
-        $.ajax({
-            type: "POST",
-            url: "php/ingresarAuxiliar.php",
-            data: dataString,
-            success: function (data) {
-                showAuxiliar("gh");
-                alert(data);
-                //recuperando las variables
-    
-            },error: function (errorThrown) 
-            {
-               alert("Existe un error"+errorThrown);
+        && document.getElementById('fech_nac').value && document.getElementById('direccion').value && document.getElementById('correo').value) {
+            if (cedulaVerificada == true) {
+                if (valcorreo == true) {
+                    $.ajax({
+                        type: "POST",
+                        url: "php/ingresarAuxiliar.php",
+                        data: dataString,
+                        success: function (data) {
+                            showAuxiliar("gh");
+                            alert(data);
+                            //recuperando las variables
+            
+                        }, error: function (errorThrown) {
+                            alert("Existe un error" + errorThrown);
+                        }
+            
+            
+                    });
+                } else { 
+                    alert("El correo electronico ingresado es incorrecto");
+                }
+            } else {
+                alert("La cédula ingresada es incorrecta");
             }
-        
-    
-        });
-    } else
-    {
+    } else {
         alert("Faltan parmetros por llenar");
     }
 
-    
+
 
 }
 
@@ -648,120 +651,110 @@ function guardarHistoriaClinicaPasiente() {
     var dataString = 'cedulaHist=' + document.getElementById('cedula').value +
         '&nombreHist=' + document.getElementById('nombre').value +
         '&apellidoHist=' + document.getElementById('apellido').value +
-        '&fech_nacHist='+document.getElementById('fech_nac').value+
+        '&fech_nacHist=' + document.getElementById('fech_nac').value +
         '&telefonoHist=' + document.getElementById('telefono').value +
-        '&direccionHist='+document.getElementById('direccion').value+
-        '&provinciaHist='+document.getElementById('provincia').value+
-        '&cantonHist='+document.getElementById('canton').value+
-        '&ecivilHist='+document.getElementById('ecivil').value+
-        '&sexoHist='+document.getElementById('sexo').value+
-        '&profesionHist='+document.getElementById('profesion').value+
-        '&contrasenaHist='+document.getElementById('contrasena').value+
-        '&correoHist='+document.getElementById('correo').value+
-        '&responsableHist='+document.getElementById('responsable').value+
-        '&observacionesHist='+document.getElementById('observaciones').value;
-        
-        if(document.getElementById('cedula').value && document.getElementById('nombre').value && document.getElementById('apellido').value
-          &&  document.getElementById('fech_nac').value && document.getElementById('telefono').value && document.getElementById('direccion').value &&
-          document.getElementById('provincia').value&& document.getElementById('canton').value && document.getElementById('ecivil').value&& document.getElementById('sexo').value
-          &&document.getElementById('profesion').value && document.getElementById('contrasena').value && document.getElementById('responsable').value &&  document.getElementById('correo').value && document.getElementById('responsable').value
-          )
-        {
-            $.ajax({
-                type: "POST",
-                url: "php/ingresarHistoriaClinicaPaciente.php",
-                data: dataString,
-                success: function (data) {
-                    showPaciente("fg");
-                    alert(data);
-                    //recuperando las variables
-        
-                }
-        
-            });
-        }else
-        {
-            alert("Faltan parametros por llenar");
-        }
-       
-        /// historia clinica 
+        '&direccionHist=' + document.getElementById('direccion').value +
+        '&provinciaHist=' + document.getElementById('provincia').value +
+        '&cantonHist=' + document.getElementById('canton').value +
+        '&ecivilHist=' + document.getElementById('ecivil').value +
+        '&sexoHist=' + document.getElementById('sexo').value +
+        '&profesionHist=' + document.getElementById('profesion').value +
+        '&contrasenaHist=' + document.getElementById('contrasena').value +
+        '&correoHist=' + document.getElementById('correo').value +
+        '&responsableHist=' + document.getElementById('responsable').value +
+        '&observacionesHist=' + document.getElementById('observaciones').value;
 
+    if (document.getElementById('cedula').value && document.getElementById('nombre').value && document.getElementById('apellido').value
+        && document.getElementById('fech_nac').value && document.getElementById('telefono').value && document.getElementById('direccion').value &&
+        document.getElementById('provincia').value && document.getElementById('canton').value && document.getElementById('ecivil').value && document.getElementById('sexo').value
+        && document.getElementById('profesion').value && document.getElementById('contrasena').value && document.getElementById('responsable').value && document.getElementById('correo').value && document.getElementById('responsable').value
+    ) {
+        $.ajax({
+            type: "POST",
+            url: "php/ingresarHistoriaClinicaPaciente.php",
+            data: dataString,
+            success: function (data) {
+                showPaciente("fg");
+                alert(data);
+                //recuperando las variables
 
-    
+            }
 
-}
+        });
+    } else {
+        alert("Faltan parametros por llenar");
+    }
 
+    /// historia clinica 
 
-function reservarCitaPorMedico()
-{
-    var dataString = 'cedulaReserva=' + document.getElementById('cedula').value +
-        '&medicoReserva=' + document.getElementById('medico').value +
-      
-        '&fech_consulReserva=' + document.getElementById('fech_consul').value +
-        '&horario_medReserva=' + document.getElementById('horario_med').value;
-      
-
-        if(document.getElementById('cedula').value && document.getElementById('medico').value&& document.getElementById('fech_consul').value
-    &&  document.getElementById('horario_med').value)
-        {
-            $.ajax({
-                type: "POST",
-                url: "php/citaMedica.php",
-                data: dataString,
-                success: function () {
-                    reservarCita("sad");
-                    alert(data);
-                    //recuperando las variables
-        
-                },error: function (errorThrown) 
-                {
-                   alert("Existe un error"+errorThrown);
-                }
-            
-        
-            });
-        }else
-        {
-            alert("Faltan parametros de llenar para poder reservar la cita medica");
-        }
 
 
 
 }
 
 
-function reservarCitaPorPaciente()
-{
+function reservarCitaPorMedico() {
     var dataString = 'cedulaReserva=' + document.getElementById('cedula').value +
         '&medicoReserva=' + document.getElementById('medico').value +
-      
+
         '&fech_consulReserva=' + document.getElementById('fech_consul').value +
         '&horario_medReserva=' + document.getElementById('horario_med').value;
-      
 
 
-        if(document.getElementById('cedula').value && document.getElementById('medico').value &&
-        document.getElementById('fech_consul').value&& document.getElementById('horario_med').value)
-        {
-            $.ajax({
-                type: "POST",
-                url: "php/citaMedica.php",
-                data: dataString,
-                success: function (data) {
-                    showAgregarCita("sad");
-                    alert(data);
-                    //recuperando las variables
-        
-                },  error: function (errorThrown) 
-                {
-                   alert(errorThrown);
-                }
-        
-            });
-        }else
-        {
-            alert("Faltan parametros por llenar");
-        }
+    if (document.getElementById('cedula').value && document.getElementById('medico').value && document.getElementById('fech_consul').value
+        && document.getElementById('horario_med').value) {
+        $.ajax({
+            type: "POST",
+            url: "php/citaMedica.php",
+            data: dataString,
+            success: function () {
+                reservarCita("sad");
+                alert(data);
+                //recuperando las variables
+
+            }, error: function (errorThrown) {
+                alert("Existe un error" + errorThrown);
+            }
+
+
+        });
+    } else {
+        alert("Faltan parametros de llenar para poder reservar la cita medica");
+    }
+
+
+
+}
+
+
+function reservarCitaPorPaciente() {
+    var dataString = 'cedulaReserva=' + document.getElementById('cedula').value +
+        '&medicoReserva=' + document.getElementById('medico').value +
+
+        '&fech_consulReserva=' + document.getElementById('fech_consul').value +
+        '&horario_medReserva=' + document.getElementById('horario_med').value;
+
+
+
+    if (document.getElementById('cedula').value && document.getElementById('medico').value &&
+        document.getElementById('fech_consul').value && document.getElementById('horario_med').value) {
+        $.ajax({
+            type: "POST",
+            url: "php/citaMedica.php",
+            data: dataString,
+            success: function (data) {
+                showAgregarCita("sad");
+                alert(data);
+                //recuperando las variables
+
+            }, error: function (errorThrown) {
+                alert(errorThrown);
+            }
+
+        });
+    } else {
+        alert("Faltan parametros por llenar");
+    }
 
 
 
@@ -772,29 +765,26 @@ function cambiarContrasenaPaciente() {
 
 
     var dataString = 'ccactual=' + document.getElementById('ccactual').value +
-    '&ccnueva=' + document.getElementById('ccnueva').value +
-    '&ccverinueva=' + document.getElementById('ccverinueva').value;
-     
+        '&ccnueva=' + document.getElementById('ccnueva').value +
+        '&ccverinueva=' + document.getElementById('ccverinueva').value;
 
-    if(document.getElementById('ccnueva').value!=document.getElementById('ccverinueva').value)
-    {
-       alert("Las contraseñas no coinciden");
-    }else
-    {
+
+    if (document.getElementById('ccnueva').value != document.getElementById('ccverinueva').value) {
+        alert("Las contraseñas no coinciden");
+    } else {
         $.ajax({
             type: "POST",
             url: "php/modificarContrasenaDoctor.php",
             data: dataString,
             success: function (data) {
-                      
+
                 alert(data);
                 //recuperando las variables
-        
-            },error: function (errorThrown) 
-            {
-               alert("Existe un error"+errorThrown);
+
+            }, error: function (errorThrown) {
+                alert("Existe un error" + errorThrown);
             }
-        
+
         });
     }
 
@@ -802,43 +792,40 @@ function cambiarContrasenaPaciente() {
 }
 
 
-function modificarPaciente()
-{
-  
+function modificarPaciente() {
 
-    var dataString ='nombreHist=' + document.getElementById('nombre').value +
-    '&apellidoHist=' + document.getElementById('apellido').value +
-    '&fech_nacHist='+document.getElementById('fech_nac').value+
-    '&telefonoHist=' + document.getElementById('telefono').value +
-    '&direccionHist='+document.getElementById('direccion').value+
-    '&provinciaHist='+document.getElementById('provincia').value+
-    '&cantonHist='+document.getElementById('canton').value+
-    '&ecivilHist='+document.getElementById('ecivil').value+
-    '&sexoHist='+document.getElementById('sexo').value+
-    '&profesionHist='+document.getElementById('profesion').value+
-  
-    '&correoHist='+document.getElementById('correo').value;
 
-    if(document.getElementById('nombre').value && document.getElementById('apellido').value
-          &&  document.getElementById('fech_nac').value && document.getElementById('telefono').value && document.getElementById('direccion').value &&
-          document.getElementById('provincia').value&& document.getElementById('canton').value && document.getElementById('ecivil').value&& document.getElementById('sexo').value
-          &&document.getElementById('profesion').value &&  document.getElementById('correo').value )
-        {
-            $.ajax({
-                type: "POST",
-                url: "php/modificarMiCuentaPaciente.php",
-                data: dataString,
-                success: function (data) {
-                    showModificarPaciente("a");
-                    alert(data);
-                    //recuperando las variables
-        
-                }
-             });
-        }else
-        {
-            alert("Faltan parametros por llenar");
-        }
+    var dataString = 'nombreHist=' + document.getElementById('nombre').value +
+        '&apellidoHist=' + document.getElementById('apellido').value +
+        '&fech_nacHist=' + document.getElementById('fech_nac').value +
+        '&telefonoHist=' + document.getElementById('telefono').value +
+        '&direccionHist=' + document.getElementById('direccion').value +
+        '&provinciaHist=' + document.getElementById('provincia').value +
+        '&cantonHist=' + document.getElementById('canton').value +
+        '&ecivilHist=' + document.getElementById('ecivil').value +
+        '&sexoHist=' + document.getElementById('sexo').value +
+        '&profesionHist=' + document.getElementById('profesion').value +
+
+        '&correoHist=' + document.getElementById('correo').value;
+
+    if (document.getElementById('nombre').value && document.getElementById('apellido').value
+        && document.getElementById('fech_nac').value && document.getElementById('telefono').value && document.getElementById('direccion').value &&
+        document.getElementById('provincia').value && document.getElementById('canton').value && document.getElementById('ecivil').value && document.getElementById('sexo').value
+        && document.getElementById('profesion').value && document.getElementById('correo').value) {
+        $.ajax({
+            type: "POST",
+            url: "php/modificarMiCuentaPaciente.php",
+            data: dataString,
+            success: function (data) {
+                showModificarPaciente("a");
+                alert(data);
+                //recuperando las variables
+
+            }
+        });
+    } else {
+        alert("Faltan parametros por llenar");
+    }
 
 
 }

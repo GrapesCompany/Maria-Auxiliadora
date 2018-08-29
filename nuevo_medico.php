@@ -10,7 +10,7 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text"  name="cedula" id="cedula" onkeyup="this.value=soloNumeros(this.value)" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
+         <input type="text"  name="cedula" id="cedula" onkeyup="this.value=soloNumeros(this.value)" minlength="10" maxlength="10" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
          <label for="cedula">Cédula</label>
        </div>
      </div>
@@ -60,13 +60,13 @@
    <div class="form-row">
    <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="telefono" class="form-control" placeholder="Teléfono" required="required">
+         <input type="text" id="telefono" onkeyup="this.value=soloNumeros(this.value)" maxlength="10" class="form-control" placeholder="Teléfono" required="required">
          <label for="telefono">Teléfono</label>
        </div>
    </div>   
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="especialidad" class="form-control" placeholder="Especialidad" required="required" autofocus="autofocus">
+         <input type="text" id="especialidad" onkeyup="this.value=soloLetras(this.value)" class="form-control" placeholder="Especialidad" required="required" autofocus="autofocus">
          <label for="especialidad">Especialidad</label>
        </div>
      </div>           
@@ -92,4 +92,6 @@
 
 </div>';
 echo $pep;
+
+//<input type="submit" class="btn btn-block col-md-2 btn-ttc" onclick="guardarDoctor()" value="Registrar">
 ?>

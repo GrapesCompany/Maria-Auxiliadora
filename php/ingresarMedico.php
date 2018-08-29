@@ -39,7 +39,7 @@ $correo=$_POST['correo'];
            ('$cedula','$nombre','$apellido',' $telefono','$especialidad','0',' $inputPassword','$fech_nac','$direccion','$correo')" ) or die("   Problemas en el select: ".mysqli_error($conexion));
 
          cerrar($conexion);
-         echo "La historia clinica se ha creado correctamente.  ";
+         echo "La historia clinica se ha creado correctamente.";
 
         }
           ?>
