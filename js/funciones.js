@@ -957,15 +957,15 @@ function modificarMedico() {
 }*/
 
 function eliminarAuxiliares(str) {
-    alert('estoy en eliminar aux');
-    //var mandar = str;
+
     var dataString = 'enviar=' + str;
     $.ajax({
         type: 'POST',
         url: 'php/eliminarauxiliares.php',
         data: dataString,
         success: function(data){
-            alert('dentro del ajax',data);
+            alert('El auxiliar ha sido eliminado correctamente');
+            location.reload(true);
         }, error: function (errorThrown) {
             alert("Existe un error" + errorThrown);
         }
@@ -973,15 +973,15 @@ function eliminarAuxiliares(str) {
 }
 
 function eliminarMedicos(str) {
-    alert('estoy en eliminar med');
-    //var mandar = str;
+   
     var dataString = 'enviar=' + str;
     $.ajax({
         type: 'POST',
         url: 'php/eliminarmedicos.php',
         data: dataString,
         success: function(data){
-            alert('dentro del ajax',data);
+            alert('El médico ha sido eliminado correctamente');
+            location.reload(true);
         }, error: function (errorThrown) {
             alert("Existe un error" + errorThrown);
         }
