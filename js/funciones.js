@@ -647,6 +647,12 @@ function guardarAux() {
 
 function guardarHistoriaClinicaPasiente() {
 
+    var verificarCedula = document.getElementById('cedula').value;
+    var correito = document.getElementById('correo').value;
+
+    var cedulaVerificada = validarCedula(verificarCedula);
+    var valcorreo = validateMail(correito);
+
 
     var dataString = 'cedulaHist=' + document.getElementById('cedula').value +
         '&nombreHist=' + document.getElementById('nombre').value +
@@ -669,18 +675,25 @@ function guardarHistoriaClinicaPasiente() {
         document.getElementById('provincia').value && document.getElementById('canton').value && document.getElementById('ecivil').value && document.getElementById('sexo').value
         && document.getElementById('profesion').value && document.getElementById('contrasena').value && document.getElementById('responsable').value && document.getElementById('correo').value && document.getElementById('responsable').value
     ) {
-        $.ajax({
-            type: "POST",
-            url: "php/ingresarHistoriaClinicaPaciente.php",
-            data: dataString,
-            success: function (data) {
-                showPaciente("fg");
-                alert(data);
-                //recuperando las variables
 
+        if (cedulaVerificada == true) {
+            if (valcorreo == true) {
+                $.ajax({
+                    type: "POST",
+                    url: "php/ingresarHistoriaClinicaPaciente.php",
+                    data: dataString,
+                    success: function (data) {
+                        showPaciente("fg");
+                        alert(data);
+                        //recuperando las variables
+                    }
+                });
+            } else {
+                alert("El correo electronico ingresado es incorrecto");
             }
-
-        });
+        } else {
+            alert("La cédula ingresada es incorrecta");
+        }
     } else {
         alert("Faltan parametros por llenar");
     }
@@ -694,6 +707,10 @@ function guardarHistoriaClinicaPasiente() {
 
 
 function reservarCitaPorMedico() {
+
+    var verificarCedula = document.getElementById('cedula').value;
+    var cedulaVerificada = validarCedula(verificarCedula);
+
     var dataString = 'cedulaReserva=' + document.getElementById('cedula').value +
         '&medicoReserva=' + document.getElementById('medico').value +
 
@@ -703,21 +720,23 @@ function reservarCitaPorMedico() {
 
     if (document.getElementById('cedula').value && document.getElementById('medico').value && document.getElementById('fech_consul').value
         && document.getElementById('horario_med').value) {
-        $.ajax({
-            type: "POST",
-            url: "php/citaMedica.php",
-            data: dataString,
-            success: function () {
-                reservarCita("sad");
-                alert(data);
-                //recuperando las variables
+        if (cedulaVerificada == true) {
+            $.ajax({
+                type: "POST",
+                url: "php/citaMedica.php",
+                data: dataString,
+                success: function () {
+                    reservarCita("sad");
+                    alert(data);
+                    //recuperando las variables
 
-            }, error: function (errorThrown) {
-                alert("Existe un error" + errorThrown);
-            }
-
-
-        });
+                }, error: function (errorThrown) {
+                    alert("Existe un error" + errorThrown);
+                }
+            });
+        } else {
+            alert("La cédula ingresada es incorrecta");
+        }
     } else {
         alert("Faltan parametros de llenar para poder reservar la cita medica");
     }
@@ -794,6 +813,10 @@ function cambiarContrasenaPaciente() {
 
 function modificarPaciente() {
 
+    
+    var correito = document.getElementById('correo').value;
+    var valcorreo = validateMail(correito);
+
 
     var dataString = 'nombreHist=' + document.getElementById('nombre').value +
         '&apellidoHist=' + document.getElementById('apellido').value +
@@ -812,26 +835,35 @@ function modificarPaciente() {
         && document.getElementById('fech_nac').value && document.getElementById('telefono').value && document.getElementById('direccion').value &&
         document.getElementById('provincia').value && document.getElementById('canton').value && document.getElementById('ecivil').value && document.getElementById('sexo').value
         && document.getElementById('profesion').value && document.getElementById('correo').value) {
-        $.ajax({
-            type: "POST",
-            url: "php/modificarMiCuentaPaciente.php",
-            data: dataString,
-            success: function (data) {
-                showModificarPaciente("a");
-                alert(data);
-                //recuperando las variables
-
+            if (valcorreo == true) {
+                $.ajax({
+                    type: "POST",
+                    url: "php/modificarMiCuentaPaciente.php",
+                    data: dataString,
+                    success: function (data) {
+                        showModificarPaciente("a");
+                        alert(data);
+                        //recuperando las variables
+                    }
+                });
+            } else {
+                alert("El correo electronico ingresado es incorrecto");
             }
-        });
     } else {
         alert("Faltan parametros por llenar");
     }
-
-
 }
 
 
+
+    
+
 function modificarMedico() {
+    var verificarCedula = document.getElementById('cedula').value;
+    var correito = document.getElementById('correo').value;
+
+    var cedulaVerificada = validarCedula(verificarCedula);
+    var valcorreo = validateMail(correito);
 
     var dataString = 'cedula=' + document.getElementById('cedula').value +
         '&nombre=' + document.getElementById('nombre').value +
@@ -845,22 +877,30 @@ function modificarMedico() {
     if (document.getElementById('cedula').value && document.getElementById('nombre').value && document.getElementById('apellido').value &&
         document.getElementById('telefono').value && document.getElementById('especialidad').value && document.getElementById('fech_nac').value &&
         document.getElementById('direccion').value && document.getElementById('correo').value) {
-        $.ajax({
-            type: "POST",
-            url: "php/modificarMiCuentaDoctor.php",
-            data: dataString,
-            success: function (data) {
-                showModificarMedico("a");
 
-                alert(data);
-                //recuperando las variables
+        if (cedulaVerificada == true) {
+            if (valcorreo == true) {
+                $.ajax({
+                    type: "POST",
+                    url: "php/modificarMiCuentaDoctor.php",
+                    data: dataString,
+                    success: function (data) {
+                        showModificarMedico("a");
 
-            }, error: function (errorThrown) {
-                alert("Existe un error" + errorThrown);
+                        alert(data);
+                        //recuperando las variables
+
+                    }, error: function (errorThrown) {
+                        alert("Existe un error" + errorThrown);
+                    }
+
+                });
+            } else {
+                alert("El correo electronico ingresado es incorrecto");
             }
-
-        });
-
+        } else {
+            alert("La cédula ingresada es incorrecta");
+        }
     } else {
         alert("Faltan parametros por llenar");
     }
@@ -946,9 +986,3 @@ function modificarAuxiliar() {
         alert("Faltan parmetros por llenar");
     }
 }
-
-
-
-
-
-

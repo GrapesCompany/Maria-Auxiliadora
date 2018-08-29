@@ -17,7 +17,7 @@ echo '<div class="container">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="cedula"  name="cedula" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
+         <input type="text" id="cedula" onkeyup="this.value=soloNumeros(this.value)" minlength="10" maxlength="10" name="cedula" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
          <label for="cedula">Cédula</label>
        </div>
      </div> 
@@ -86,7 +86,7 @@ echo '<div class="container">
          <option value="11:00">11:00</option>
          <option value="11:30">11:30</option>
          <option value="12:00">12:00</option>
-         <option value="14:00">14:00<</option>
+         <option value="14:00">14:00</option>
          <option value="14:30">14:30</option>
          <option value="15:00">15:00</option>  
          <option value="15:30">15:30</option>  

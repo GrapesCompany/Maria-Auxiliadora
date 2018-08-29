@@ -10,13 +10,13 @@ $pep = '<div class="container">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="cedula" name="cedula" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
+         <input type="text" id="cedula" onkeyup="this.value=soloNumeros(this.value)" minlength="10" maxlength="10" name="cedula" class="form-control" placeholder="Cédula" required="required" autofocus="autofocus">
          <label for="cedula">Cédula</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" required="required">
+         <input type="text" id="nombre" onkeyup="this.value=soloLetras(this.value)" name="nombre" class="form-control" placeholder="Nombre" required="required">
          <label for="nombre">Nombre</label>
        </div>
      </div>
@@ -26,7 +26,7 @@ $pep = '<div class="container">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" required="required" autofocus="autofocus">
+         <input type="text" id="apellido" onkeyup="this.value=soloLetras(this.value)" name="apellido" class="form-control" placeholder="Apellido" required="required" autofocus="autofocus">
          <label for="apellido">Apellido</label>
        </div>
      </div>
@@ -45,7 +45,7 @@ $pep = '<div class="container">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="telefono"  name="telefono" class="form-control" placeholder="Telefono" required="required" autofocus="autofocus">
+         <input type="text" id="telefono" onkeyup="this.value=soloNumeros(this.value)" maxlength="10"  name="telefono" class="form-control" placeholder="Telefono" required="required" autofocus="autofocus">
          <label for="telefono">Teléfono</label>
        </div>
      </div>
@@ -62,13 +62,13 @@ $pep = '<div class="container">
  <div class="form-row">
    <div class="col-md-6">
      <div class="form-label-group">
-       <input type="text" id="provincia" name="provincia" class="form-control" placeholder="Provincia" required="required" autofocus="autofocus">
+       <input type="text" id="provincia" onkeyup="this.value=soloLetras(this.value)" name="provincia" class="form-control" placeholder="Provincia" required="required" autofocus="autofocus">
        <label for="provincia">Provincia</label>
      </div>
    </div>
    <div class="col-md-6">
      <div class="form-label-group">
-       <input type="text" id="canton" name="canton" class="form-control" placeholder="Cantón" required="required">
+       <input type="text" id="canton" onkeyup="this.value=soloLetras(this.value)" name="canton" class="form-control" placeholder="Cantón" required="required">
        <label for="canton">Cantón</label>
      </div>
    </div>
@@ -111,7 +111,7 @@ $pep = '<div class="container">
   </div>
   <div class="col-md-6">
     <div class="form-label-group">
-    <input type="text" id="profesion"  name="profesion" class="form-control" placeholder="Profesión" required="required" autofocus="autofocus">
+    <input type="text" id="profesion" onkeyup="this.value=soloLetras(this.value)" name="profesion" class="form-control" placeholder="Profesión" required="required" autofocus="autofocus">
     <label for="profesion">Profesión</label>
     </div>
   </div>
@@ -144,7 +144,7 @@ $pep = '<div class="container">
    <div class="form-row">     
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="responsable" name="responsable" class="form-control" placeholder="Responsable" required="required" autofocus="autofocus">
+         <input type="text" id="responsable" onkeyup="this.value=soloLetras(this.value)" name="responsable" class="form-control" placeholder="Responsable" required="required" autofocus="autofocus">
          <label for="responsable">Responsable</label>
        </div>
      </div>

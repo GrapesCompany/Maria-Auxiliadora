@@ -38,13 +38,13 @@ echo '<div class="container">
   <div class="form-row">
     <div class="col-md-6">
       <div class="form-label-group">
-        <input type="text" id="cedula" name="cedula" class="form-control" placeholder="Cédula" disabled required="required" autofocus="autofocus" value="'; echo $cedulaPaciente; echo'">
+        <input type="text" id="cedula" onkeyup="this.value=soloNumeros(this.value)" minlength="10" maxlength="10" name="cedula" class="form-control" placeholder="Cédula" disabled required="required" autofocus="autofocus" value="'; echo $cedulaPaciente; echo'">
         <label for="cedula">Cédula</label>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-label-group">
-        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" disabled required="required" value="'; echo $nombrePaciente; echo'">
+        <input type="text" id="nombre" onkeyup="this.value=soloLetras(this.value)" name="nombre" class="form-control" placeholder="Nombre" disabled required="required" value="'; echo $nombrePaciente; echo'">
         <label for="nombre">Nombre</label>
       </div>
     </div>
@@ -54,7 +54,7 @@ echo '<div class="container">
   <div class="form-row">
     <div class="col-md-6">
       <div class="form-label-group">
-        <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" disabled required="required" autofocus="autofocus" value="'; echo $apellidoPaciente; echo'">
+        <input type="text" id="apellido" onkeyup="this.value=soloLetras(this.value)" name="apellido" class="form-control" placeholder="Apellido" disabled required="required" autofocus="autofocus" value="'; echo $apellidoPaciente; echo'">
         <label for="apellido">Apellido</label>
       </div>
     </div>
@@ -73,7 +73,7 @@ echo '<div class="container">
   <div class="form-row">
     <div class="col-md-6">
       <div class="form-label-group">
-        <input type="text" id="telefono"  name="telefono" class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus" value="'; echo $telefonoPaciente; echo'">
+        <input type="text" id="telefono" onkeyup="this.value=soloNumeros(this.value)" maxlength="10" name="telefono" class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus" value="'; echo $telefonoPaciente; echo'">
         <label for="telefono">Teléfono</label>
       </div>
     </div>
@@ -90,13 +90,13 @@ echo '<div class="container">
 <div class="form-row">
   <div class="col-md-6">
     <div class="form-label-group">
-      <input type="text" id="provincia" name="provincia" class="form-control" placeholder="Provincia" disabled required="required" autofocus="autofocus" value="'; echo $provinciaPaciente; echo'">
+      <input type="text" id="provincia" onkeyup="this.value=soloLetras(this.value)" name="provincia" class="form-control" placeholder="Provincia" disabled required="required" autofocus="autofocus" value="'; echo $provinciaPaciente; echo'">
       <label for="provincia">Provincia</label>
     </div>
   </div>
   <div class="col-md-6">
     <div class="form-label-group">
-      <input type="text" id="canton" name="canton" class="form-control" placeholder="Cantón" disabled required="required" value="'; echo $cantonPaciente; echo'">
+      <input type="text" id="canton" onkeyup="this.value=soloLetras(this.value)" name="canton" class="form-control" placeholder="Cantón" disabled required="required" value="'; echo $cantonPaciente; echo'">
       <label for="canton">Cantón</label>
     </div>
   </div>
@@ -139,7 +139,7 @@ echo '<div class="container">
  </div>
  <div class="col-md-6">
    <div class="form-label-group">
-   <input type="text" id="profesion"  name="profesion" class="form-control" placeholder="Profesión" disabled required="required" autofocus="autofocus" value="'; echo $profesionPaciente; echo'">
+   <input type="text" id="profesion" onkeyup="this.value=soloLetras(this.value)" name="profesion" class="form-control" placeholder="Profesión" disabled required="required" autofocus="autofocus" value="'; echo $profesionPaciente; echo'">
    <label for="profesion">Profesión</label>
    </div>
  </div>

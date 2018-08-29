@@ -30,13 +30,13 @@ echo '<div class="container">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="cedulaa" class="form-control" placeholder="Cédula" required="required" disabled autofocus="autofocus" value="'; echo $cedulaAuxiliar; echo'">
+         <input type="text" id="cedulaa" onkeyup="this.value=soloNumeros(this.value)" minlength="10" maxlength="10" class="form-control" placeholder="Cédula" required="required" disabled autofocus="autofocus" value="'; echo $cedulaAuxiliar; echo'">
          <label for="cedulaa">Cédula</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="nombrea" class="form-control" placeholder="Nombre" disabled required="required" value="'; echo $nombreAuxiliar; echo'">
+         <input type="text" id="nombrea" onkeyup="this.value=soloLetras(this.value)"  class="form-control" placeholder="Nombre" disabled required="required" value="'; echo $nombreAuxiliar; echo'">
          <label for="nombrea">Nombre</label>
        </div>
      </div>
@@ -46,7 +46,7 @@ echo '<div class="container">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="apellidoa" class="form-control" placeholder="Apellido" disabled required="required" autofocus="autofocus" value="'; echo $apellidoAuxiliar; echo'">
+         <input type="text" id="apellidoa" onkeyup="this.value=soloLetras(this.value)"  class="form-control" placeholder="Apellido" disabled required="required" autofocus="autofocus" value="'; echo $apellidoAuxiliar; echo'">
          <label for="apellidoa">Apellido</label>
        </div>
      </div>
@@ -70,7 +70,7 @@ echo '<div class="container">
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-       <input type="text" id="telefonoa" class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus" value="'; echo $telefonoAuxiliar; echo'">
+       <input type="text" id="telefonoa" onkeyup="this.value=soloNumeros(this.value)" maxlength="10"  class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus" value="'; echo $telefonoAuxiliar; echo'">
        <label for="telefonoa">Teléfono</label>
        </div>
      </div>

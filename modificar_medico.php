@@ -24,19 +24,19 @@ $correoMedico=$medico[0]['correoM'];
  <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-address-book"></i>
-              Modificar Datos de un Médico</div><br>
+              Modificar Datos del Médico</div><br>
             <div class="container">
             <form  > <div class="form-group">
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" disabled name="cedula" id="cedula" class="form-control" disabled placeholder="Cédula" required="required" autofocus="autofocus" value="'; echo $cedulaMedico; echo'">
+         <input type="text" disabled name="cedula" id="cedula" onkeyup="this.value=soloNumeros(this.value)" minlength="10" maxlength="10" class="form-control" disabled placeholder="Cédula" required="required" autofocus="autofocus" value="'; echo $cedulaMedico; echo'">
          <label for="cedula">Cédula</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" name="nombre" id="nombre" class="form-control" disabled placeholder="Nombre" required="required" value="'; echo $nombreMedico; echo'">
+         <input type="text" name="nombre" id="nombre" onkeyup="this.value=soloLetras(this.value)" class="form-control" disabled placeholder="Nombre" required="required" value="'; echo $nombreMedico; echo'">
          <label for="nombre">Nombre</label>
        </div>
      </div>
@@ -46,7 +46,7 @@ $correoMedico=$medico[0]['correoM'];
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" name="apellido" id="apellido" class="form-control" disabled placeholder="Apellido" required="required" autofocus="autofocus" value="'; echo $apellidoMedico; echo'">
+         <input type="text" name="apellido" id="apellido" onkeyup="this.value=soloLetras(this.value)" class="form-control" disabled placeholder="Apellido" required="required" autofocus="autofocus" value="'; echo $apellidoMedico; echo'">
          <label for="apellido">Apellido</label>
        </div>
      </div>
@@ -80,13 +80,13 @@ $correoMedico=$medico[0]['correoM'];
    <div class="form-row">
    <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="telefono" class="form-control" placeholder="Teléfono" disabled required="required" value="'; echo $telefonoMedico; echo'">
+         <input type="text" id="telefono" onkeyup="this.value=soloNumeros(this.value)" maxlength="10" class="form-control" placeholder="Teléfono" disabled required="required" value="'; echo $telefonoMedico; echo'">
          <label for="telefono">Teléfono</label>
        </div>
    </div>   
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="text" id="especialidad" class="form-control" placeholder="Especialidad" disabled required="required" autofocus="autofocus" value="'; echo $especialidadMedico; echo'">
+         <input type="text" id="especialidad" onkeyup="this.value=soloLetras(this.value)" class="form-control" placeholder="Especialidad" disabled required="required" autofocus="autofocus" value="'; echo $especialidadMedico; echo'">
          <label for="especialidad">Especialidad</label>
        </div>
      </div>           
