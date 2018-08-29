@@ -855,10 +855,8 @@ function modificarPaciente() {
 }
 
 
-
-    
-
 function modificarMedico() {
+
     var verificarCedula = document.getElementById('cedula').value;
     var correito = document.getElementById('correo').value;
 
@@ -957,6 +955,10 @@ function eliminarMedicos(str) {
 }
 
 function modificarAuxiliar() {
+
+    var correito = document.getElementById('correo').value;
+    var valcorreo = validateMail(correito);
+
     var dataString = 'nombreAux=' + document.getElementById('nombrea').value +
         '&apellidoAux=' + document.getElementById('apellidoa').value +
         '&telefonoAux=' + document.getElementById('telefonoa').value +
@@ -967,22 +969,31 @@ function modificarAuxiliar() {
     if (document.getElementById('nombrea').value &&
         document.getElementById('apellidoa').value && document.getElementById('telefonoa').value &&
         document.getElementById('fec_naca').value && document.getElementById('direcciona').value && document.getElementById('correoea').value) {
-        $.ajax({
-            type: "POST",
-            url: "php/modificarMiCuentaAuxiliar.php",
-            data: dataString,
-            success: function (data) {
-                showModificarAuxiliar("gh");
-                alert(data);
-                //recuperando las variables
+        if (valcorreo == true) {
+            $.ajax({
+                type: "POST",
+                url: "php/modificarMiCuentaAuxiliar.php",
+                data: dataString,
+                success: function (data) {
+                    showModificarAuxiliar("gh");
+                    alert(data);
+                    //recuperando las variables
 
-            }, error: function (errorThrown) {
-                alert("Existe un error" + errorThrown);
-            }
-
-
-        });
+                }, error: function (errorThrown) {
+                    alert("Existe un error" + errorThrown);
+                }
+            });
+        } else {
+            alert("El correo electronico ingresado es incorrecto");
+        }
     } else {
         alert("Faltan parmetros por llenar");
     }
 }
+
+
+
+
+
+
+
