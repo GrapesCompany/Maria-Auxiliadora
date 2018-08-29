@@ -173,6 +173,26 @@ function showBuscadorCitasMedicasPendientes(str) {
     xmlhttp.send();
 }
 
+function showModificarHClinica(str) {
+
+    document.getElementById("div_nuevopaciente").innerHTML = "";
+    document.getElementById("div_modificaraux").innerHTML = "";
+    document.getElementById("div_modificarcita").innerHTML = "";
+    document.getElementById("div_historiasClinicas").innerHTML = "";
+    var strBuscar = document.getElementById('strBuscar').value;
+
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_CitasMedicas").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "modificar_hclinica.php?strPalabra=" + strBuscar, true);
+    xmlhttp.send();
+}
+
 /*__________________________________________Fin Administrador - Auxiliar________________________________________________________*/
 
 /*__________________________________________Inicio Administrador - Médico_______________________________________________________*/
@@ -452,13 +472,16 @@ function habilitarcampospaciente() {
 
 function habilitarcamposcmedica()
 {
-
     document.getElementById("peso").removeAttribute("disabled");
     document.getElementById("altura").removeAttribute("disabled");
     document.getElementById("presion").removeAttribute("disabled");
     document.getElementById("motivo_cita").removeAttribute("disabled");
+}
 
-
+function habilitarcamposhclinica()
+{
+    document.getElementById("responsable").removeAttribute("disabled");
+    document.getElementById("observaciones").removeAttribute("disabled");    
 }
  
 
