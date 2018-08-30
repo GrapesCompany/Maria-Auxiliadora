@@ -564,6 +564,40 @@ function finalizarCitaMedica(idCita) {
 
 }
 
+function actualizarCitaMedicaAuxiliar(idCita) {
+   // alert('ES MI FINALIZAR');
+    var idC = idCita;
+    var peso = document.getElementById('peso').value;
+    var altura = document.getElementById('altura').value;
+    var presion = document.getElementById('presion').value;
+    var motivo_cita = document.getElementById('motivo_cita').value;
+
+    var dataString = 'peso=' + document.getElementById('peso').value +
+        '&altura=' + document.getElementById('altura').value +
+        '&presion=' + document.getElementById('presion').value +
+        '&motivo_cita=' + document.getElementById('motivo_cita').value + 
+        '&idC=' + idC;
+    if (document.getElementById('peso').value && document.getElementById('altura').value 
+    && document.getElementById('presion').value && document.getElementById('motivo_cita').value) {
+        
+        $.ajax({
+            type: "POST",
+            url: "php/actualizarCitaAuxiliar.php",
+            data: dataString,
+            success: function (data) {
+                alert(data);
+                location.reload(true);
+            }, error: function (errorThrown) {
+                alert("Existe un error" + errorThrown);
+            }
+
+        });
+    } else {
+        alert("Faltan por llenar parametros");
+    }
+
+}
+
 
 /*__________________________________________Fin Administrador - Médico__________________________________________________________*/
 

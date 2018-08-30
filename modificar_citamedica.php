@@ -1,5 +1,16 @@
 <?php
- $pep ='<div class="container">
+
+include 'conexion.php';
+$idCitaM = $_GET['q'];
+$conexion = conectar();
+
+
+$citaPendientePaciente = mysqli_query($conexion,"SELECT * FROM `cita` WHERE ID_CITA = $idCitaM;")
+                                                      or die("Problemas en el select" . mysqli_error($conexion));
+
+
+   while ($row = (mysqli_fetch_array($citaPendientePaciente))) {
+ echo '<div class="container">
 
  <div class="card mb-3">
             <div class="card-header">
@@ -10,18 +21,20 @@
    <div class="form-row">
      <div class="col-md-6">
        <div class="form-label-group">
-         <input type="date" id="fecha_cita" class="form-control" placeholder="Fecha" required="required" disabled autofocus="autofocus">
-         <label for="fecha_cita">Fecha</label>
+         <input type="text" id="fecha_cita" class="form-control" placeholder="Fecha" required="required" disabled autofocus="autofocus">
+         <label for="fecha_cita">'.$row[5].'</label>
        </div>
      </div>
      <div class="col-md-6">
        <div class="form-label-group">
          <input type="text" id="hora_cita" class="form-control" placeholder="Hora" disabled required="required">
-         <label for="hora_cita">Hora</label>
+         <label for="hora_cita">'.$row[4].'</label>
        </div>
      </div>
    </div>         
- </div>
+ </div>';
+}
+echo '    
  <div class="form-group">
    <div class="form-row">
    <div class="col-md-6">
@@ -85,7 +98,7 @@
  </div>
 
  <button class="btn col-md-2 btn-ttc inline-block" href="#" onclick="habilitarcamposcmedica()">Modificar</button>
- <button class="btn col-md-2 btn-ttc inline-block" href="#">Guardar</button>
+ <button class="btn col-md-2 btn-ttc inline-block" href="#" onclick="actualizarCitaMedicaAuxiliar('.$idCitaM.')">Guardar</button>
  
  </form>
  </div>
@@ -94,5 +107,6 @@
  </div>
  
  </div>';
-echo $pep;
+
+//cerrar($conexion);
 ?>
