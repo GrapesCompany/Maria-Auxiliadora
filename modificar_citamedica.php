@@ -9,8 +9,8 @@ $citaPendientePaciente = mysqli_query($conexion,"SELECT * FROM `cita` WHERE ID_C
                                                       or die("Problemas en el select" . mysqli_error($conexion));
 
 
-   while ($row = (mysqli_fetch_array($citaPendientePaciente))) {
- echo '<div class="container">
+    while ($row = (mysqli_fetch_array($citaPendientePaciente))) {
+  echo '<div class="container">
 
  <div class="card mb-3">
             <div class="card-header">

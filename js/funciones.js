@@ -598,6 +598,33 @@ function actualizarCitaMedicaAuxiliar(idCita) {
 
 }
 
+function actualizarHistoriaClinica(idCita){
+    // alert('ES MI FINALIZAR');
+    var idC = idCita;
+    var observaciones = document.getElementById('observaciones').value;
+    var responsable = document.getElementById('responsable').value;
+
+    var dataString = 'observaciones=' + document.getElementById('observaciones').value +
+        '&responsable=' + document.getElementById('responsable').value + 
+        '&idC=' + idC;
+    if (document.getElementById('observaciones').value && document.getElementById('responsable').value ) {
+        
+        $.ajax({
+            type: "POST",
+            url: "php/actualizarHistoriaClinicaAuxiliar.php",
+            data: dataString,
+            success: function (data) {
+                alert(data);
+                location.reload(true);
+            }, error: function (errorThrown) {
+                alert("Existe un error" + errorThrown);
+            }
+
+        });
+    } else {
+        alert("Faltan por llenar parametros");
+    }
+}
 
 /*__________________________________________Fin Administrador - Médico__________________________________________________________*/
 
