@@ -60,7 +60,8 @@ if(isset($_SESSION['userMedico'])){
         <div class="input-group">
           <input type="text" class="form-control" size="40" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
           <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" onclick="showCita(this.value)" href="#" title="Buscar Paciente" type="button">
+            <button class="btn btn-primary colorsecb" onclick="showListarTotalPaciente(this.value)" href="#" title="Buscar Paciente" type="button">
+              <!-- showCita(this.value)  Este metodo poner en el Boton-->
               <i class="fas fa-user-md"></i>
             </button>            
           </div>
@@ -133,9 +134,6 @@ if(isset($_SESSION['userMedico'])){
 
         <!--Reservar Cita Medica--> 
         <div id="div_reservarcita" class="container"></div>
-       
-        
-        
 
         <!--Nueva Cita Medica--> 
         <div id="div_nuevacita" class="container"></div>
@@ -146,6 +144,9 @@ if(isset($_SESSION['userMedico'])){
          <!--Listar Cita Pendiente--> 
          <div id="div_listarcitapendiente" class="container"></div>
 
+         <!--Listar total pacientes--> 
+         <div id="div_listartotalpacientes" class="container"></div>
+
          <!--Reporte Cita Médicas--> 
          <div id="div_reportecita" class="container"></div>
         
@@ -154,6 +155,8 @@ if(isset($_SESSION['userMedico'])){
 
          <!--Nueva Historia Clinica--> 
          <div id="div_nuevahistclinica" class="container"></div>
+
+         
 
         </div>
         
