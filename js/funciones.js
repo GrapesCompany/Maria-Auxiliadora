@@ -355,6 +355,8 @@ function showListarTotalPaciente(str) {
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
 
+    var strBuscar = document.getElementById('strBuscar').value;
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -363,7 +365,7 @@ function showListarTotalPaciente(str) {
         }
     }
 
-    xmlhttp.open("GET", "listar_totalpacientes.php?q=" + str, true);
+    xmlhttp.open("GET", "listar_totalpacientes.php?strPalabra=" + strBuscar, true);
     xmlhttp.send();
 }
 

@@ -15,7 +15,7 @@ $citasPendientes = mysqli_query($conexion, "SELECT * FROM	cita c
                     INNER JOIN paciente p ON c.CEDULA_PAC = P.CEDULA_PAC
                     WHERE c.CEDULA_MED = '$cedulaMed' AND c.ESTADO_CITA = 0")
                     or die("Problemas en el select" . mysqli_error($conexion));
-                    
+
 $citasPendientes1 = mysqli_query($conexion, "SELECT * FROM	cita c
                     INNER JOIN medico m ON c.CEDULA_MED = m.CEDULA_MED
                     INNER JOIN paciente p ON c.CEDULA_PAC = P.CEDULA_PAC
@@ -86,4 +86,5 @@ echo '</tbody>
  </div>
  
  ';
+ cerrar($conexion); 
 ?>
