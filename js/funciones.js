@@ -208,8 +208,7 @@ function reservarCita(str) {
     document.getElementById("div_historiac").innerHTML = "";
     document.getElementById("div_listartotalpacientes").innerHTML = "";
     document.getElementById("div_modificarcitamedico").innerHTML = "";    
-    document.getElementById("div_citamedicapaciente").innerHTML = "";
-    
+    document.getElementById("div_citamedicapaciente").innerHTML = "";    
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -384,6 +383,8 @@ function showListarTotalPaciente(str) {
     document.getElementById("div_historiac").innerHTML = "";
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_citamedicapaciente").innerHTML = "";
+    document.getElementById("div_modificarcitamedico").innerHTML = "";
+
 
     var strBuscar = document.getElementById('strBuscar').value;
 
@@ -410,6 +411,8 @@ function showModificarCitaMedico(str) {
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_listartotalpacientes").innerHTML = "";
     document.getElementById("div_citamedicapaciente").innerHTML = "";
+    document.getElementById("div_historiac").innerHTML = "";
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -429,11 +432,13 @@ function showHistoriaClinica(str) {
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
-    document.getElementById("div_modificarmedico").innerHTML = "";
-    document.getElementById("div_historiac").innerHTML = "";
+    document.getElementById("div_modificarmedico").innerHTML = "";    
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_modificarcitamedico").innerHTML = "";
-
+    document.getElementById("div_listartotalpacientes").innerHTML = "";
+    document.getElementById("div_citamedicapaciente").innerHTML = "";
+  
+    
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -450,14 +455,19 @@ function showCitaMedicaPaciente(str) {
 
     document.getElementById("div_nuevacita").innerHTML = "";
     document.getElementById("div_buscarcita").innerHTML = "";
-    document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
+    document.getElementById("div_nuevahistclinica").innerHTML = "";
+    document.getElementById("div_historiac").innerHTML = "";
     document.getElementById("div_listartotalpacientes").innerHTML = "";
-
+    document.getElementById("div_modificarcitamedico").innerHTML = "";   
+    document.getElementById("div_reservarcita").innerHTML = ""; 
+    
     var strFecha = document.getElementById('strFecha').value;
    
+    
+     
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
