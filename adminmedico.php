@@ -60,7 +60,7 @@ if(isset($_SESSION['userMedico'])){
       <!-- Navbar Search -->
       <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
-          <input type="text" class="form-control" size="40" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" size="40" id='strBuscar' placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
           <div class="input-group-append">
             <button class="btn btn-primary colorsecb" onclick="showListarTotalPaciente(this.value)" href="#" title="Buscar Paciente" type="button">
               <!-- showCita(this.value)  Este metodo poner en el Boton-->
@@ -163,6 +163,10 @@ if(isset($_SESSION['userMedico'])){
          
          <!--Modifica Cita Medico--> 
          <div id="div_modificarcitamedico" class="container"></div>
+
+
+         <!--Detalle de Cita medica Paciente--> 
+         <div id="div_citamedicapaciente" class="container"></div>
 
 
          
