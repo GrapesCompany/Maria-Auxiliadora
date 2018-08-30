@@ -164,10 +164,11 @@ if(isset($_SESSION['userMedico'])){
          <!--Modifica Cita Medico--> 
          <div id="div_modificarcitamedico" class="container"></div>
 
-
          <!--Detalle de Cita medica Paciente--> 
          <div id="div_citamedicapaciente" class="container"></div>
 
+         <!--Detalle Modificar Cita Medica Completa--> 
+         <div id="div_modificarcmcompleta" class="container"></div>
 
          
 

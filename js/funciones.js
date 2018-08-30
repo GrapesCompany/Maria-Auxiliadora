@@ -207,8 +207,10 @@ function reservarCita(str) {
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
     document.getElementById("div_listartotalpacientes").innerHTML = "";
-    document.getElementById("div_modificarcitamedico").innerHTML = "";    
-    document.getElementById("div_citamedicapaciente").innerHTML = "";    
+    document.getElementById("div_modificarcitamedico").innerHTML = "";
+    document.getElementById("div_citamedicapaciente").innerHTML = "";
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -234,6 +236,8 @@ function showCita(str) {
     document.getElementById("div_listartotalpacientes").innerHTML = "";
     document.getElementById("div_modificarcitamedico").innerHTML = "";
     document.getElementById("div_citamedicapaciente").innerHTML = "";
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -259,6 +263,8 @@ function buscarCita(str) {
     document.getElementById("div_listartotalpacientes").innerHTML = "";
     document.getElementById("div_modificarcitamedico").innerHTML = "";
     document.getElementById("div_citamedicapaciente").innerHTML = "";
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -284,6 +290,8 @@ function listarCitaPendiente(str) {
     document.getElementById("div_listartotalpacientes").innerHTML = "";
     document.getElementById("div_modificarcitamedico").innerHTML = "";
     document.getElementById("div_citamedicapaciente").innerHTML = "";
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -309,6 +317,8 @@ function reporteCita(str) {
     document.getElementById("div_listartotalpacientes").innerHTML = "";
     document.getElementById("div_modificarcitamedico").innerHTML = "";
     document.getElementById("div_citamedicapaciente").innerHTML = "";
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -334,6 +344,8 @@ function showModificarMedico(str) {
     document.getElementById("div_citamedicapaciente").innerHTML = "";
     document.getElementById("div_listartotalpacientes").innerHTML = "";
     document.getElementById("div_modificarcitamedico").innerHTML = "";
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -359,6 +371,8 @@ function showNuevoHistoriaCc(str) {
     document.getElementById("div_listartotalpacientes").innerHTML = "";
     document.getElementById("div_modificarcitamedico").innerHTML = "";
     document.getElementById("div_citamedicapaciente").innerHTML = "";
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -384,6 +398,8 @@ function showListarTotalPaciente(str) {
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_citamedicapaciente").innerHTML = "";
     document.getElementById("div_modificarcitamedico").innerHTML = "";
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
 
 
     var strBuscar = document.getElementById('strBuscar').value;
@@ -412,6 +428,8 @@ function showModificarCitaMedico(str) {
     document.getElementById("div_listartotalpacientes").innerHTML = "";
     document.getElementById("div_citamedicapaciente").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -432,13 +450,15 @@ function showHistoriaClinica(str) {
     document.getElementById("div_reservarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
     document.getElementById("div_reportecita").innerHTML = "";
-    document.getElementById("div_modificarmedico").innerHTML = "";    
+    document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_modificarcitamedico").innerHTML = "";
     document.getElementById("div_listartotalpacientes").innerHTML = "";
     document.getElementById("div_citamedicapaciente").innerHTML = "";
-  
-    
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
+
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -453,6 +473,9 @@ function showHistoriaClinica(str) {
 
 function showCitaMedicaPaciente(str) {
 
+    var strFecha = document.getElementById('fech_consulC').value;
+    //alert ('strFecha', strFecha);
+
     document.getElementById("div_nuevacita").innerHTML = "";
     document.getElementById("div_buscarcita").innerHTML = "";
     document.getElementById("div_listarcitapendiente").innerHTML = "";
@@ -461,13 +484,10 @@ function showCitaMedicaPaciente(str) {
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
     document.getElementById("div_listartotalpacientes").innerHTML = "";
-    document.getElementById("div_modificarcitamedico").innerHTML = "";   
-    document.getElementById("div_reservarcita").innerHTML = ""; 
-    
-    var strFecha = document.getElementById('strFecha').value;
-   
-    
-     
+    document.getElementById("div_modificarcitamedico").innerHTML = "";
+    document.getElementById("div_reservarcita").innerHTML = "";
+    document.getElementById("div_modificarcmcompleta").innerHTML = "";
+
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -476,12 +496,73 @@ function showCitaMedicaPaciente(str) {
         }
     }
 
-    xmlhttp.open("GET", "modificar_citammedico.php?strFecha=" + strFecha, true);
+    xmlhttp.open("GET", "modificar_citammedico.php?q=" + strFecha, true);
     xmlhttp.send();
 }
 
 
+function showModificarCMCompleta(str) {
 
+    //var strFecha = document.getElementById('fech_consulC').value;
+    //alert ('strFecha', strFecha);
+
+    document.getElementById("div_nuevacita").innerHTML = "";
+    document.getElementById("div_buscarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendiente").innerHTML = "";
+    document.getElementById("div_reportecita").innerHTML = "";
+    document.getElementById("div_modificarmedico").innerHTML = "";
+    document.getElementById("div_nuevahistclinica").innerHTML = "";
+    document.getElementById("div_historiac").innerHTML = "";
+    document.getElementById("div_listartotalpacientes").innerHTML = "";
+    document.getElementById("div_modificarcitamedico").innerHTML = "";
+    document.getElementById("div_reservarcita").innerHTML = "";
+    document.getElementById("div_citamedicapaciente").innerHTML = "";
+
+
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_modificarcmcompleta").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "modificar_cmcompleta.php?q=" + str, true);
+    xmlhttp.send();
+}
+
+
+function finalizarCitaMedica(idCita) {
+   // alert('ES MI FINALIZAR');
+    var idCita1 = idCita;
+    var tratamientoMCM = document.getElementById('tratamientoMCM').value;
+    var medicamentoMCM = document.getElementById('medicamentoMCM').value;
+    var diagnosticoMCM = document.getElementById('diagnosticoMCM').value;
+
+    var dataString = 'tratamientoMCM=' + document.getElementById('tratamientoMCM').value +
+        '&medicamentoMCM=' + document.getElementById('medicamentoMCM').value +
+        '&diagnosticoMCM=' + document.getElementById('diagnosticoMCM').value + 
+        '&idCita1=' + idCita1;
+    if (document.getElementById('tratamientoMCM').value && document.getElementById('medicamentoMCM').value 
+    && document.getElementById('diagnosticoMCM').value) {
+        
+        $.ajax({
+            type: "POST",
+            url: "php/actualizarCitaMedica.php",
+            data: dataString,
+            success: function (data) {
+                alert(data);
+                location.reload(true);
+            }, error: function (errorThrown) {
+                alert("Existe un error" + errorThrown);
+            }
+
+        });
+    } else {
+        alert("Faltan por llenar parametros");
+    }
+
+}
 
 
 /*__________________________________________Fin Administrador - Médico__________________________________________________________*/
@@ -607,25 +688,22 @@ function habilitarcampospaciente() {
 
 }
 
-function habilitarcamposcmedica()
-{
+function habilitarcamposcmedica() {
     document.getElementById("peso").removeAttribute("disabled");
     document.getElementById("altura").removeAttribute("disabled");
     document.getElementById("presion").removeAttribute("disabled");
     document.getElementById("motivo_cita").removeAttribute("disabled");
 }
 
-function habilitarcamposhclinica()
-{
+function habilitarcamposhclinica() {
     document.getElementById("responsable").removeAttribute("disabled");
-    document.getElementById("observaciones").removeAttribute("disabled");    
+    document.getElementById("observaciones").removeAttribute("disabled");
 }
- 
-function recargar(str)
-{
-    location.reload(true);  
+
+function recargar(str) {
+    location.reload(true);
 }
- 
+
 
 /*Fin - Modificar campos*/
 
@@ -989,7 +1067,7 @@ function cambiarContrasenaPaciente() {
 
 function modificarPaciente() {
 
-    
+
     var correito = document.getElementById('correo').value;
     var valcorreo = validateMail(correito);
 
@@ -1011,20 +1089,20 @@ function modificarPaciente() {
         && document.getElementById('fech_nac').value && document.getElementById('telefono').value && document.getElementById('direccion').value &&
         document.getElementById('provincia').value && document.getElementById('canton').value && document.getElementById('ecivil').value && document.getElementById('sexo').value
         && document.getElementById('profesion').value && document.getElementById('correo').value) {
-            if (valcorreo == true) {
-                $.ajax({
-                    type: "POST",
-                    url: "php/modificarMiCuentaPaciente.php",
-                    data: dataString,
-                    success: function (data) {
-                        showModificarPaciente("a");
-                        alert(data);
-                        //recuperando las variables
-                    }
-                });
-            } else {
-                alert("El correo electronico ingresado es incorrecto");
-            }
+        if (valcorreo == true) {
+            $.ajax({
+                type: "POST",
+                url: "php/modificarMiCuentaPaciente.php",
+                data: dataString,
+                success: function (data) {
+                    showModificarPaciente("a");
+                    alert(data);
+                    //recuperando las variables
+                }
+            });
+        } else {
+            alert("El correo electronico ingresado es incorrecto");
+        }
     } else {
         alert("Faltan parametros por llenar");
     }
@@ -1105,7 +1183,7 @@ function eliminarAuxiliares(str) {
         type: 'POST',
         url: 'php/eliminarauxiliares.php',
         data: dataString,
-        success: function(data){
+        success: function (data) {
             alert('El auxiliar ha sido eliminado correctamente');
             location.reload(true);
         }, error: function (errorThrown) {
@@ -1115,13 +1193,13 @@ function eliminarAuxiliares(str) {
 }
 
 function eliminarMedicos(str) {
-   
+
     var dataString = 'enviar=' + str;
     $.ajax({
         type: 'POST',
         url: 'php/eliminarmedicos.php',
         data: dataString,
-        success: function(data){
+        success: function (data) {
             alert('El médico ha sido eliminado correctamente');
             location.reload(true);
         }, error: function (errorThrown) {
