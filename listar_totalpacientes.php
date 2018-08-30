@@ -26,7 +26,7 @@ $pep = '<div class="container">
        <td>Mark</td>
        <td>Otto</td>
        <td>@mdo</td>
-       <td><button type="button" class="btn btn-warning" onclick="showModificarHClinica(this.value)">Ver Historia Clínica</button></td>
+       <td><button type="button" class="btn btn-warning" onclick="showHistoriaClinica(this.value)">Ver Historia Clínica</button></td>
      </tr>
      
    </tbody>

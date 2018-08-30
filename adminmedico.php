@@ -156,6 +156,9 @@ if(isset($_SESSION['userMedico'])){
          <!--Nueva Historia Clinica--> 
          <div id="div_nuevahistclinica" class="container"></div>
 
+         <!--Nueva Historia Clinica--> 
+         <div id="div_historiac" class="container"></div>
+
          
 
         </div>
