@@ -16,7 +16,7 @@ $pep = '<div class="container">
      <div class="input-group">
        <input type="date" class="form-control" size="40" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
        <div class="input-group-append">
-         <button class="btn btn-primary colorsecb" title="Buscar cita médica" type="button">
+         <button class="btn btn-primary colorsecb" title="Buscar cita médica" onclick="showCitaMedicaPaciente(this.value)" type="button">
            <i class="fas fa-search"></i>
          </button> 
            

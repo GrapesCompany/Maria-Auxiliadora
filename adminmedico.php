@@ -49,7 +49,7 @@ if(isset($_SESSION['userMedico'])){
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1"  onclick="showNuevoHistoriaCc(this.value)" href="#">Maria Auxiliadora - Médico</a>
+      <a class="navbar-brand mr-1" href="index2.php">Maria Auxiliadora - Médico</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-arrows-alt-h fa-lg"></i>
@@ -158,6 +158,10 @@ if(isset($_SESSION['userMedico'])){
 
          <!--Nueva Historia Clinica--> 
          <div id="div_historiac" class="container"></div>
+
+         <!--Detalle de Cita medica Paciente--> 
+         <div id="div_citamedicapaciente" class="container"></div>
+
 
          
 
