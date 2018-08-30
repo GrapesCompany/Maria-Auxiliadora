@@ -206,6 +206,8 @@ function reservarCita(str) {
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
+    document.getElementById("div_listartotalpacientes").innerHTML = "";
+    
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -219,7 +221,6 @@ function reservarCita(str) {
     xmlhttp.send();
 }
 
-
 function showCita(str) {
 
     document.getElementById("div_buscarcita").innerHTML = "";
@@ -229,6 +230,7 @@ function showCita(str) {
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
+    document.getElementById("div_listartotalpacientes").innerHTML = "";
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -251,6 +253,7 @@ function buscarCita(str) {
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
+    document.getElementById("div_listartotalpacientes").innerHTML = "";
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -264,7 +267,6 @@ function buscarCita(str) {
     xmlhttp.send();
 }
 
-
 function listarCitaPendiente(str) {
 
     document.getElementById("div_nuevacita").innerHTML = "";
@@ -274,6 +276,7 @@ function listarCitaPendiente(str) {
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
+    document.getElementById("div_listartotalpacientes").innerHTML = "";
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -296,6 +299,7 @@ function reporteCita(str) {
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
+    document.getElementById("div_listartotalpacientes").innerHTML = "";
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -319,6 +323,7 @@ function showModificarMedico(str) {
     document.getElementById("div_nuevahistclinica").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
 
+    document.getElementById("div_listartotalpacientes").innerHTML = "";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -331,7 +336,6 @@ function showModificarMedico(str) {
     xmlhttp.send();
 }
 
-
 function showNuevoHistoriaCc(str) {
 
     document.getElementById("div_nuevacita").innerHTML = "";
@@ -341,6 +345,7 @@ function showNuevoHistoriaCc(str) {
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
+    document.getElementById("div_listartotalpacientes").innerHTML = "";
 
 
     var xmlhttp = new XMLHttpRequest();
@@ -363,6 +368,7 @@ function showListarTotalPaciente(str) {
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_historiac").innerHTML = "";
+    document.getElementById("div_nuevahistclinica").innerHTML = "";
 
     var strBuscar = document.getElementById('strBuscar').value;
 
