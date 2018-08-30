@@ -54,7 +54,7 @@ echo '<div class="container">
     <td>'.$row[3].'</td>
     <td>'.$row[13].'</td>
     <td>'.$row[14].'</td>
-    <td><button type="button" class="btn btn-warning" onclick="showModificarHClinica(this.value)">Ver Historia Clínica</button></td>
+    <td><button type="button" class="btn btn-warning" onclick="showHistoriaClinica(this.value)">Ver Historia Clínica</button></td>
   </tr>';
   $c++;
  }
