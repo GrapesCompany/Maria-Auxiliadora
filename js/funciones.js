@@ -455,6 +455,8 @@ function showCitaMedicaPaciente(str) {
     document.getElementById("div_reportecita").innerHTML = "";
     document.getElementById("div_modificarmedico").innerHTML = "";
     document.getElementById("div_listartotalpacientes").innerHTML = "";
+
+    var strFecha = document.getElementById('strFecha').value;
    
 
     var xmlhttp = new XMLHttpRequest();
@@ -464,7 +466,7 @@ function showCitaMedicaPaciente(str) {
         }
     }
 
-    xmlhttp.open("GET", "modificar_citammedico.php?q=" + str, true);
+    xmlhttp.open("GET", "modificar_citammedico.php?strFecha=" + strFecha, true);
     xmlhttp.send();
 }
 

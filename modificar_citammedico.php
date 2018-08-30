@@ -1,4 +1,12 @@
 <?php
+
+include 'conexion.php';
+$strFecha = $_GET['strFecha'];
+$conexion = conectar();
+echo 'dasdasdas';
+echo 'dasdasdas';
+echo 'dasdasdas';
+echo 'dasdasdas';
 $pep = '<div class="container">
 
 <div class="card mb-3">
