@@ -346,6 +346,27 @@ function showNuevoHistoriaCc(str) {
     xmlhttp.send();
 }
 
+function showListarTotalPaciente(str) {
+
+    document.getElementById("div_nuevacita").innerHTML = "";
+    document.getElementById("div_buscarcita").innerHTML = "";
+    document.getElementById("div_reservarcita").innerHTML = "";
+    document.getElementById("div_listarcitapendiente").innerHTML = "";
+    document.getElementById("div_reportecita").innerHTML = "";
+    document.getElementById("div_modificarmedico").innerHTML = "";
+
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_listartotalpacientes").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "listar_totalpacientes.php?q=" + str, true);
+    xmlhttp.send();
+}
+
 
 /*__________________________________________Fin Administrador - Médico__________________________________________________________*/
 
