@@ -545,6 +545,11 @@ function habilitarcamposhclinica()
     document.getElementById("observaciones").removeAttribute("disabled");    
 }
  
+function recargar(str)
+{
+    location.reload(true);  
+}
+ 
 
 /*Fin - Modificar campos*/
 
