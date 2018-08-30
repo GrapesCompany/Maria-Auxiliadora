@@ -1,5 +1,10 @@
 <?php
-$pep = '<div class="container">
+
+include 'conexion.php';
+$strId = $_GET['strPalabra'];
+$conexion = conectar();
+
+echo '<div class="container">
 
  <div class="card mb-3">
             <div class="card-header text-center">
@@ -155,5 +160,6 @@ $pep = '<div class="container">
  </div>
  
  </div>';
-echo $pep;
+
+ cerrar($conexion);
 ?>

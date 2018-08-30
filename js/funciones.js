@@ -189,7 +189,7 @@ function showModificarHClinica(str) {
         }
     }
 
-    xmlhttp.open("GET", "modificar_hclinica.php?strPalabra=" + strBuscar, true);
+    xmlhttp.open("GET", "modificar_hclinica.php?strPalabra=" + str, true);
     xmlhttp.send();
 }
 

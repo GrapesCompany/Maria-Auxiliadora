@@ -38,7 +38,7 @@ echo '
       <td>'.$historiasClinicas[$i]['cedulaPac']. '&nbsp;</td>
       <td>'.$historiasClinicas[$i]['nombrePaciente'].'</td>
       <td>'.$historiasClinicas[$i]['apellidoPac'].'</td>
-      <td><button type="button" class="btn btn-warning" onclick="showModificarHClinica(this.value)">Modificar</button></td>
+      <td><button type="button" class="btn btn-warning"  value="'.$historiasClinicas[$i]['idHC'].'" onclick="showModificarHClinica(this.value)">Modificar</button></td>
     </tr>';
     $c++;
   }
@@ -68,31 +68,17 @@ function buscarHistoriaClinicaPaciente($strBuscar)
 
     $ct = 0; //variable para el while
     $_HC; //declaracion del vector para almacenar los datos de la consulta
-    $findHC = mysqli_query($conexion, "SELECT * FROM	cita c
-                                                INNER JOIN historiaclinica hc ON c.ID_HC = hc.ID_HC
-                                                INNER JOIN paciente p ON c.CEDULA_PAC = P.CEDULA_PAC
-                                                WHERE c.CEDULA_PAC LIKE '%$strBuscar%'
+    $findHC = mysqli_query($conexion, "SELECT * FROM	historiaclinica hc
+                                                INNER JOIN paciente p ON hc.CEDULA_PAC = p.CEDULA_PAC 
+                                                  WHERE hc.CEDULA_PAC LIKE '%$strBuscar%'
                                                 OR p.NOMBRE_PAC LIKE '%$strBuscar%'
-                                                OR p.APELLIDO_PAC LIKE '%$strBuscar%'
-                                                AND c.ESTADO_CITA = '1'")
+                                                OR p.APELLIDO_PAC LIKE '%$strBuscar%'")
     or die("Problemas en el select" . mysqli_error($conexion));
 
     while ($row = (mysqli_fetch_array($findHC))) { //ciclo while para almacenar todos los datos que vienen de la base
         $_HC[$ct] = array(
-            'idCita' => $row['ID_CITA'],
-            'cedulaMed' => $row['CEDULA_MED'],
+          'idHC' => $row['ID_HC'],
             'cedulaPac' => $row['CEDULA_PAC'],
-            'idHC' => $row['ID_HC'],
-            'horaCita' => $row['HORA_CITA'],
-            'fechaCita' => $row['FECHA_CITA'],
-            'motivoCita' => $row['MOTIVO_CITA'],
-            'detalleDiagnoticoCita' => $row['DETALLE_DIAGNOSTICO_CITA'],
-            'tratamientoCita' => $row['TRATAMIENTO_CITA'],
-            'medicamentoCita' => $row['MEDICAMENTO_CITA'],
-            'fechProxCita' => $row['FECHA_PROX_CITA'],
-            'PesoCita' => $row['PESO_CITA'],
-            'alturaCita' => $row['ALTURA_CITA'],
-            'estadoCita' => $row['ESTADO_CITA'],
             'cedulaAux' => $row['CEDULA_AUX'],
             'hcFechCreacion' => $row['HC_FECHA_CREACION'],
             'responsable' => $row['RESPONSABLE'],
