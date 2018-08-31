@@ -13,7 +13,6 @@ $findCita = mysqli_query($conexion, "SELECT * FROM	cita c
 or die("Problemas en el select" . mysqli_error($conexion));
 
 
-
 echo '<div class="container">
 
  <div class="card mb-3">
