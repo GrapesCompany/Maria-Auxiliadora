@@ -5,7 +5,7 @@
 include '../conexion.php';
 session_start();
 if(isset($_SESSION['userPaciente'])){
-  $medico=$_SESSION['userPaciente'];
+  $paciente=$_SESSION['userPaciente'];
 }else
 {
   header("Location: ../index2.php");
@@ -16,8 +16,8 @@ $ccactual=$_POST['ccactual'];
 $ccnueva=$_POST['ccnueva'];
 $ccverinueva=$_POST['ccverinueva'];
 
-$cedulaPaciente=$medico[0]['cedulaP'];
-$conrasenaPaciente=$medico[0]['contrasenaP'];
+$cedulaPaciente=$paciente[0]['cedulaP'];
+$conrasenaPaciente=$paciente[0]['contrasenaP'];
 
 
 if($conrasenaPaciente!=$ccactual)
