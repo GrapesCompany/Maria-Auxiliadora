@@ -22,8 +22,7 @@ echo '<div class="container">
             <div class="container">
             <form> 
             <div class="form-group">
-   <div class="form-row">
-   <h1>Paciente: Listado de Citas Medicas Pendientes</h1><br>
+   <div class="form-row"><br>
    <table class="table">
    <thead>
      <tr>
