@@ -95,8 +95,7 @@ if(isset($_SESSION['userAdministrador'])){
             <a class="dropdown-item" onclick="showAuxiliar(this.value)" href="#">Auxiliar</a>                         
           </div>
         </li>
-
-         <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" onclick="showReporte(this.value)" href="#">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Reporte</span></a>
@@ -140,7 +139,7 @@ if(isset($_SESSION['userAdministrador'])){
         <footer class="sticky-footer colorf">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © J Choto 2018</span>
+              <span></span>
             </div>
           </div>
         </footer>
@@ -242,7 +241,7 @@ if(isset($_SESSION['userAdministrador'])){
     <!-- Javascript Paginas-->
     <script src="js/funciones.js"></script>
     <script src="js/validaciones.js"></script>
-    <script src="js/chart-area-demo.js"></script>
+    
 
   </body>
 

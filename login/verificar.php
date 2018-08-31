@@ -39,7 +39,7 @@ if ($tipoP == 'paciente' && $username != "" && $username != null && $password !=
     }
 } else {
     if ($tipoP == 'administrador' && $cargo == 'medico' && $username != "" && $username != null && $password != "" && $password != null) {
-        $existenciausuario = mysqli_query($conexion, "SELECT * FROM medico WHERE medico.`CEDULA_MED`='$username' AND  medico.`CONTRASENA_MED`='$password' AND  medico.`ESTADO_MED`='0'") or die("Problemas en el select" . mysqli_error($conexion));
+        $existenciausuario = mysqli_query($conexion, "SELECT * FROM medico WHERE medico.`CEDULA_MED`='$username' AND  medico.`CONTRASENA_MED`='$password' AND  medico.`ESTADO_MED`=0") or die("Problemas en el select" . mysqli_error($conexion));
 
         while ($f = mysqli_fetch_array($existenciausuario)) {
             $arreglo_medico[] = array('cedulaM' => $f['CEDULA_MED'],

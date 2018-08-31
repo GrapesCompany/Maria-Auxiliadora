@@ -45,7 +45,7 @@ if(isset($_SESSION['userAuxiliar'])){
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1" href="index.php">Maria Auxiliadora - Auxiliar</a>
+      <a class="navbar-brand mr-1" href="adminauxiliar.php">Maria Auxiliadora - Auxiliar</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-arrows-alt-h fa-lg"></i>
@@ -69,7 +69,7 @@ if(isset($_SESSION['userAuxiliar'])){
             </button>            
           </div>
 
-          <!-- onclick="showCitaMedica(this.value)" -->
+          <!-- onclick="showCitaMedica(this.value)" showBuscadorCitasMedicasPendientes-->
 
         </div>
       </form>
@@ -154,7 +154,7 @@ if(isset($_SESSION['userAuxiliar'])){
         <footer class="sticky-footer colorf">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © J Choto 2018</span>
+              <span></span>
             </div>
           </div>
         </footer>

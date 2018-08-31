@@ -40,7 +40,7 @@ echo '
       <td>'.$citasPendientes[$i]['fechaCita'].'</td>
       <td>'.$citasPendientes[$i]['horaCita'].'</td>
       <td>'.$citasPendientes[$i]['nombreM']. '&nbsp;' .$citasPendientes[$i]['apellidoM'].'</td>
-      <td><button type="button" class="btn btn-warning">Modificar</button></td>
+      <td><button type="button" class="btn btn-warning" value='.$citasPendientes[$i]['idCita'].' onclick="showCitaMedica(this.value)">Modificar</button></td>
     </tr>';
     $c++;
   }

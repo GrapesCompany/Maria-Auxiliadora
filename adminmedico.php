@@ -49,7 +49,9 @@ if(isset($_SESSION['userMedico'])){
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1"  onclick="showNuevoHistoriaCc(this.value)" href="#">Maria Auxiliadora - Médico</a>
+      <a class="navbar-brand mr-1" href="index2.php">Maria Auxiliadora - Médico</a>
+
+      <!-- showNuevoHistoriaCc(this.value) -->
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-arrows-alt-h fa-lg"></i>
@@ -58,9 +60,10 @@ if(isset($_SESSION['userMedico'])){
       <!-- Navbar Search -->
       <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
-          <input type="text" class="form-control" size="40" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" size="40" id='strBuscar' placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon1">
           <div class="input-group-append">
-            <button class="btn btn-primary colorsecb" onclick="showCita(this.value)" href="#" title="Buscar Paciente" type="button">
+            <button class="btn btn-primary colorsecb" onclick="showListarTotalPaciente(this.value)" href="#" title="Buscar Paciente" type="button">
+              <!-- showCita(this.value)  Este metodo poner en el Boton-->
               <i class="fas fa-user-md"></i>
             </button>            
           </div>
@@ -133,9 +136,6 @@ if(isset($_SESSION['userMedico'])){
 
         <!--Reservar Cita Medica--> 
         <div id="div_reservarcita" class="container"></div>
-       
-        
-        
 
         <!--Nueva Cita Medica--> 
         <div id="div_nuevacita" class="container"></div>
@@ -146,6 +146,9 @@ if(isset($_SESSION['userMedico'])){
          <!--Listar Cita Pendiente--> 
          <div id="div_listarcitapendiente" class="container"></div>
 
+         <!--Listar total pacientes--> 
+         <div id="div_listartotalpacientes" class="container"></div>
+
          <!--Reporte Cita Médicas--> 
          <div id="div_reportecita" class="container"></div>
         
@@ -155,6 +158,20 @@ if(isset($_SESSION['userMedico'])){
          <!--Nueva Historia Clinica--> 
          <div id="div_nuevahistclinica" class="container"></div>
 
+         <!--Nueva Historia Clinica--> 
+         <div id="div_historiac" class="container"></div>
+         
+         <!--Modifica Cita Medico--> 
+         <div id="div_modificarcitamedico" class="container"></div>
+
+         <!--Detalle de Cita medica Paciente--> 
+         <div id="div_citamedicapaciente" class="container"></div>
+
+         <!--Detalle Modificar Cita Medica Completa--> 
+         <div id="div_modificarcmcompleta" class="container"></div>
+
+         
+
         </div>
         
 
@@ -162,7 +179,7 @@ if(isset($_SESSION['userMedico'])){
         <footer class="sticky-footer colorf">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © J Choto 2018</span>
+              <span></span>
             </div>
           </div>
         </footer>
