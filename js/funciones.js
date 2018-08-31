@@ -1269,6 +1269,22 @@ function eliminarMedicos(str) {
     });
 }
 
+function CancelarCitaMedica(str) {
+
+    var dataString = 'enviar=' + str;
+    $.ajax({
+        type: 'POST',
+        url: 'php/cancelarCita.php',
+        data: dataString,
+        success: function (data) {
+            alert('La cita ha sido cancelada correctamente');
+            location.reload(true);
+        }, error: function (errorThrown) {
+            alert("Existe un error" + errorThrown);
+        }
+    });
+}
+
 function modificarAuxiliar() {
 
     var correito = document.getElementById('correo').value;
