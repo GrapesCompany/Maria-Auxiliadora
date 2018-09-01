@@ -51,10 +51,7 @@ echo '
  </div>
 </div>
 
-<div class="form-group">
-<div class="form-row">
-<div class="col-md-6"> <br><br> 
-</div></div></div>
+ 
 
  <div class="col-md-6">
  <div class="form-label-group">
@@ -68,10 +65,7 @@ echo '
  </div>
 </div> 
 
-<div class="form-group">
-<div class="form-row">
-<div class="col-md-6"> <br><br> 
-</div></div></div>
+ 
 
 <div class="col-md-6">
 <div class="form-label-group">  
@@ -84,15 +78,31 @@ echo '
 <i> mmHg (Milímetro de mercurio) </i>
 </div>
 </div>
+
+<div class="col-md-6">
+<div class="form-label-group">  
+  <input type="number" id="temperatura" class="form-control" placeholder="Temperatura" step="any" disabled required="required" size="40">
+  <label for="temperatura">Temperatura</label>
+</div>
+</div> 
+<div class="col-md-6">
+<div class="form-label-group">   
+<i> ºC (Grados) </i>
+</div>
+</div>
      
    </div>
    </div>
      <div class="col-md-6">
        <div class="form-label-group">
-       <textarea type="text" id="motivo_cita" class="form-control" disabled placeholder="Motivo" rows="7"></textarea>
-       <label for="motivo_cita"></label>
+       <textarea type="text" id="motivo_cita" class="form-control" disabled placeholder="Motivo" rows="8"></textarea>
+       <label for="motivo_cita"></label>       
        </div>
      </div>
+
+     
+
+     
   
    </div>         
  </div>

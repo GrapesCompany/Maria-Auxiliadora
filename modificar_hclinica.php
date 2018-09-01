@@ -23,18 +23,21 @@ while ($datosInf = (mysqli_fetch_array($findHC))) {
             <form> <div class="form-group">
    <div class="form-row">
      <div class="col-md-4">
-       <div class="form-label-group">
+     <label><b>Cédula:</b></label>
+       <div class="form-label-group">       
          <input type="text" id="cedula" name="cedula" class="form-control" placeholder="Cédula" disabled required="required" autofocus="autofocus">
          <label for="cedula">' . $datosInf[1] . '</label>
        </div>
      </div>
      <div class="col-md-4">
+     <label><b>Nombre:</b></label>
        <div class="form-label-group">
          <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" disabled required="required">
          <label for="nombre">' . $datosInf[7] . '</label>
        </div>
      </div>
      <div class="col-md-4">
+     <label><b>Apellido:</b></label>
      <div class="form-label-group">
      <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido" disabled required="required" autofocus="autofocus">
      <label for="apellido">' . $datosInf[8] . '</label>
@@ -45,18 +48,21 @@ while ($datosInf = (mysqli_fetch_array($findHC))) {
  <div class="form-group">
    <div class="form-row">
      <div class="col-md-4">
+     <label><b>Fecha de Nacimiento:</b></label>
        <div class="form-label-group">
        <input type="text" id="fech_nac"  name="fech_nac" class="form-control" placeholder="Fecha de Nacimiento" disabled required="required">
        <label for="fech_nac">' . $datosInf[10] . '</label>
        </div>
      </div>
      <div class="col-md-4">
+     <label><b>Teléfono:</b></label>
        <div class="form-label-group">
        <input type="text" id="telefono"  name="telefono" class="form-control" placeholder="Telefono" disabled required="required" autofocus="autofocus">
        <label for="telefono">' . $datosInf[9] . '</label>
        </div>
      </div>
      <div class="col-md-4">
+     <label><b>Provincia:</b></label>
      <div class="form-label-group">
      <input type="text" id="provincia" name="provincia" class="form-control" placeholder="Provincia" disabled required="required" autofocus="autofocus">
      <label for="provincia">' . $datosInf[12] . '</label>
@@ -70,18 +76,21 @@ while ($datosInf = (mysqli_fetch_array($findHC))) {
  <div class="form-group">
    <div class="form-row">
      <div class="col-md-4">
+     <label><b>Cantón:</b></label>
        <div class="form-label-group">
        <input type="text" id="canton" name="canton" class="form-control" placeholder="Cantón" disabled required="required">
        <label for="canton">' . $datosInf[13] . '</label>
        </div>
      </div>
      <div class="col-md-4">
+     <label><b>Dirección:</b></label>
        <div class="form-label-group">
-       <input type="text" id="direccion"  name="direccion" placeholder="Dirección" class="form-control" disabled required="required">
+       <input type="text" id="direccion"  name="direccion" placeholder="Riobamba - Ecuador" class="form-control" disabled required="required">
        <label for="direccion">Dirección</label>
        </div>
      </div>
      <div class="col-md-4">
+     <label><b>Profesión:</b></label>
      <div class="form-label-group">
      <input type="text" id="profesion"  name="profesion" class="form-control" placeholder="Profesión" disabled required="required" autofocus="autofocus">
      <label for="profesion">' . $datosInf[14] . '</label>
@@ -93,18 +102,21 @@ while ($datosInf = (mysqli_fetch_array($findHC))) {
  <div class="form-group">
  <div class="form-row">
    <div class="col-md-4">
+   <label><b>Estado civil:</b></label>
    <div class="form-label-group">
    <input type="text" id="ecivil"  name="ecivil" class="form-control" placeholder="Profesión" disabled required="required" autofocus="autofocus">
    <label for="ecivil">' . $datosInf[15] . '</label>
    </div>
    </div>
    <div class="col-md-4">
+   <label><b>Género:</b></label>
    <div class="form-label-group">
    <input type="text" id="sexo"  name="sexo" class="form-control" placeholder="Profesión" disabled required="required" autofocus="autofocus">
    <label for="sexo">' . $datosInf[16] . '</label>
  </div>
    </div>
    <div class="col-md-4">
+   <label><b>Correo electrónico:</b></label>
    <div class="form-label-group">
    <input type="mail" id="correo" name="correo" class="form-control" placeholder="Correo electrónico" disabled required="required">
    <label for="correo">' . $datosInf[19] . '</label>
@@ -125,7 +137,7 @@ while ($row = (mysqli_fetch_array($historiaClinicaInd))) {
    <div class="form-row">
 
    <div class="col-md-6">
-   <h5>Responsable</h5>
+   <label><b>Responsable:</b></label>
    <div class="form-label-group">
      <textarea type="text" id="responsable" name="responsable" class="form-control" placeholder="Responsable" disabled rows="3">
      ' . $row[4] . '
@@ -137,7 +149,7 @@ while ($row = (mysqli_fetch_array($historiaClinicaInd))) {
   
 
      <div class="col-md-6">
-     <h5>Observaciones</h5>
+     <label><b>Observaciones:</b></label>
        <div class="form-label-group">
          <textarea type="text" id="observaciones" name="observaciones" class="form-control" placeholder="Observaciones" disabled rows="3">
          ' . $row[5] . '
