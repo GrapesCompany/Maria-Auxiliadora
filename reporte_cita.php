@@ -6,7 +6,7 @@ $pep = ' <div class="container">
              <i class="fas fa-notes-medical"></i>
              Reporte de las atenciones médicas</div><br>
            <div class="container">
- <form> <div class="form-group">
+ <form  name="frmReporte" method="post" action="php/pastel1.php"> <div class="form-group"> <div class="form-group">
   <div class="form-row"> 
   <div class="col-md-6">
   <div class="form-label-group">
@@ -34,11 +34,11 @@ $pep = ' <div class="container">
   <label for="anio">Año</label>
 </div>
   </div>
-  
+  <input   class="btn btn-block col-md-2 btn-ttc"type="submit" value="Dibujar Reporte">
   </form>
    
    
-  <button class="btn btn-block col-md-2 btn-ttc" href="#">Buscar</button>
+  
   </div>
   <br>
   

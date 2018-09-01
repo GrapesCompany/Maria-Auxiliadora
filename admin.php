@@ -13,7 +13,7 @@ if(isset($_SESSION['userAdministrador'])){
 
   <head>
 
-    <meta charset="utf-8">
+   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -21,21 +21,23 @@ if(isset($_SESSION['userAdministrador'])){
 
     <title>MA Administración</title>
 
-    <!-- Bootstrap core CSS-->
+     
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">   
 
 
-    <!-- Custom fonts for this template-->
+    
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Page level plugin CSS-->
+    
     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
+  
+  
+     
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/administrar.css" rel="stylesheet">
-    <link href="css/estilosadministrar.css" rel="stylesheet">
+    <link href="css/estilosadministrar.css" rel="stylesheet">  
 
+ 
 
 
   </head>
@@ -125,12 +127,22 @@ if(isset($_SESSION['userAdministrador'])){
           <!--Nuevo Auxiliar--> 
           <div id="div_nuevoauxiliar" class="container"></div>
 
-          <!--Reporte--> 
+          <!--Reporte-->         
           <div id="div_reporte" class="container"></div>
-
+          
+         
           <!--Buscador--> 
           <div id="div_buscador" class="container"></div>
+          
+          
+          
+ <!--Dibujo reporte-->  
 
+
+
+
+
+  
 
         </div>
         
@@ -227,6 +239,8 @@ if(isset($_SESSION['userAdministrador'])){
     </div>
 
 
+
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -242,7 +256,13 @@ if(isset($_SESSION['userAdministrador'])){
     <script src="js/funciones.js"></script>
     <script src="js/validaciones.js"></script>
     
+   
+ 
 
+
+
+     
+   
   </body>
 
 </html>

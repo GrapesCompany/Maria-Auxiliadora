@@ -71,7 +71,24 @@ function showBuscador(str) {
     xmlhttp.open("GET", "listar_ma.php?strPalabra=" + strBuscar, true);
     xmlhttp.send();
 }
+/*
+function showDibujoReporte(str) {
 
+    var strBuscar = document.getElementById('strBuscar').value;
+
+
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("div_dibujoreporte").innerHTML = this.responseText;
+        }
+    }
+
+    xmlhttp.open("GET", "dibujoreporte.php?strPalabra=" + strBuscar, true);
+    xmlhttp.send();
+   
+}
+*/
 /*__________________________________________Fin Administrador - Administrador___________________________________________________*/
 
 /*__________________________________________Inicio Administrador - Auxiliar_____________________________________________________*/
