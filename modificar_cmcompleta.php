@@ -80,7 +80,7 @@ echo '<div class="card mb-3">
 <div class="col-md-6">
 <div class="form-label-group">  
   <input type="number" id="temperatura" class="form-control" placeholder="Temperatura" step="any" disabled required="required" size="40">
-  <label for="temperatura">Temperatura</label>
+  <label for="temperatura">'.$row[15].'</label>
 </div>
 </div> 
 <div class="col-md-6">
