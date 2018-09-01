@@ -59,7 +59,7 @@ echo'<div class="container">
 
     while ($medico= mysqli_fetch_row($result)){
      //echo $medico[1];
-    echo '<option value="'.$medico[0].'">'.$medico[0].'</option>'; 
+    echo '<option value="'.$medico[0].'">'.$medico[1].'-'.$medico[4].'</option>'; 
    
     }      cerrar($conexion);          
     echo '</select>
