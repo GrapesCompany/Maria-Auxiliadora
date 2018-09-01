@@ -64,6 +64,7 @@ echo '
 function buscarCitasPendientes($strBuscar){
 
     global $conexion;
+    global $strBuscar;
 
     $ct = 0; //variable para el while
     $_CitasPendientes; //declaracion del vector para almacenar los datos de la consulta
@@ -72,7 +73,8 @@ function buscarCitasPendientes($strBuscar){
                                         ON c.CEDULA_MED = m.CEDULA_MED
                                         INNER JOIN paciente p 
                                         ON c.CEDULA_PAC = P.CEDULA_PAC
-                                        WHERE c.CEDULA_PAC LIKE '%17%' OR p.NOMBRE_PAC LIKE '%a%' OR p.APELLIDO_PAC LIKE '%a%' AND c.ESTADO_CITA = '0'")
+                                        WHERE (c.ESTADO_CITA = 0) AND
+                                        (c.CEDULA_PAC LIKE '%$strBuscar%' OR p.NOMBRE_PAC LIKE '%$strBuscar%' OR p.APELLIDO_PAC LIKE '%$strBuscar%')")
     or die("Problemas en el select" . mysqli_error($conexion));
 
     while ($row = (mysqli_fetch_array($findCitasPendientes))) { //ciclo while para almacenar todos los datos que vienen de la base
