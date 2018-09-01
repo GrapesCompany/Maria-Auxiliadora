@@ -68,3 +68,15 @@ function validateMail(idMail) {
     return false;
 }
 /*********************************** */
+
+//Solo Numeros y Slash --------------------  onkeyup='this.value=soloNumerosySlash(this.value)'
+function soloNumerosySlash(string) {//solo numeros
+    var out = '';
+    //Se añaden las letras validas
+    var filtro = '0123456789/';//Caracteres validos
+
+    for (var i = 0; i < string.length; i++)
+        if (filtro.indexOf(string.charAt(i)) != -1)
+            out += string.charAt(i);
+    return out;
+}

@@ -75,7 +75,7 @@ echo '
 
 <div class="col-md-6">
 <div class="form-label-group">  
-  <input type="number" id="presion" class="form-control" placeholder="Presión" step="any" disabled required="required" size="40">
+  <input type="text" id="presion" class="form-control" onkeyup="this.value=soloNumerosySlash  (this.value)" placeholder="Presión" step="any" disabled required="required" size="40">
   <label for="presion">Presión</label>
 </div>
 </div> 
