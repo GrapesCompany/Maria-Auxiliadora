@@ -8,13 +8,15 @@ $idIn = $_POST['idC'];
 $pesoIn = $_POST['peso'];
 $alturaIn = $_POST['altura'];
 $presionIn = $_POST['presion'];
+$temperaturaIn = $_POST['temperatura'];
 $motivo_citaIn = $_POST['motivo_cita'];
 
 $FinalizacionCitaAuxiliar = mysqli_query($conexion, "UPDATE `cita` 
                                                     SET `MOTIVO_CITA` = '$motivo_citaIn', 
                                                     `PESO_CITA` = '$pesoIn', 
                                                     `ALTURA_CITA` = '$alturaIn', 
-                                                    `PRESION` = '$presionIn' 
+                                                    `PRESION` = '$presionIn', 
+                                                    `TEMPERATURA` = '$temperaturaIn' 
                                                     WHERE `cita`.`ID_CITA` = $idIn")
 or die("Problemas en el select" . mysqli_error($conexion));
 

@@ -588,21 +588,25 @@ function actualizarCitaMedicaAuxiliar(idCita) {
     var altura = document.getElementById('altura').value;
     var presion = document.getElementById('presion').value;
     var motivo_cita = document.getElementById('motivo_cita').value;
+    var temperatura = document.getElementById('temperatura').value;
 
     var dataString = 'peso=' + document.getElementById('peso').value +
         '&altura=' + document.getElementById('altura').value +
         '&presion=' + document.getElementById('presion').value +
-        '&motivo_cita=' + document.getElementById('motivo_cita').value + 
+        '&motivo_cita=' + document.getElementById('motivo_cita').value +
+        '&temperatura=' + document.getElementById('temperatura').value + 
         '&idC=' + idC;
+
     if (document.getElementById('peso').value && document.getElementById('altura').value 
-    && document.getElementById('presion').value && document.getElementById('motivo_cita').value) {
+    && document.getElementById('presion').value && document.getElementById('motivo_cita').value
+    && document.getElementById('temperatura').value) {
         
         $.ajax({
             type: "POST",
             url: "php/actualizarCitaAuxiliar.php",
             data: dataString,
             success: function (data) {
-                alert(data);
+                alert('La CITA MEDICA ha sido actualizada satisfactoriamente');
                 location.reload(true);
             }, error: function (errorThrown) {
                 alert("Existe un error" + errorThrown);
