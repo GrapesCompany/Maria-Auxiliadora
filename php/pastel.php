@@ -15,6 +15,7 @@
 
     
     <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+	<link href="../css/estilosadministrar.css" rel="stylesheet"> 
 </head>
 <body>
 
@@ -57,16 +58,18 @@ $dataPoints = array(
 	
 	
 
-<h2>Médico</h2>      
+<h1 class="textcol">Médico</h1>      
    <hr>
    <div id="chartContainer" style="height: 300pt; width: 100%;"></div>
    <br>
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-<button  class="btn btn-block col-md-2 btn-ttc">
-<a  href="../admin.php"> salir</a>
-</button>
+ <div class="container text-center">
+ <a  href="../admin.php" class="cafecenter">
+<button class="btn btn-ttc medidadbtn">Regresar</button></a>
+</div>	
+ 
 
 
 

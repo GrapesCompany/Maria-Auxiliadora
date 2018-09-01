@@ -11,10 +11,21 @@
   background-color: #005874 !important;
 }
 
-.dise{
-  
-  
+.medidadbtn{
+  width: 150px !important;
+  text-align: center !important;
 }
+
+.cafecenter{
+  text-align: center !important;
+}
+
+.textcol{
+  color: #005874 !important; 
+  font-weight: bolder !important;
+  text-transform: uppercase !important; 
+}
+ 
 
  
 
