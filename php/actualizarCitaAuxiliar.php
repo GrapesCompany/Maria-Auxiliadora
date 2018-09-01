@@ -19,4 +19,5 @@ $FinalizacionCitaAuxiliar = mysqli_query($conexion, "UPDATE `cita`
 or die("Problemas en el select" . mysqli_error($conexion));
 
 echo 'La CITA MEDICA ha sido actualizada satisfactoriamente';
+
 ?>
