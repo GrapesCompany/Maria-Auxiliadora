@@ -771,6 +771,8 @@ function habilitarcamposcmedica() {
     document.getElementById("altura").removeAttribute("disabled");
     document.getElementById("presion").removeAttribute("disabled");
     document.getElementById("motivo_cita").removeAttribute("disabled");
+    document.getElementById("temperatura").removeAttribute("disabled");
+
 }
 
 function habilitarcamposhclinica() {
