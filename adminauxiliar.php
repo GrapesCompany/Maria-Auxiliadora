@@ -45,7 +45,7 @@ if(isset($_SESSION['userAuxiliar'])){
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1" href="adminauxiliar.php">Maria Auxiliadora - Auxiliar</a>
+      <a class="navbar-brand mr-1" href="#">Maria Auxiliadora - Auxiliar</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-arrows-alt-h fa-lg"></i>

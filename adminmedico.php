@@ -49,7 +49,7 @@ if(isset($_SESSION['userMedico'])){
 
     <nav class="navbar navbar-expand navbar-dark bg-darkpr static-top">
 
-      <a class="navbar-brand mr-1" href="index2.php">Maria Auxiliadora - Médico</a>
+      <a class="navbar-brand mr-1" href="#">Maria Auxiliadora - Médico</a>
 
       <!-- showNuevoHistoriaCc(this.value) -->
 
