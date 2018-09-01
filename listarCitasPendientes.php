@@ -64,7 +64,6 @@ echo '
 function buscarCitasPendientes($strBuscar){
 
     global $conexion;
-    global $strBuscar;
 
     $ct = 0; //variable para el while
     $_CitasPendientes; //declaracion del vector para almacenar los datos de la consulta
@@ -162,6 +161,8 @@ function buscarCitasPendientes($strBuscar){
             echo '------------------------------------------------------------';
             echo "<br>";*/
         }
+    }else{
+      $_SESSION['citasPendientes'] = null;
     }
 
 }
