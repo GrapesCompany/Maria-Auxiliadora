@@ -739,7 +739,7 @@ function habilitarcampos() {
 
 
 function habilitarcamposmedico() {
-    document.getElementById("cedula").removeAttribute("disabled");
+   
     document.getElementById("nombre").removeAttribute("disabled");
     document.getElementById("apellido").removeAttribute("disabled");
     document.getElementById("fech_nac").removeAttribute("disabled");
